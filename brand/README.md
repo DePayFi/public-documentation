@@ -14,26 +14,26 @@ In case "DePay" should be taken as a name on certain platforms we register, we u
 
 ## Logo
 
-<img src="./DePay%20-%20Logo.svg" height="240"/>
-
 [DePay - Logo.ai](https://github.com/DePayFi/42/blob/master/brand/DePay%20-%20Logo.ai?raw=true)
+
+[DePay - Logo.png](https://github.com/DePayFi/42/blob/master/brand/DePay%20-%20Logo.png?raw=true)
 
 The DePay logo consists of three circular shapes aranged in three-dimensional space  
 and is supposed to represent a flipping coin.
 
 ### Alternatives
 
-<img src="./DePay%20-%20Logo%20with%20text.svg" height="140"/>
-
 [DePay - Logo with text.ai](https://github.com/DePayFi/42/blob/master/brand/DePay%20-%20Logo%20with%20text.ai?raw=true)
 
-<img src="./DePay%20-%20Logo%20with%20white%20text.svg" height="140"/>
+[DePay - Logo with text.png](https://github.com/DePayFi/42/blob/master/brand/DePay%20-%20Logo%20with%20text.png?raw=true)
 
 [DePay - Logo with white text.ai](https://github.com/DePayFi/42/blob/master/brand/DePay%20-%20Logo%20with%20text.ai?raw=true)
 
-<img src="./DePay%20-%20Logo%20without%20circle.svg" height="140"/>
+[DePay - Logo with white text.png](https://github.com/DePayFi/42/blob/master/brand/DePay%20-%20Logo%20with%20text.png?raw=true)
 
 [DePay - Logo without circle.ai](https://github.com/DePayFi/42/blob/master/brand/DePay%20-%20Logo%20without%20circle.ai?raw=true)
+
+[DePay - Logo without circle.png](https://github.com/DePayFi/42/blob/master/brand/DePay%20-%20Logo%20without%20circle.png?raw=true)
 
 ## Animated Gifs 
 
