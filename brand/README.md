@@ -21,20 +21,6 @@ In case "DePay" should be taken as a name on certain platforms we register, we u
 The DePay logo consists of three circular shapes aranged in three-dimensional space  
 and is supposed to represent a flipping coin.
 
-## Animated Gifs 
-* Edit: lxp, 20210127*
-Giphy Brand Channel application was sent on 20210127
-
-https://giphy.com/channel/DePay_fi
-
-
-## Font
-
-*Edit: lxp, 20210119*
-
-Maven Pro Extra Bold (Google Font) - [Download here amigo](https://fonts.google.com/specimen/Maven+Pro?sidebar.open=true&selection.family=Maven+Pro:wght@800)
-
-
 ### Alternatives
 
 <img src="./DePay%20-%20Logo%20with%20text.svg" height="140"/>
@@ -49,3 +35,19 @@ Maven Pro Extra Bold (Google Font) - [Download here amigo](https://fonts.google.
 
 [DePay - Logo without circle.ai](https://github.com/DePayFi/42/blob/master/brand/DePay%20-%20Logo%20without%20circle.ai?raw=true)
 
+## Animated Gifs 
+
+Giphy Brand Channel application was sent on 20210127
+
+https://giphy.com/channel/DePay_fi
+
+## Font
+
+Maven Pro Extra Bold (Google Font) - [Download here amigo](https://fonts.google.com/specimen/Maven+Pro?sidebar.open=true&selection.family=Maven+Pro:wght@800)
+
+
+## Video Intro
+
+> DePay: The missing piece of crypto payments. Built on decentralized finance:
+
+[Video](./video-intro-DePay.mp4)
