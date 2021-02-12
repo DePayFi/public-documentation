@@ -18,25 +18,25 @@ PayPay is DePay's mascot. Originally designed by [SuRaj Renuka](https://www.beha
 ### Mining
 
 ![Mining](./Animations/GIF/mining.gif)
-![Mining](./Animations/Pngs/mining/Animation10001.png)
+![Mining](./Animations/Pngs/mining/Animation20001.png)
 
 ### Money
 
 ![Money](./Animations/GIF/money.gif)
-![Money](./Animations/Pngs/money/Animation10001.png)
+![Money](./Animations/Pngs/money/Animation50001.png)
 
 ### Party
 
 ![Party](./Animations/GIF/party.gif)
-![Party](./Animations/Pngs/party/Animation10001.png)
+![Party](./Animations/Pngs/party/Animation30001.png)
 
 ### Rocket
 
 ![Rocket](./Animations/GIF/rocket.gif)
-![Rocket](./Animations/Pngs/rocket/Animation10001.png)
+![Rocket](./Animations/Pngs/rocket/Animation60001.png)
 
 ### Rollercoaster
 
 ![Rollercoaster](./Animations/GIF/rollercoaster.gif)
-![Rollercoaster](./Animations/Pngs/rollercoaster/Animation10001.png)
+![Rollercoaster](./Animations/Pngs/rollercoaster/Animation40001.png)
 
