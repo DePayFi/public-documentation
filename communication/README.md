@@ -5,3 +5,11 @@
 ## Brand
 
 See: [/brand](/brand)
+
+## Wording
+
+### Dapp
+
+We write it "Dapp" (only capital D). 
+
+Short form for decentralized applications.
