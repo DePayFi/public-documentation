@@ -5,7 +5,6 @@
 
 import requests
 import json
-import pprint
 
 def get_token_info_for_address(contract_address):
   request_url = "https://api.coingecko.com/api/v3/coins/ethereum/contract/" + str(contract_address)
