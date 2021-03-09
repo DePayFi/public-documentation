@@ -46,6 +46,25 @@ Responsibilities:
 *   Assisting the Chief Executive Officer (CEO) to develop financial plans
 *   Managing accounting procedures
 
+### Chief Marketing Officer (CMO)
+
+The CMO is responsible for facilitating growth, sales and marketing strategy by using marketing- and product data insights
+
+- Definition of marketing key results aligned with company objectives
+- Overall marketing strategy/tactics/campaign planning, execution & optimization
+- Planning, execution & optimization of key growth tactics 
+- Content marketing strategy definition, review & management
+- Safeguarding company core values (such as the idea of decentralization & independence) within the scope of all marketing efforts, measures & external communication
+- Marketing budget monitoring
+- KPI / OKR monitoring & reporting
+- Strong collaboration with sales evelopment / customer success
+- Data-driven marketing decisions (data analytics / data science)
+- Ongoing analysis & data driven optimization of previous campaigns
+- Assisting the CEO, CFO & product team with data insights
+- Networking with key market players & building relationships for further growth
+- Acquisition state-of-the-art knowledge in digital marketing- & blockchain innovation
+- Enabling & empowering colleagues with tech marketing resources & trainings
+
 ### Community Manager (Telegram)
 
 A community manager likes to communicate, understands digital community dynamics and makes people feel welcome in ours.
