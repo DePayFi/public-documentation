@@ -1,6 +1,6 @@
 # People
 
-> People first. That’s how we see it. Our people are part of one large family who embrace each others' authentic selves. First, we hire the right people for the job and help them find a team where they can let their talents shine and add the most value. Magic happens when people feel like they belong.
+> People first. That’s how we see it. Our people are part of one large family. We don't manage human resources we embrace each others' authentic selves and talents.
 
 ## Positions
 
