@@ -4,7 +4,7 @@
 
 ## Focus and limitation
 
-We develop software using only the programming languages TypeScript, Ruby (on Rails), and Solidity,  
+We develop software using only the programming languages Javascript, Ruby (on Rails), and Solidity,  
 as well as Cascading Stylsheets and Markup Language,
 because we believe that this toolset is good enough to build great applications.
 
