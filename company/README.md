@@ -6,6 +6,10 @@
 
 DePay AG, Gotthardstrasse 26, 6300 Zug
 
+### Sub-Office Zürich
+
+DePay AG, 8052 Zürich, Schärenmoosstrasse 77
+
 ## Corporate Purpose
 
 ```
