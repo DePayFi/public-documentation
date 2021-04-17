@@ -10,6 +10,10 @@ DePay AG, Gotthardstrasse 26, 6300 Zug
 
 DePay AG, Schärenmoosstrasse 77, 8052 Zürich
 
+## Company Core Values
+
+Value creation, Simplicity, and Decentralization.
+
 ## Corporate Purpose
 
 ```
