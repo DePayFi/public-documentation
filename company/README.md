@@ -17,10 +17,10 @@ Value creation, Simplicity, and Decentralization.
 ## Corporate Purpose
 
 ```
-The company aims to provide services
-and the production and sale of technology products 
+The company provides services
+and produces technology products 
 in information technology and finance, 
-especially by using advanced IT technologies 
+especially by using advanced IT technologies
 like distributed ledger technologies.
 
 The Company may establish branch offices in Switzerland and abroad,
