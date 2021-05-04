@@ -16,7 +16,7 @@ In case "DePay" should be taken as a name on certain platforms we register, we u
 
 [DePay - Logo.ai](https://github.com/DePayFi/42/blob/master/brand/DePay%20-%20Logo.ai?raw=true)
 
-[DePay - Logo.png](https://github.com/DePayFi/public-documentation/blob/master/brand/DePay%20-%20Logo%20with%20text.png?raw=true)
+[DePay - Logo.png](https://github.com/DePayFi/public-documentation/blob/master/brand/DePay%20-%20Logo.png?raw=true)
 
 The DePay logo consists of three circular shapes aranged in three-dimensional space  
 and is supposed to represent a flipping coin.
