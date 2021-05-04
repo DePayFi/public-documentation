@@ -27,9 +27,9 @@ and is supposed to represent a flipping coin.
 
 [DePay - Logo with text.png](https://github.com/DePayFi/public-documentation/blob/master/brand/DePay%20-%20Logo%20with%20text.png?raw=true)
 
-[DePay - Logo with white text.ai](https://github.com/DePayFi/public-documentation/blob/master/brand/DePay%20-%20Logo%20with%20text.ai?raw=true)
+[DePay - Logo with white text.ai](https://github.com/DePayFi/public-documentation/blob/master/brand/DePay%20-%20Logo%20with%white%20text.ai?raw=true)
 
-[DePay - Logo with white text.png](https://github.com/DePayFi/public-documentation/blob/master/brand/DePay%20-%20Logo%20with%20text.png?raw=true)
+[DePay - Logo with white text.png](https://github.com/DePayFi/public-documentation/blob/master/brand/DePay%20-%20Logo%20with%white%20text.png?raw=true)
 
 [DePay - Logo without circle.ai](https://github.com/DePayFi/public-documentation/blob/master/brand/DePay%20-%20Logo%20without%20circle.ai?raw=true)
 
