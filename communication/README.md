@@ -8,8 +8,8 @@ See: [/brand](/brand)
 
 ## Wording
 
-### dApp
+### DApp
 
-We write it "dApp" (small d, capital A). 
+We write it "DApp" (capital D, capital A). 
 
 Short form for decentralized applications.
