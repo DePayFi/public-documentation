@@ -35,6 +35,10 @@ and is supposed to represent a flipping coin.
 
 [DePay - Logo without circle.png](https://github.com/DePayFi/public-documentation/blob/master/brand/DePay%20-%20Logo%20without%20circle.png?raw=true)
 
+[DePay - Logo on grey circle.ai](https://github.com/DePayFi/public-documentation/blob/master/brand/DePay%20-%20Logo%20on%20grey%20circle.ai?raw=true)
+
+[DePay - Logo on grey circle.png](https://github.com/DePayFi/public-documentation/blob/master/brand/DePay%20-%20Logo%20on%20grey%20circle.png?raw=true)
+
 ## Animated Gifs 
 
 Giphy Brand Channel application was sent on 20210127
