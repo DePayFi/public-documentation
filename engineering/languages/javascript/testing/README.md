@@ -14,3 +14,9 @@
 ```
 yarn test --spec "cypress/integration/my-spec.js"
 ```
+
+### Show interactive browser
+
+```
+yarn test --headed
+```
