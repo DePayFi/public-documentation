@@ -1,0 +1,183 @@
+$headings-font-weight: 700;
+$lead-font-weight: 400;
+$line-height-base: 1.3;
+$headings-margin-bottom: 0.8rem;
+$primary: #3371b8;
+$secondary: #e9e8ef;
+$success: #20bf1b;
+$info: #e9e8ef;
+$warning: #eee57b;
+$danger: #ee7b7b;
+$light: #EEE;
+$dark: black;
+$black: #08364c;
+$light: #3b535f;
+@import '~bootstrap/scss/bootstrap.scss';
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --bs-body-font-size: 1.1rem;
+  --bs-body-color: #3b535f;
+  --ifm-color-primary: #3371b8;
+  --ifm-color-primary-dark: #2a629d;
+  --ifm-color-primary-darker: #265281;
+  --ifm-color-primary-darkest: #3b535f;
+  --ifm-color-primary-light: #4c8cd5;
+  --ifm-color-primary-lighter: #579ae5;
+  --ifm-color-primary-lightest: #67a7f0;
+  --ifm-code-font-size: 95%;
+  --ifm-footer-padding-horizontal: 5.6rem;
+  --ifm-footer-padding-vertical: 5.6rem;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-background-surface-color: #f7f8fa;
+  --ifm-header-border-color: #e8e8e8;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --bs-body-font-size: 1.1rem;
+  --bs-body-color: #3b535f;
+  --ifm-color-primary: #3371b8;
+  --ifm-color-primary-dark: #2a629d;
+  --ifm-color-primary-darker: #265281;
+  --ifm-color-primary-darkest: #3b535f;
+  --ifm-color-primary-light: #4c8cd5;
+  --ifm-color-primary-lighter: #579ae5;
+  --ifm-color-primary-lightest: #67a7f0;
+  --ifm-footer-padding-horizontal: 5.6rem;
+  --ifm-footer-padding-vertical: 5.6rem;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-background-surface-color: #f7f8fa;
+  --ifm-header-border-color: #e8e8e8;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $black;
+}
+
+.navbar {
+  box-shadow: none;
+  border-bottom: 1px solid var(--ifm-header-border-color);
+  padding: 1rem 2rem;
+  height: auto;
+}
+
+.navbar a.navbar__item {
+  text-decoration: none;
+}
+
+.navbar__logo {
+  height: 2.46rem
+}
+
+.navbar__title {
+  width: 1px;
+  overflow: hidden;
+}
+
+@media (max-width: 996px) {
+  .navbar__logo {
+    display: none;
+  }
+}
+
+.hero--primary {
+  --ifm-hero-background-color: #FFF;
+  --ifm-hero-text-color: var(--ifm-color-primary-darkest);
+}
+
+.container {
+  max-width: 1140px;
+}
+
+main {
+  padding-top: 1.4rem;
+}
+
+.breadcrumbs {
+  padding-bottom: 1.4rem;
+}
+
+.badge {
+  font-weight: 400;
+}
+
+.hover-card {
+  border-radius: 1rem;
+  text-decoration: none !important;
+
+  &:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  }
+
+  &:active {
+    background: #FAFAFA;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.02);
+    filter: brightness(98%);
+  }
+}
+
+.menu__link, .menu__list-item-collapsible {
+  text-decoration: none;
+
+  &:hover {
+    background: #FAFAFF;
+  }
+
+  &:active {
+    background: #F5F5FF;
+  }
+}
+
+.menu__link--active, .menu__list-item-collapsible--active {
+  background: #F5F5FF !important;
+  font-weight: 700;
+}
+
+.menu {
+  padding: 1.4rem 0.5rem 1rem 1.6rem !important;
+}
+
+.breadcrumbs__link {
+  text-decoration: none !important;
+}
+
+h1 + p {
+  font-size: 1.5rem;
+}
+
+h1 {
+  margin-bottom: 0.8rem !important;
+}
+
+p {
+  line-height: 1.7rem;
+}
+
+.doc-item-footer {
+  padding-top: 7rem;
+}
+
+.table-of-contents__link {
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+main h2 {
+  padding-top: 2rem;
+}
+
+@import './frontpage.scss';
+@import './dialog.scss';

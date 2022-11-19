@@ -1,0 +1,40 @@
+.Dialog {
+  margin: 0 auto;
+  position: relative;
+  width: 420px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 13px;
+  background: rgb(248,248,248);
+
+  .btn-dialog {
+    background: none;
+    position: relative;
+
+    &:hover {
+      background: rgba(0,0,0,0.1);
+    }
+
+    &:active {
+      background: rgba(0,0,0,0.2);
+    }
+
+    svg {
+      fill : #000000;
+      stroke : #000000;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+    }
+  }
+}
+
+@media (orientation: portrait) and (max-width: 800px) {
+ 
+  .ReactDialogAnimation, .Dialog {
+    width: 100%;
+  }
+
+  .Dialog {
+    left: 2px;
+  }
+}
