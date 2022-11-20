@@ -45,7 +45,7 @@ export default function Home() {
             </div>
 
             <div className="col-12 col-md-6 pt-5 pt-md-0">
-              <img className="frontpage-web3-payments-image" src="/img/web3-payments.svg"/>
+              <img className="frontpage-web3-payments-image" src="/docs/img/web3-payments.svg"/>
             </div>
           </div>
 
@@ -87,7 +87,7 @@ export default function Home() {
               
               <div className="pb-1">
                 <a href="/docs/payments/" className="d-flex hover-card p-3">
-                  <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/img/products/DePay-Payments.png"/>
+                  <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/docs/img/products/DePay-Payments.png"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Payments</strong></div>
                     <div className="text-light">One-off payments</div>
@@ -97,7 +97,7 @@ export default function Home() {
 
               <div className="pb-1">
                 <a href="/docs/payments/donations/" className="d-flex hover-card p-3">
-                  <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/img/products/DePay-Donations.png"/>
+                  <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/docs/img/products/DePay-Donations.png"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Donations</strong></div>
                     <div className="text-light">One-off donations</div>
@@ -106,8 +106,8 @@ export default function Home() {
               </div>
 
               <div className="pb-1">
-                <a href="/docs/payments/implementations/link" className="d-flex hover-card p-3">
-                  <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/img/products/DePay-Links.png"/>
+                <a href="/docs/payments/integrations/link" className="d-flex hover-card p-3">
+                  <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/docs/img/products/DePay-Links.png"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Links</strong></div>
                     <div className="text-light">No-code payments</div>
@@ -122,7 +122,7 @@ export default function Home() {
               
               <div className="pb-1">
                 <a href="/docs/payments/plugins/shopify" className="d-flex hover-card p-3">
-                  <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/img/plugins/Shopify.svg"/>
+                  <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/docs/img/plugins/Shopify.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Shopify</strong></div>
                     <div className="text-light">E-commerce</div>
@@ -132,7 +132,7 @@ export default function Home() {
 
               <div className="pb-1">
                 <a href="/docs/payments/plugins/woocommerce" className="d-flex hover-card p-3">
-                  <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/img/plugins/WooCommerce.svg"/>
+                  <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/docs/img/plugins/WooCommerce.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>WooCommerce</strong></div>
                     <div className="text-light">E-commerce</div>
@@ -142,7 +142,7 @@ export default function Home() {
 
               <div className="pb-1">
                 <a href="/docs/payments/plugins/wordpress" className="d-flex hover-card p-3">
-                  <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/img/plugins/Wordpress.svg"/>
+                  <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/docs/img/plugins/Wordpress.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Wordpress</strong></div>
                     <div className="text-light">Websites, Blogs & CMS</div>
@@ -160,7 +160,7 @@ export default function Home() {
               
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/tokens/USDC.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/USDC.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>USDC</strong></div>
                   </div>
@@ -169,7 +169,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/tokens/BUSD.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/BUSD.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>BUSD</strong></div>
                   </div>
@@ -178,7 +178,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/tokens/USDT.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/USDT.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>USDT</strong></div>
                   </div>
@@ -187,7 +187,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/tokens/DAI.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/DAI.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>DAI</strong></div>
                   </div>
@@ -196,7 +196,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/tokens/ETH.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/ETH.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>ETH</strong></div>
                   </div>
@@ -205,7 +205,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/tokens/BNB.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/BNB.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>BNB</strong></div>
                   </div>
@@ -214,7 +214,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/tokens/MATIC.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/MATIC.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>MATIC</strong></div>
                   </div>
@@ -223,7 +223,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/tokens/SHIB.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/SHIB.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>SHIB</strong></div>
                   </div>
@@ -232,7 +232,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/tokens/DOGE.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/DOGE.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>DOGE</strong></div>
                   </div>
@@ -241,7 +241,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/tokens/FRAX.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/FRAX.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>FRAX</strong></div>
                   </div>
@@ -250,7 +250,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/tokens/APE.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/APE.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>APE</strong></div>
                   </div>
@@ -262,7 +262,7 @@ export default function Home() {
                   <div className="ps-0">
                     <div className="text-light">8'000+ accepted tokens</div>
                     <div className="pt-3">
-                      <a href="/docs/payments/supported/blockchains" className="text-decoration-none">Learn more</a>
+                      <a href="/docs/payments/supported/tokens" className="text-decoration-none">Learn more</a>
                     </div>
                   </div>
                 </div>
@@ -275,7 +275,7 @@ export default function Home() {
               
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/wallets/MetaMask.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/MetaMask.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>MetaMask</strong></div>
                   </div>
@@ -284,7 +284,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/wallets/Coinbase.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Coinbase.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Coinbase Wallet</strong></div>
                   </div>
@@ -293,7 +293,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/wallets/TrustWallet.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/TrustWallet.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Trust Wallet</strong></div>
                   </div>
@@ -302,7 +302,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/wallets/CryptoCom.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/CryptoCom.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>crypto.com DeFi Wallet</strong></div>
                   </div>
@@ -311,7 +311,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/wallets/1inch.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/1inch.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>1inch Wallet</strong></div>
                   </div>
@@ -320,7 +320,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/wallets/imToken.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/imToken.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>imToken Wallet</strong></div>
                   </div>
@@ -329,7 +329,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/wallets/Ledger.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Ledger.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Ledger Live</strong></div>
                   </div>
@@ -337,7 +337,7 @@ export default function Home() {
 
                 <div className="pb-1 pt-1">
                   <div className="d-flex p-2 text-decoration-none">
-                    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/wallets/WalletConnect.svg"/>
+                    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/WalletConnect.svg"/>
                     <div className="ps-3">
                       <div className="text-light">100+ additional wallets via <strong>WalletConnect</strong></div>
                       <div className="pt-3">
@@ -355,7 +355,7 @@ export default function Home() {
               
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/blockchains/Ethereum.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Ethereum.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Ethereum</strong></div>
                   </div>
@@ -364,7 +364,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/blockchains/BSC.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/BSC.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>BNB Smart Chain</strong></div>
                   </div>
@@ -373,7 +373,7 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/img/blockchains/Polygon.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Polygon.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Polygon</strong></div>
                   </div>

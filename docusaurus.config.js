@@ -11,7 +11,7 @@ const config = {
   title: 'DePay Documentation',
   tagline: 'Learn how to integrate Web3 Payments by example.',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: '/docs',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -36,6 +36,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: '/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.scss'),

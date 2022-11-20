@@ -5,7 +5,7 @@ sidebar_label: Tokens
 
 # Supported Tokens
 
-Learn which tokens DePay supports and what it requires to add support for custom tokens.
+Learn which tokens are supported by DePay and what requirements custom tokens need to fulfill.
 
 ## List
 

@@ -5,7 +5,7 @@ sidebar_label: Overview
 
 # Web3 Payments
 
-Find the right way to implement DePay.
+Find the right way to integrate DePay.
 
 *Do you want to start without any code? Look at [no-code solutions](/docs/no-code).*
 
@@ -44,72 +44,72 @@ In order to receive Web3 Payments directly, you need to have a wallet and an add
 
 [Get ready to integrate DePay](/docs/payments/preparation).
 
-## Implementation Options
+## Integration Options
 
 There are multiple ways to integrate DePay. Explore all of them and pick the one that is right for you:
 
 <div className="row pt-2 pb-4">
   <div className="col-12 col-xl-4 pe-4">
-    <a style={{ background: "#ea357a" }} className="hover-card pt-1 px-1 mb-4 w-100 d-block d-block" href="/docs/payments/implementations/link">
-      <img src="/img/payments/link.png" />
+    <a style={{ background: "#ea357a" }} className="hover-card pt-1 px-1 mb-4 w-100 d-block d-block" href="/docs/payments/integrations/link">
+      <img src="/docs/img/payments/link.png" />
     </a>
     <div className="ps-1">
-      <div><a href="/docs/payments/implementations/link"><h5 className="text-primary">Link</h5></a></div>
+      <div><a href="/docs/payments/integrations/link"><h5 className="text-primary pb-1 mb-0">Link</h5></a></div>
       <div><p>Start without any code. Create a link and send customers to it.</p></div>
     </div>
   </div>
   <div className="col-12 col-xl-4 pe-4">
-    <a style={{ background: "#ea357a" }} className="hover-card p-1 mb-4 w-100 d-block d-block" href="/docs/payments/implementations/button">
-      <img src="/img/payments/button.png" />
+    <a style={{ background: "#ea357a" }} className="hover-card p-1 mb-4 w-100 d-block d-block" href="/docs/payments/integrations/button">
+      <img src="/docs/img/payments/button.png" />
     </a>
     <div className="ps-1">
-      <div><a href="/docs/payments/implementations/button"><h5 className="text-primary">Button</h5></a></div>
+      <div><a href="/docs/payments/integrations/button"><h5 className="text-primary pb-1 mb-0">Button</h5></a></div>
       <div><p>Place HTML and receive payments with the click of a button.</p></div>
     </div>
   </div>
   <div className="col-12 col-xl-4 pe-4">
-    <a style={{ background: "#ea357a" }} className="hover-card p-1 mb-4 w-100 d-block d-block" href="/docs/payments/implementations/widget">
-      <img src="/img/payments/widget.png" />
+    <a style={{ background: "#ea357a" }} className="hover-card p-1 mb-4 w-100 d-block d-block" href="/docs/payments/integrations/widget">
+      <img src="/docs/img/payments/widget.png" />
     </a>
     <div className="ps-1">
-      <div><a href="/docs/payments/implementations/widget"><h5 className="text-primary">Widget</h5></a></div>
+      <div><a href="/docs/payments/integrations/widget"><h5 className="text-primary pb-1 mb-0">Widget</h5></a></div>
       <div><p>Integrate a JavaScript widget into your user flows.</p></div>
     </div>
   </div>
 </div>
 
-[See all DePay implementation options](/docs/payments/implementations/)
+[See all DePay integration options](/docs/payments/integrations/)
 
 
 ## Payment APIs
 
-Use DePay's Payment APIs complementary to the implementation options:
+Use DePay's Payment APIs complementary to the integration options:
 
 <div className="row pt-2 pb-4">
   <div className="col-12 col-xl-4 pe-4">
-    <a style={{ background: "#447fc2" }} className="hover-card p-3 mb-4 w-100 d-block d-block" href="/docs/payments/implementations/link">
+    <a style={{ background: "#447fc2" }} className="hover-card p-3 mb-4 w-100 d-block d-block" href="/docs/payments/integrations/link">
       text
     </a>
     <div className="ps-1">
-      <div><a href="/docs/payments/implementations/link"><h5 className="text-primary">Track</h5></a></div>
+      <div><a href="/docs/payments/integrations/link"><h5 className="text-primary pb-1 mb-0">Track</h5></a></div>
       <div><p>Keep track of payments performed & settled on blockchains.</p></div>
     </div>
   </div>
   <div className="col-12 col-xl-4 pe-4">
-    <a style={{ background: "#447fc2" }} className="hover-card p-3 mb-4 w-100 d-block d-block" href="/docs/payments/implementations/button">
+    <a style={{ background: "#447fc2" }} className="hover-card p-3 mb-4 w-100 d-block d-block" href="/docs/payments/integrations/button">
       text
     </a>
     <div className="ps-1">
-      <div><a href="/docs/payments/implementations/button"><h5 className="text-primary">Validate</h5></a></div>
+      <div><a href="/docs/payments/integrations/button"><h5 className="text-primary pb-1 mb-0">Validate</h5></a></div>
       <div><p>Make sure the expected payment actually happened within a transaction.</p></div>
     </div>
   </div>
   <div className="col-12 col-xl-4 pe-4">
-    <a style={{ background: "#447fc2" }} className="hover-card p-3 mb-4 w-100 d-block d-block" href="/docs/payments/implementations/widget">
+    <a style={{ background: "#447fc2" }} className="hover-card p-3 mb-4 w-100 d-block d-block" href="/docs/payments/integrations/widget">
       text
     </a>
     <div className="ps-1">
-      <div><a href="/docs/payments/implementations/widget"><h5 className="text-primary">Automate</h5></a></div>
+      <div><a href="/docs/payments/integrations/widget"><h5 className="text-primary pb-1 mb-0">Automate</h5></a></div>
       <div><p>Receive events/callbacks to automate payments within your systems.</p></div>
     </div>
   </div>
