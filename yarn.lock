@@ -1176,9 +1176,9 @@
     to-fast-properties "^2.0.0"
 
 "@coinbase/wallet-sdk@^3.4.0":
-  version "3.5.4"
-  resolved "https://registry.yarnpkg.com/@coinbase/wallet-sdk/-/wallet-sdk-3.5.4.tgz#957aa74521a4afa61ae99e1e2b948a6e017fcc87"
-  integrity sha512-+5s05dmB6YUPUnV5vThP96GVG1O4GgS3qYvjYJhe56ds8YFz+keU3/docFBLf8FQOCIO5j7IZtZmVGvz7G+kRw==
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@coinbase/wallet-sdk/-/wallet-sdk-3.6.0.tgz#52cc01d6721b171b69f8c4a83ef5029e52d997d4"
+  integrity sha512-p7RHnbhWiwVr9viX9Z5KLxKgzGoJRKcAN/BYRTsodnesgA7y+omangXncsxY+5eyQSflEL7Dqs0dv/yeDsomow==
   dependencies:
     "@metamask/safe-event-emitter" "2.0.0"
     "@solana/web3.js" "1.52.0"
@@ -1204,9 +1204,9 @@
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
 "@depay/buttons@^8.1.1":
-  version "8.1.1"
-  resolved "https://registry.yarnpkg.com/@depay/buttons/-/buttons-8.1.1.tgz#c25b0945d65227d2d9fee7b7604a7e3f48b65cca"
-  integrity sha512-PGUG6mFDgh+wpbaoXlhaJErbVPQE/a00h/YS9oHF+FfTH3KVlLDeP4izvbjD0i3nVKBcGOMEEnkG2+69LiDPcw==
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/@depay/buttons/-/buttons-8.1.2.tgz#f1b5d09bc2bcc079dc19aba4d2a6cec1f031514c"
+  integrity sha512-BW1FlwSeJN8jja7gN8p7XfnRKvt/kWO4h+kw8MOjnh93liCbSzYs+YFRn/jGPBLrOE6H8Tl7R9pO3fOpFBtAUg==
   dependencies:
     "@depay/react-shadow-dom" "^5.0.4"
     "@depay/web3-blockchains" "^6.2.3"
@@ -1300,9 +1300,9 @@
   integrity sha512-rLyju0hRI5B4VU7Hnh2meUQhHcw0bH9CEpouPTPeRWKSt9heiuW8UgXSaFv+hzcirjEAp/SezZi+CINfBFnv5Q==
 
 "@depay/widgets@^8.0.2", "@depay/widgets@^8.0.3":
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/@depay/widgets/-/widgets-8.0.3.tgz#51bc2fc0b39acc17523cc1f48823ebbbc9970686"
-  integrity sha512-hG9YkaHb8jrLXT7H+RAkNbzIiUbT8KpaV21NZ0nwEmUzdpyLuzrQIng7dGCl/Y74epP/4Nr+u7C9ALSon/9cEQ==
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/@depay/widgets/-/widgets-8.0.5.tgz#70b0425304c9b60b0f89e6e2ba0a4a61402f869a"
+  integrity sha512-nWDdnnrCXHRZ4Jlj2MuMeZyZAYIKTQp3juEaxntYB2vBhtK2iEqcdLoaPRUhvVarfEajqY38VZOb9H2OwDFCQw==
   dependencies:
     "@depay/coinbase-wallet-sdk" "^1.1.0"
     "@depay/local-currency" "^3.5.4"
