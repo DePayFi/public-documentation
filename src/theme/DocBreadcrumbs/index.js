@@ -10,6 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import {translate} from '@docusaurus/Translate';
 import IconHome from '@theme/Icon/Home';
 import styles from './styles.module.css';
+import {useLocation} from '@docusaurus/router';
 // TODO move to design system folder
 function BreadcrumbsItemLink({children, href, isLast}) {
   const className = 'breadcrumbs__link';
@@ -70,8 +71,9 @@ function HomeBreadcrumbItem() {
 export default function DocBreadcrumbs() {
   let breadcrumbs = useSidebarBreadcrumbs();
   const homePageRoute = useHomePageRoute();
-  const mainNavigationMatch = window.location.pathname.match(/\/docs\/(.*?)\//);
-  let mainNavigation = mainNavigationMatch ? window.location.pathname.match(/\/docs\/(.*?)\//)[1] : undefined;
+  const location = useLocation();
+  const mainNavigationMatch = location.pathname.match(/\/docs\/(.*?)\//);
+  let mainNavigation = mainNavigationMatch ? location.pathname.match(/\/docs\/(.*?)\//)[1] : undefined;
   if(mainNavigation) {
     breadcrumbs = breadcrumbs.filter((crumb)=>{
       return crumb.href != `/docs/${mainNavigation.toLowerCase()}/`
