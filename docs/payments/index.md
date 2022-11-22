@@ -17,27 +17,27 @@ There are plenty of benefits using DePay over other providers:
   <div className="col-12 ps-0 pe-0 col-md-4 pe-md-4">
     <a href="/docs/payments/benefits#direct-wallet-payments" className="d-block hover-card p-3">
       <span className="d-block">
-        <FontAwesomeIcon icon="fa-solid fa-wallet" className="text-secondary h2 pt-2" />
+        <FontAwesomeIcon icon="fa-solid fa-wallet" className="text-body-color h2 pt-2" />
       </span>
-      <h4 className="d-block h5 text-primary mb-1">Direct wallet payments</h4>
+      <h4 className="d-block h5 mb-1">Direct wallet payments</h4>
     </a>
   </div>
 
   <div className="col-12 ps-0 pe-0 col-md-4 pe-md-4">
     <a href="/docs/payments/benefits#auto-conversion" className="d-block hover-card p-3">
       <span className="d-block">
-        <FontAwesomeIcon icon="fa-solid fa-rotate" className="text-secondary h2 pt-2" />
+        <FontAwesomeIcon icon="fa-solid fa-rotate" className="text-body-color h2 pt-2" />
       </span>
-      <h4 className="d-block h5 text-primary mb-1">Auto-conversion</h4>
+      <h4 className="d-block h5 mb-1">Auto-conversion</h4>
     </a>
   </div>
 
   <div className="col-12 ps-0 pe-0 col-md-4 pe-md-4">
     <a href="/docs/payments/benefits#one-click-payments" className="d-block hover-card p-3">
       <span className="d-block">
-        <FontAwesomeIcon icon="fa-solid fa-wand-magic-sparkles" className="text-secondary h2 pt-2" />
+        <FontAwesomeIcon icon="fa-solid fa-wand-magic-sparkles" className="text-body-color h2 pt-2" />
       </span>
-      <h4 className="d-block h5 text-primary mb-1">"One-click" Payments</h4>
+      <h4 className="d-block h5 mb-1">"One-click" Payments</h4>
     </a>
   </div>
 </div>
@@ -48,39 +48,45 @@ There are plenty of benefits using DePay over other providers:
 
 In order to receive Web3 Payments directly, you need to have a wallet and an address on each blockchain you want to support.
 
-[Get ready to integrate DePay](/docs/payments/preparation).
+[Get ready to integrate DePay](/docs/payments/preparation)
 
 ## Integration Options
 
 There are multiple ways to integrate DePay. Explore all of them and pick the one that is right for you:
 
 <div className="row pt-2 pb-4">
-  <div className="col-12 col-xl-4 pe-4">
-    <a style={{ background: "#ea357a" }} className="hover-card pt-1 px-1 mb-4 w-100 d-block d-block" href="/docs/payments/integrations/link">
-      <img src="/docs/img/payments/link.png" />
+  <div className="col-12 col-md-4">
+    <a href="/docs/payments/integrations/link" className="d-block hover-card p-3">
+      <div className="bg-contrast p-2 rounded-2">
+        <img src="/docs/img/payments/link.png" />
+      </div>
+      <div className="pt-4">
+        <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Link</h5></a></div>
+        <div className="pb-2"><small className="text-light">Start without any code. Create a link and send customers to it.</small></div>
+      </div>
     </a>
-    <div className="ps-1">
-      <div><a href="/docs/payments/integrations/link"><h5 className="text-primary pb-1 mb-0">Link</h5></a></div>
-      <div><p>Start without any code. Create a link and send customers to it.</p></div>
-    </div>
   </div>
-  <div className="col-12 col-xl-4 pe-4">
-    <a style={{ background: "#ea357a" }} className="hover-card p-1 mb-4 w-100 d-block d-block" href="/docs/payments/integrations/button">
-      <img src="/docs/img/payments/button.png" />
+  <div className="col-12 col-md-4 pe-4">
+    <a href="/docs/payments/integrations/button" className="d-block hover-card p-3">
+      <div className="bg-contrast p-2 rounded-2">
+        <img src="/docs/img/payments/button.png" />
+      </div>
+      <div className="pt-4">
+        <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Button</h5></a></div>
+        <div className="pb-2"><small className="text-light">Place HTML and receive payments with just a click.</small></div>
+      </div>
     </a>
-    <div className="ps-1">
-      <div><a href="/docs/payments/integrations/button"><h5 className="text-primary pb-1 mb-0">Button</h5></a></div>
-      <div><p>Place HTML and receive payments with the click of a button.</p></div>
-    </div>
   </div>
-  <div className="col-12 col-xl-4 pe-4">
-    <a style={{ background: "#ea357a" }} className="hover-card p-1 mb-4 w-100 d-block d-block" href="/docs/payments/integrations/widget">
-      <img src="/docs/img/payments/widget.png" />
+  <div className="col-12 col-md-4 pe-4">
+    <a href="/docs/payments/integrations/widget" className="d-block hover-card p-3">
+      <div className="bg-contrast p-2 rounded-2">
+        <img src="/docs/img/payments/widget.png" />
+      </div>
+      <div className="pt-4">
+        <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Widget</h5></a></div>
+        <div className="pb-2"><small className="text-light">Place HTML and receive payments with just a click.</small></div>
+      </div>
     </a>
-    <div className="ps-1">
-      <div><a href="/docs/payments/integrations/widget"><h5 className="text-primary pb-1 mb-0">Widget</h5></a></div>
-      <div><p>Integrate a JavaScript widget into your user flows.</p></div>
-    </div>
   </div>
 </div>
 
@@ -95,30 +101,30 @@ Use DePay's Payment APIs complementary to the integration options:
   <div className="col-12 ps-0 pe-0 col-md-4 pe-md-4">
     <a href="/docs/apis/payments/tracking" className="d-block hover-card p-3">
       <span className="d-block">
-        <FontAwesomeIcon icon="fa-solid fa-flag" className="text-secondary h2 pt-2" />
+        <FontAwesomeIcon icon="fa-solid fa-compass" className="text-body-color h2 pt-2" />
       </span>
-      <h4 className="d-block h5 text-primary mb-1">Track</h4>
-      <div><p className="text-black mb-1">Keep track of payments performed & settled on blockchains.</p></div>
+      <h4 className="d-block h5 mb-1">Track</h4>
+      <div><small className="text-light">Keep track of payments across multiple blockchains.</small></div>
     </a>
   </div>
 
   <div className="col-12 ps-0 pe-0 col-md-4 pe-md-4">
-    <a href="/docs/apis/payments/tracking" className="d-block hover-card p-3">
+    <a href="/docs/apis/payments/tracking#validate-requests" className="d-block hover-card p-3">
       <span className="d-block">
-        <FontAwesomeIcon icon="fa-solid fa-square-check" className="text-secondary h2 pt-2" />
+        <FontAwesomeIcon icon="fa-solid fa-square-check" className="text-body-color h2 pt-2" />
       </span>
-      <h4 className="d-block h5 text-primary mb-1">Validate</h4>
-      <div><p className="text-black mb-1">Make sure the expected payment actually happened within a transaction.</p></div>
+      <h4 className="d-block h5 mb-1">Validate</h4>
+      <div><small className="text-light">Make sure you've received the correct payment.</small></div>
     </a>
   </div>
 
   <div className="col-12 ps-0 pe-0 col-md-4 pe-md-4">
-    <a href="/docs/apis/payments/tracking" className="d-block hover-card p-3">
+    <a href="/docs/apis/payments/tracking#example-request-1" className="d-block hover-card p-3">
       <span className="d-block">
-        <FontAwesomeIcon icon="fa-solid fa-robot" className="text-secondary h2 pt-2" />
+        <FontAwesomeIcon icon="fa-solid fa-robot" className="text-body-color h2 pt-2" />
       </span>
-      <h4 className="d-block h5 text-primary mb-1">Automate</h4>
-      <div><p className="text-black mb-1">Receive events/callbacks to automate payments within your systems.</p></div>
+      <h4 className="d-block h5 mb-1">Automate</h4>
+      <div><small className="text-light">Receive callbacks to automate payment events.</small></div>
     </a>
   </div>
 </div>

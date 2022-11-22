@@ -158,7 +158,7 @@ POST <YOUR PROVIDED CALLBACK ENDPOINT>
 }
 ```
 
-Learn more about the [Payment Data Structure](/docs/apis/payments/data-structure).
+Learn more about the [Payment Data Structure](/docs/apis/payments/data-structure)
 
 ### Validate Requests
 
@@ -300,5 +300,5 @@ GET https://api.depay.com/v2/payments/45b55d24-60d0-45ba-9800-c61835494dc8-3
 }
 ```
 
-Learn more about the [Payment Data Structure](/docs/apis/payments/data-structure).
+Learn more about the [Payment Data Structure](/docs/apis/payments/data-structure)
 

@@ -5,6 +5,8 @@ sidebar_label: Data Structure
 
 # Payment Data Structure
 
+Learn how DePay Payment objects are structured.
+
 ```javascript
 {
   "status": "success",

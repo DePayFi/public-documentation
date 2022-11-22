@@ -87,7 +87,7 @@ Change the `widget` attribute if you want to open another widget type upon click
 
 Change the `configuration` attribute if you want to pass a different configuration to the widget.
 
-[Learn more about the widget configuration](/docs/payments/donations/widget#configuration).
+[Learn more about the widget configuration](/docs/payments/donations/widget#configuration)
 
 Or use the DePay App to generate a valid configuration: Go to **[DePay App](https://app.depay.com)** > **Integrations** > **New Integration** > **Donation Button**.
 

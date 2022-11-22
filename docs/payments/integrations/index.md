@@ -7,35 +7,39 @@ sidebar_position: 4
 
 Discover all available options to integrate DePay.
 
-<div className="pt-4">
-  <div className="row pt-2">
-    <div className="col-12 col-xl-4 pe-4 float-left">
-      <a style={{ background: "#ea357a" }} className="hover-card pt-1 px-1 mb-4 w-100 d-block d-block" href="/docs/payments/integrations/link">
+<div className="row pt-5">
+  <div className="col-12 col-md-4">
+    <a href="/docs/payments/integrations/link" className="d-block hover-card p-3">
+      <div className="bg-contrast p-2 rounded-2">
         <img src="/docs/img/payments/link.png" />
-      </a>
-      <div className="ps-1">
-        <div><a href="/docs/payments/integrations/link"><h5 className="text-primary pb-1 mb-0">Link</h5></a></div>
-        <div><p>Start without any code. Create a link and send customers to it.</p></div>
       </div>
-    </div>
-    <div className="col-12 col-xl-4 pe-4 float-left">
-      <a style={{ background: "#ea357a" }} className="hover-card p-1 mb-4 w-100 d-block d-block" href="/docs/payments/integrations/button">
+      <div className="pt-4">
+        <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Link</h5></a></div>
+        <div className="pb-2"><small className="text-light">Start without any code. Create a link and send customers to it.</small></div>
+      </div>
+    </a>
+  </div>
+  <div className="col-12 col-md-4 pe-4">
+    <a href="/docs/payments/integrations/button" className="d-block hover-card p-3">
+      <div className="bg-contrast p-2 rounded-2">
         <img src="/docs/img/payments/button.png" />
-      </a>
-      <div className="ps-1">
-        <div><a href="/docs/payments/integrations/button"><h5 className="text-primary pb-1 mb-0">Button</h5></a></div>
-        <div><p>Place HTML and receive payments with the click of a button.</p></div>
       </div>
-    </div>
-    <div className="col-12 col-xl-4 pe-4 float-left">
-      <a style={{ background: "#ea357a" }} className="hover-card p-1 mb-4 w-100 d-block d-block" href="/docs/payments/integrations/widget">
+      <div className="pt-4">
+        <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Button</h5></a></div>
+        <div className="pb-2"><small className="text-light">Place HTML and receive payments with just a click.</small></div>
+      </div>
+    </a>
+  </div>
+  <div className="col-12 col-md-4 pe-4">
+    <a href="/docs/payments/integrations/widget" className="d-block hover-card p-3">
+      <div className="bg-contrast p-2 rounded-2">
         <img src="/docs/img/payments/widget.png" />
-      </a>
-      <div className="ps-1">
-        <div><a href="/docs/payments/integrations/widget"><h5 className="text-primary pb-1 mb-0">Widget</h5></a></div>
-        <div><p>Integrate a JavaScript widget into your user flows.</p></div>
       </div>
-    </div>
+      <div className="pt-4">
+        <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Widget</h5></a></div>
+        <div className="pb-2"><small className="text-light">Place HTML and receive payments with just a click.</small></div>
+      </div>
+    </a>
   </div>
 </div>
 
@@ -51,7 +55,7 @@ At the end you will receive a Link/URL that you can use to recieve payments.
 
 Even though this is a **no-code** solution, you can still integrate it with a callback and automation capability.
 
-[Start setting up a Payment Link](/docs/payments/integrations/link).
+[Start setting up a Payment Link](/docs/payments/integrations/link)
 
 ### Button
 
@@ -61,7 +65,7 @@ Knowledge about **JavaScript** is **not** required.
 
 You can configure the button in the [DePay App](https://app.depay.com) and only need to place some **HTML** on your website to start receiving payments.
 
-[Start setting up a Payment Button](/docs/payments/integrations/button).
+[Start setting up a Payment Button](/docs/payments/integrations/button)
 
 ### Widget
 
@@ -71,4 +75,4 @@ Payment widgets are self-hosted, run directly within your website/app and give y
 
 The [DePay App](https://app.depay.com) can help you to generate a valid "payment configuration" and helps you to track payments within your account automatically.
 
-[Start integrating the Payment Widget](/docs/payments/integrations/widget).
+[Start integrating the Payment Widget](/docs/payments/integrations/widget)

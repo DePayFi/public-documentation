@@ -30,11 +30,6 @@ export default function Home() {
             
             <div className="col-12 col-md-6 pe-0 pe-md-4">
               <h2 className="h3 pt-0">Web3 Payments</h2>
-              <div className="pt-2 pb-3">
-                <span className="badge text-bg-secondary me-2">Decentralized</span>
-                <span className="badge text-bg-secondary me-2">Peer-to-peer</span>
-                <span className="badge text-bg-secondary me-2">Auto-conversion</span>
-              </div>
               <p className="lead">Offer seamless blockchain-powered payment experiences to your users.</p>
               <div className="pt-2">
                 <a className="button btn btn-primary mt-1" href="/docs/payments/">
@@ -55,24 +50,24 @@ export default function Home() {
               
               <div className="col-12 ps-0 pe-0 col-md-4 pe-md-4">
                 <a href="/docs/payments/benefits#direct-wallet-payments" className="d-block hover-card p-3">
-                  <span className="d-block"><FontAwesomeIcon icon={ faWallet } className="text-secondary h2 pt-2" /></span>
-                  <h4 className="d-block h5 text-primary mb-1">Direct wallet payments</h4>
+                  <span className="d-block"><FontAwesomeIcon icon={ faWallet } className="text-body-color h2 pt-2" /></span>
+                  <h4 className="d-block h5 mb-1">Direct wallet payments</h4>
                   <p className="d-block text-light pt-1 mb-0">Receive payments directly and without any intermediaries.</p>
                 </a>
               </div>
 
               <div className="col-12 ps-0 pe-0 col-md-4 pe-md-4">
                 <a href="/docs/payments/benefits#auto-conversion" className="d-block hover-card p-3">
-                  <span className="d-block"><FontAwesomeIcon icon={ faRotate } className="text-secondary h2 pt-2" /></span>
-                  <h4 className="d-block h5 text-primary mb-1">Auto-conversion</h4>
+                  <span className="d-block"><FontAwesomeIcon icon={ faRotate } className="text-body-color h2 pt-2" /></span>
+                  <h4 className="d-block h5 mb-1">Auto-conversion</h4>
                   <p className="d-block text-light pt-1 mb-0">DePay uses decentralized finance to convert payments on-the-fly.</p>
                 </a>
               </div>
 
               <div className="col-12 ps-0 pe-0 col-md-4 pe-md-4">
                 <a href="/docs/payments/benefits#one-click-payments" className="d-block hover-card p-3">
-                  <span className="d-block"><FontAwesomeIcon icon={ faWandMagicSparkles } className="text-secondary h2 pt-2" /></span>
-                  <h4 className="d-block h5 text-primary mb-1">"One-click" Payments</h4>
+                  <span className="d-block"><FontAwesomeIcon icon={ faWandMagicSparkles } className="text-body-color h2 pt-2" /></span>
+                  <h4 className="d-block h5 mb-1">"One-click" Payments</h4>
                   <p className="d-block text-light pt-1 mb-0">DePay automagically suggests the most cost-efficient payment to users.</p>
                 </a>
               </div>

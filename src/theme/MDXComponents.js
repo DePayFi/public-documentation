@@ -14,8 +14,10 @@ import {
     faRotate,
     faWandMagicSparkles,
     faFlag,
+    faCompass,
     faSquareCheck,
     faRobot,
+    faKey,
   } from '@fortawesome/free-solid-svg-icons'
 
 [
@@ -28,12 +30,15 @@ import {
   faRotate,
   faWandMagicSparkles,
   faFlag,
+  faCompass,
   faSquareCheck,
   faRobot,
+  faKey,
 ].forEach((icon)=>library.add(icon))
 
+let DePayButtons
 if (ExecutionEnvironment.canUseDOM) {
-  const DePayButtons = require('@depay/buttons');
+  DePayButtons = require('@depay/buttons').default;
 }
 
 function DePayButton(props){

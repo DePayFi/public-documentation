@@ -19,7 +19,7 @@ DePay will allow you to **simplify receiving payments** to that address.
 Blockchains differ mainly in **speed**, **usage** (active users, tokens, liquidity) and **security**.
 Please do your own research and pick at least one blockchain in order to set up DePay for receiving payments.
 
-[Learn which blockchains are currently supported by DePay](/docs/payments/supported/blockchains).
+[Learn which blockchains are currently supported by DePay](/docs/payments/supported/blockchains)
 
 
 ## Select Token(s)
@@ -27,4 +27,4 @@ Please do your own research and pick at least one blockchain in order to set up 
 After you have decided which blockchains you want to receive payments on, you will need to select which tokens you are accepting as means of payment.
 Your users will be able to pay with whatever tokens they have in their wallet, thanks to DePay's auto-conversion, and you will always receive the tokens you have selected/configured.
 
-[Learn which tokens are currently supported by DePay](/docs/payments/supported/tokens).
+[Learn which tokens are currently supported by DePay](/docs/payments/supported/tokens)

@@ -67,6 +67,12 @@ const config = {
             position: 'left',
             label: 'APIs',
           },
+          {
+            type: 'doc',
+            docId: 'apps/index',
+            position: 'left',
+            label: 'Apps',
+          },
         ],
       },
       footer: {}, // edit src/theme/Footer/index.js instead
