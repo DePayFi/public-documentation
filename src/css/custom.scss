@@ -65,8 +65,14 @@ h1, h2, h3, h4, h5, h6,
 .navbar {
   box-shadow: none;
   border-bottom: 1px solid var(--ifm-header-border-color);
-  padding: 1rem 2rem;
   height: auto;
+  padding: 1rem;
+}
+
+@media (min-width: 997px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
 }
 
 .navbar a.navbar__item {
@@ -94,11 +100,29 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 1140px !important;
 }
 
-main {
-  padding-top: 1.4rem;
+@media (max-width: 996px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 997px) and (max-width: 1540px) {
+  
+  .container {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+}
+
+@media (min-width: 997px) {
+  
+  main {
+    padding-top: 1.4rem;
+  }
 }
 
 .breadcrumbs {
@@ -180,7 +204,8 @@ main h2 {
 }
 
 .theme-doc-toc-mobile {
-  margin-bottom: 3rem;
+  margin-top: -1rem !important;
+  margin-bottom: 2.4rem !important;
 }
 
 @import './frontpage.scss';

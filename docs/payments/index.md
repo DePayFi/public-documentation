@@ -7,7 +7,7 @@ sidebar_label: Overview
 
 Find the right way to integrate DePay.
 
-*Do you want to start without any code? Look at [no-code solutions](/docs/no-code).*
+<!-- *Do you want to start without any code? Look at [no-code solutions](/docs/no-code).* -->
 
 ## Benefits
 

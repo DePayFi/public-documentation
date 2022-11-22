@@ -40,12 +40,14 @@ function DePayButton(props){
 
   return(
     <BrowserOnly>
-      <DePayButtons.DePayButton
-        label={ props.label }
-        widget={ props.widget }
-        configuration={ props.configuration }
-        css={ props.css }
-      />
+      {() =>
+        <DePayButtons.DePayButton
+          label={ props.label }
+          widget={ props.widget }
+          configuration={ props.configuration }
+          css={ props.css }
+        />
+      }
     </BrowserOnly>
   )
 }

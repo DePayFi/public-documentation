@@ -11,8 +11,6 @@ import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarSearch from '@theme/Navbar/Search';
 import styles from './styles.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
@@ -55,7 +53,6 @@ export default function NavbarContent() {
         // Ask the user to add the respective navbar items => more flexible
         <>
           <NavbarItems items={rightItems} />
-          <a style={{ position: 'relative', top: '1px' }} className="navbar__item navbar__link h4 mb-0" href="https://github.com/depayfi" target="_blank" rel="noopener nofollow" title="DePay on Github"><FontAwesomeIcon icon={ faGithub } /></a>
           <NavbarColorModeToggle className={styles.colorModeToggle} />
           {!searchBarItem && (
             <NavbarSearch>
