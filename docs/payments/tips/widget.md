@@ -3,9 +3,9 @@ sidebar_position: 3
 sidebar_label: Widget
 ---
 
-# Web3 Donation Widget
+# Web3 Tip Widget
 
-Self-host and controll the entire donation flow within your app.
+Self-host and controll the entire tip flow within your app.
 
 ## Example
 
@@ -21,7 +21,7 @@ Self-host and controll the entire donation flow within your app.
                   <div className="DialogHeader">
                     <div className="DialogHeaderTitle">
                       <div className="PaddingTopS PaddingLeftM PaddingRightM">
-                        <h1 className="FontSizeL TextLeft">Donation</h1>
+                        <h1 className="FontSizeL TextLeft">Tip</h1>
                       </div>
                     </div>
                     <div className="DialogHeaderActionRight PaddingTopS PaddingLeftS PaddingRightS">
@@ -96,7 +96,7 @@ Self-host and controll the entire donation flow within your app.
   <DePayButton
     label={'Click here'}
     widget={'Donation'}
-    configuration={ {"accept":[{"blockchain":"ethereum","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"bsc","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"}]} }
+    configuration={ {"title": "Tip", "accept":[{"blockchain":"ethereum","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"bsc","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"}]} }
   />
 </div>
 
@@ -139,6 +139,8 @@ You need to pass a configuration object to `DePayWidgets.Donation` which needs t
 ```javascript
 DePayWidgets.Donation({
 
+  title: "Tip",
+
   accept: [{
     blockchain: 'ethereum',
     token: '0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb',
@@ -147,12 +149,14 @@ DePayWidgets.Donation({
 });
 ```
 
-This declares to receive DEPAY tokens (`0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb`) as donation on `ethereum` to `0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02`.
+This declares to receive DEPAY tokens (`0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb`) as tip on `ethereum` to `0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02`.
 
 You can also accept multiple tokens on multiple blockchains:
 
 ```javascript
 DePayWidgets.Donation({
+
+  title: "Tip",
 
   accept: [
     {
@@ -172,7 +176,7 @@ The [DePay App](https://app.depay.com) helps you to create a basic valid configu
 
 ### accept
 
-The `accept` attribute describes what is accepted as a donation. It needs to be an array and needs to contain at least one entry.
+The `accept` attribute describes what is accepted as a tip. It needs to be an array and needs to contain at least one entry.
 
 #### Required Attributes
 
@@ -180,7 +184,7 @@ The `accept` attribute describes what is accepted as a donation. It needs to be 
 
 `token` - The address of the token you want to receive
 
-`receiver` - The address receiving the donation. Always double check that you've set the right address.
+`receiver` - The address receiving the tip. Always double check that you've set the right address.
 
 #### amount
 
@@ -219,7 +223,7 @@ connected: (address)=> {
 
 `closed`
 
-A function that will be called once the user closes the widget (no matter if before or after the donation).
+A function that will be called once the user closes the widget (no matter if before or after the tip).
 
 ```javascript
 closed: ()=> {
@@ -232,12 +236,12 @@ closed: ()=> {
 
 `before`
 
-A function that will be called before the donation is handed over to the wallet.
+A function that will be called before the tip is handed over to the wallet.
 
-Allows you to stop the donation if this methods returns false.
+Allows you to stop the tip if this methods returns false.
 
 ```javascript
-before: (donation)=> {
+before: (tip)=> {
   alert('Something went wrong')
   return false // stop
 }
@@ -247,13 +251,13 @@ before: (donation)=> {
 
 `sent`
 
-A function that will be called once the donation has been sent to the network (but still needs to be mined/confirmed).
+A function that will be called once the tip has been sent to the network (but still needs to be mined/confirmed).
 
 The widget will call this function with a transaction as single argument (see: [depay-web3-wallets](https://github.com/depayfi/depay-web3-wallets#transaction) for more details about the structure)
 
 ```javascript
 sent: (transaction)=> {
-  // called when donation transaction has been sent to the network
+  // called when tip transaction has been sent to the network
 }
 ```
 
@@ -261,13 +265,13 @@ sent: (transaction)=> {
 
 `succeeded`
 
-A function that will be called once the donation has succeeded on the network (checked client-side).
+A function that will be called once the tip has succeeded on the network (checked client-side).
 
 The widget will call this function passing a transaction as single argument (see: [depay-web3-wallets](https://github.com/depayfi/depay-web3-wallets#transaction) for more details)
 
 ```javascript
 succeeded: (transaction)=> {
-  // called when donation transaction has been confirmed once by the network
+  // called when tip transaction has been confirmed once by the network
 }
 ```
 
@@ -275,13 +279,13 @@ succeeded: (transaction)=> {
 
 `failed`
 
-A function that will be called if the donation execution failed on the blockchain (after it has been sent/submitted).
+A function that will be called if the tip execution failed on the blockchain (after it has been sent/submitted).
 
 The widget will call this function passing a transaction as single argument (see: [depay-web3-wallets](https://github.com/depayfi/depay-web3-wallets#transaction) for more details)
 
 ```javascript
 failed: (transaction)=> {
-  // called when donation transaction failed on the blockchain
+  // called when tip transaction failed on the blockchain
   // handled by the widget, no need to display anything
 }
 ```
@@ -335,7 +339,7 @@ Allows you to enforce displayed local currency (instead of automatically detecti
 
 ### whitelist
 
-Allows only the configured tokens to be eligible as means of donation (from the sender):
+Allows only the configured tokens to be eligible as means of tip (from the sender):
 
 ```javacript
 whitelist: {
@@ -358,7 +362,7 @@ whitelist: {
 
 ### blacklist
 
-Allows to blacklist tokens so that they will not be suggested as means of donation (from the sender):
+Allows to blacklist tokens so that they will not be suggested as means of tip (from the sender):
 
 ```javacript
 blacklist: {
@@ -458,7 +462,7 @@ Allows you to change the style of the widget.
 
 ### fee
 
-You can configure a fee which will be applied to every donation with it's own dedicated fee receiver address.
+You can configure a fee which will be applied to every tip with it's own dedicated fee receiver address.
 
 The fee will be taken from the target token and target amount (after swap, depending on your `accept` configuration).
 

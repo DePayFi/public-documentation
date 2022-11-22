@@ -10,7 +10,7 @@ const config = {
 
   title: 'DePay Documentation',
   tagline: 'Learn how to integrate Web3 Payments by example.',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://depay.com',
   baseUrl: '/docs',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -18,8 +18,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'depayfi', // Usually your GitHub org/user name.
+  projectName: 'public-documentation', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -66,18 +66,6 @@ const config = {
             docId: 'apis/index',
             position: 'left',
             label: 'APIs',
-          },
-          {
-            type: 'doc',
-            docId: 'apps/index',
-            position: 'left',
-            label: 'Apps',
-          },
-          {
-            type: 'doc',
-            docId: 'no-code/index',
-            position: 'left',
-            label: 'No-code',
           },
         ],
       },

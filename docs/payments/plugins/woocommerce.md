@@ -21,11 +21,15 @@ http://web3woocommerce.xyz/
 
 ### Installation
 
+First, download the latest plugin zip: [Download Here](https://github.com/DePayFi/web3-woocommerce-depay-payments/releases/latest/download/depay-woocommerce-payments.zip)
+
 Within your Wordpress admin section navigate to "Plugins".
 
 Then click "Add new".
 
-Search for "DePay" and install the "DePay Payments for WooCommerce" plugin.
+Then click "Upload Plugin".
+
+Now click "choose file" and upload the plugin zip you downloaded earlier.
 
 Make sure you click "Activate" after the installation has been completed.
 

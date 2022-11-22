@@ -9,9 +9,74 @@ Self-host and controll the entire payment flow within your app.
 
 ## Example
 
+<div className="widget-example pt-3" style={{ height: "245px" }}>
+  <div className="ReactDialog ReactDialogOpen">
+    <div className="ReactDialogRow">
+      <div className="ReactDialogCell">
+        <div className="ReactDialogStack active forward">
+          <div className="ReactDialogStackRow">
+            <div className="ReactDialogStackCell">
+              <div className="ReactDialogAnimation">
+                <div className="Dialog">
+                  <div className="DialogHeader">
+                    <div className="DialogHeaderTitle">
+                      <div className="PaddingTopS PaddingLeftM PaddingRightM">
+                        <h1 className="FontSizeL TextLeft">Payment</h1>
+                      </div>
+                    </div>
+                    <div className="DialogHeaderActionRight PaddingTopS PaddingLeftS PaddingRightS">
+                      <button className="ButtonCircular" title="Close dialog">
+                        <svg className="CloseIcon Icon" height="24" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                          <line x1="18" x2="6" y1="6" y2="18"></line>
+                          <line x1="6" x2="18" y1="6" y2="18"></line>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div className="DialogBody">
+                    <div className="PaddingTopS PaddingLeftM PaddingRightM PaddingBottomXS">
+                      <div className="Card" title="Change payment">
+                        <div className="CardImage">
+                          <img className="js-widget-payment-example-image" src="https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/info/logo.png"/>
+                        </div>
+                        <div className="CardBody">
+                          <div className="CardBodyWrapper">
+                            <h2 className="CardText">
+                              <div className="TokenAmountRow">
+                                <span className="TokenSymbolCell js-widget-example-symbol">BNB</span>
+                                <span className="TokenAmountCell js-widget-example-amount">0.413</span>
+                              </div>
+                            </h2>
+                          </div>
+                        </div>
+                        <div className="CardAction">
+                          <svg className="ChevronRight Icon" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" fillRule="evenodd" strokeWidth="1"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="DialogFooter">
+                    <div className="PaddingTopXS PaddingRightM PaddingLeftM PaddingBottomM">
+                      <div>
+                        <button className="ButtonPrimary">Pay $10.00</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div className="pt-5 pb-1">
   <DePayButton
-    label={'Pay'}
+    label={'Click here'}
     widget={'Payment'}
     configuration={ {"accept":[{"blockchain":"ethereum","amount":20,"token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"bsc","amount":20,"token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"}]} }
   />

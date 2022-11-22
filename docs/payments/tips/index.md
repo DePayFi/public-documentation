@@ -1,11 +1,11 @@
 ---
-sidebar_label: Donations
-sidebar_position: 7
+sidebar_label: Tips
+sidebar_position: 8
 ---
 
-# Web3 Donations
+# Web3 Tips
 
-DePay Donations is a variant of the DePay Payments product.
+DePay Tips is a variant of the DePay Payments product.
 
 <div className="widget-example pt-5" style={{ height: "345px" }}>
   <div className="ReactDialog ReactDialogOpen">
@@ -19,7 +19,7 @@ DePay Donations is a variant of the DePay Payments product.
                   <div className="DialogHeader">
                     <div className="DialogHeaderTitle">
                       <div className="PaddingTopS PaddingLeftM PaddingRightM">
-                        <h1 className="FontSizeL TextLeft">Donation</h1>
+                        <h1 className="FontSizeL TextLeft">Tip</h1>
                       </div>
                     </div>
                     <div className="DialogHeaderActionRight PaddingTopS PaddingLeftS PaddingRightS">
@@ -90,8 +90,7 @@ DePay Donations is a variant of the DePay Payments product.
   </div>
 </div>
 
-
 ## Differentiation
 
-While "Payments" require you to set a fix amount and the user has to pay the fix amount, with Donations your user can select the amount freely.
+While "Payments" require you to set a fix amount and the user has to pay the fix amount, with Tips your user can select the amount freely.
 

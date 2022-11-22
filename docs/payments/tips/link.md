@@ -3,31 +3,25 @@ sidebar_position: 1
 sidebar_label: Link
 ---
 
-# Web3 Donation Link
+# Web3 Tip Link
 
-Just create a link and start receiving donations.
+Just create a link and start receiving tips.
 
 ## Example
 
-https://donate.depay.com/1Ylujunhrm59HyLFuv7WwZ
+https://tip.depay.com/6KFBECVsokSt0UKOAug8CI
 
 ## Step by step
 
 ### Create new link
 
-Go to the DePay App on https://app.depay.com and create a Payment Link via **Links** > **New Link** and select **Donation Link**.
+Go to the DePay App on https://app.depay.com and create a Payment Link via **Links** > **New Link** and select **Tip Link**.
 
-### Cause/Project
+### Receiver Name/Image
 
-Enter a name for the cause/project in order to allow users to understand what they are donating for.
+Enter a name for the receiver in order to allow users to understand who will receive the tip.
 
-You can also upload an image to represent the cause/project visually.
-
-### Charity/Foundation
-
-Enter a name for the charity/foundation in order to allow users to understand who is receiving the donation.
-
-You can also upload an image to represent the charity/foundation visually.
+You can also upload an image to represent the receiver visually.
 
 ### Tokens
 

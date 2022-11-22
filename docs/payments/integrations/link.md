@@ -15,7 +15,7 @@ https://buy.depay.com/201JapngwCukZzlvdZgR1K
 
 ### Create new link
 
-Go to the DePay App on https://app.depay.com and create a Payment Link via **Links** > **New Link**.
+Go to the DePay App on https://app.depay.com and create a Payment Link via **Links** > **New Link** and select **Payment Link**.
 
 ### Product
 
@@ -57,11 +57,11 @@ Real-time conversion rates are calculated the moment a customer visits the link 
 > Once a customer visits the link to perform the payment that customer needs to pay you either **10 USDC** or **10 USDT**.
 > Conversions are also offered and calculated in real-time.
 
-### Receivables
+### Tokens
 
 Configure which tokens on which blockchains you want to receive as means of payment.
 
-As DePay offers auto-conversion to your users select as few tokens per blockchain as possible, but select at least 1 token per blockchain for every blockchain you want to support.
+Select as few tokens per blockchain as possible, but select at least 1 token per blockchain for every blockchain you want to support.
 
 ### Receiver
 
@@ -174,7 +174,3 @@ Those values will reappear in the [payment callback request](#callback-request) 
     }
   }
 ```
-
-### Prefill Form Fields
-
-...

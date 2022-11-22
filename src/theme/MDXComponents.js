@@ -4,7 +4,18 @@ import DePayButtons from '@depay/buttons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
-import { faCoins, faWallet, faCube, faMoneyBillTransfer } from '@fortawesome/free-solid-svg-icons'
+import {
+    faCoins,
+    faWallet,
+    faCube,
+    faMoneyBillTransfer,
+    faArrowRightLong,
+    faRotate,
+    faWandMagicSparkles,
+    faFlag,
+    faSquareCheck,
+    faRobot,
+  } from '@fortawesome/free-solid-svg-icons'
 
 [
   faYoutube,
@@ -12,6 +23,12 @@ import { faCoins, faWallet, faCube, faMoneyBillTransfer } from '@fortawesome/fre
   faWallet,
   faCube,
   faMoneyBillTransfer,
+  faArrowRightLong,
+  faRotate,
+  faWandMagicSparkles,
+  faFlag,
+  faSquareCheck,
+  faRobot,
 ].forEach((icon)=>library.add(icon))
 
 export default {
