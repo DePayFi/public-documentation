@@ -30,6 +30,6 @@ jobs:
         run: yarn build
       
       - name: Upload to S3 (depay-documentation)
-        run: aws s3 cp build s3://depay-documentation/ --recursive
+        run: aws s3 cp build s3://depay-documentation/docs/ --recursive
 
       
