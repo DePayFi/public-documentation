@@ -81,6 +81,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      image: 'https://depay.com/docs/img/seo/documentation.jpg'
     }),
 };
 
