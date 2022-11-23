@@ -1,6 +1,6 @@
 import BrowserOnly from '@docusaurus/BrowserOnly'
 import React, { useState } from 'react'
-import { faHeadset, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faHeadset, faEnvelope, faHouse } from '@fortawesome/free-solid-svg-icons'
 import { faTelegram, faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ReactDialog } from '@depay/react-dialog'
@@ -77,6 +77,14 @@ function Footer() {
             <FontAwesomeIcon icon={ faGithub } className="me-2" />
             <span>Want to deep dive? </span>
             <a href="https://github.com/depayfi" target="_blank" rel="noopener nofollow" title="DePay on Github" className='text-decoration-none'>Check Github.</a>
+          </small>
+        </div>
+
+        <div className="pt-2 pb-1">
+          <small>
+            <FontAwesomeIcon icon={ faHouse } className="me-2" />
+            <span>Got lost? </span>
+            <a href="https://depay.com" title="DePay Homepage" className='text-decoration-none'>Go back to the homepage.</a>
           </small>
         </div>
       </div>

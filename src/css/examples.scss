@@ -8,7 +8,7 @@
 
   .ReactDialog {
     position: relative !important;
-    z-index: 0;
+    z-index: 0 !important;
   }
 
   .TokenSymbolCell {
@@ -76,829 +76,839 @@
   }
 
   .ReactShadowDOMOutsideContainer {
-  z-index: 9999;
-}
+    z-index: 9999;
+  }
 
-.ReactDialog {
-  padding-left: 10px;
-  padding-right: 10px;
-  position: relative !important;
-  z-index: 1001;
+  .ReactDialogAnimation {
+    opacity: 1.0 !important;
+    top: auto !important;
+    display: block !important;
+    width: 100% !important;
+  }
 
-  * {
-      box-sizing: border-box;
-  }
-  button {
-      border: 0;
-      background: none;
-      outline: none;
-  }
-  .ReactDialogBackground {
-      backdrop-filter: blur(5px);
-      background: rgba(0,0,0,0.7);
-  }
-  .contained .ReactDialog {
-      position: absolute;
-      height: 100%;
-      min-height: 100%;
-      width: 100%;
-      min-width: 100%;
-  }
-  .contained .ReactDialogBackground {
-      position: absolute;
-  }
-  .contained .ReactDialog.ReactDialogOpen .ReactDialogAnimation {
-      top: 0;
-  }
-  .Dialog {
-      margin: 0 auto;
-      position: relative;
-      width: 420px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-      border-radius: 13px;
-      background: rgb(248,248,248);
-  }
-  @media (max-width: 450px) {
-      .Dialog {
-          border-radius: 0;
-          width: 100%;
-      }
-  }
-  @media (orientation: portrait) and (max-width: 800px) {
-      .ReactDialogAnimation {
-          width: 100%;
-      }
-      .ReactDialog {
-          height: 100%;
-          min-height: 100%;
-      }
-      .ReactDialogStack {
-          align-items: flex-end;
-      }
-      .Dialog {
-          align-content: stretch;
-          border-radius: 13px;
-          border-top-radius: 13px;
-          display: flex;
-          flex-direction: column;
-      }
-      .DialogBody {
-          flex: 1;
-          align-items: flex-end;
-      }
-      .DialogFooter {
-          padding-bottom: 20px;
-      }
-      .ReactDialogAnimation {
-          margin-bottom: -100px !important;
-          top: inherit !important;
-          position: relative;
-          transition: opacity 0.4s ease, margin-bottom 0.4s ease;
-      }
-      .ReactDialog.ReactDialogOpen .ReactDialogAnimation {
-          margin-bottom: 0px !important;
-      }
-      .DialogFooter {
-          border-bottom-left-radius: 0 !important;
-          border-bottom-right-radius: 0 !important;
-      }
-      .ReactShadowDOMInsideContainer > .ReactDialog {
-          align-items: flex-end;
-      }
-  }
-  .DialogBody {
-      overflow-x: hidden;
-      overflow-y: auto;
-  }
-  .DialogBody.ScrollHeight {
-      height: 30vh !important;
-      max-height: 30vh !important;
-  }
-  .DialogHeader {
-      border-top-left-radius: 13px;
-      border-top-right-radius: 13px;
-      min-height: 45px;
-      position: relative;
-      width: 100%;
-  }
-  .DialogHeaderActionRight {
-      position: absolute;
-      top: 0;
-      right: 8px;
-      height: 48px;
+  .ReactDialog {
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative !important;
+    display: block !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
 
-      .Icon {
+    * {
+        box-sizing: border-box;
+    }
+    button {
+        border: 0;
+        background: none;
+        outline: none;
+    }
+    .ReactDialogBackground {
+        backdrop-filter: blur(5px);
+        background: rgba(0,0,0,0.7);
+    }
+    .contained .ReactDialog {
+        position: absolute;
+        height: 100%;
+        min-height: 100%;
+        width: 100%;
+        min-width: 100%;
+    }
+    .contained .ReactDialogBackground {
+        position: absolute;
+    }
+    .contained .ReactDialog.ReactDialogOpen .ReactDialogAnimation {
+        top: 0;
+    }
+    .Dialog {
+        margin: 0 auto;
         position: relative;
-        top: -2px;
-      }
-  }
-  .DialogHeaderActionLeft {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 48px;
-  }
-  .DialogFooter {
-      border-bottom-left-radius: 13px;
-      border-bottom-right-radius: 13px;
-      line-height: 24px;
-      min-height: 32px;
-      position: relative;
-      text-align: center;
-  }
-  .ButtonCircular {
-      border-radius: 9999px;
-      cursor: pointer;
-      height: 34px;
-      opacity: 0.5;
-      padding: 5px 4px 4px 4px;
-      width: 34px;
-  }
-  .ButtonCircular:hover {
-      background: rgba(0,0,0,0.1);
-      opacity: 1;
-  }
-  .ButtonCircular:active {
-      background: rgba(0,0,0,0.25);
-      opacity: 1;
-  }
-  .ButtonPrimary {
-      align-items: center;
-      align-self: center;
-      background: #ea357a;
-      border-radius: 13px;
-      border: 1px solid transparent;
-      box-shadow: 0 0 16px rgba(0,0,0,0.1);
-      font-size: 21px;
-      font-weight: 400;
-      line-height: 45px;
-      height: 58px;
-      justify-content: center;
-      width: 100%;
-      overflow: hidden;
-      padding: 7px 0;
-      position: relative;
-      text-align: center;
-      text-decoration: none;
-      text-overflow: ellipsis;
-      transition: background 0.1s;
-      vertical-align: middle;
-      display: inline-block;
-  }
-  .ButtonPrimary, .ButtonPrimary * {
-      color: #ffffff;
-  }
-  .ButtonPrimary.disabled {
-      background: rgb(210,210,210);
-      color: rgb(140,140,140);
-  }
-  .ButtonPrimary:not(.disabled){
-      cursor: pointer;
-  }
-  .ButtonPrimary:not(.disabled):hover {
-      box-shadow: inset 0 0 300px rgba(0,0,0,0.1);
-  }
-  .ButtonPrimary:not(.disabled):active {
-      box-shadow: inset 0 0 300px rgba(0,0,0,0.2);
-  }
-  .Card {
-      align-items: center;
-      background: rgb(255,255,255);
-      border-radius: 13px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.03);
-      cursor: pointer;
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 8px;
-      min-height: 76px;
-      padding: 16px 10px;
-      width: 100%;
-  }
-  .Card.Row {
-      border-radius: 0;
-      margin-bottom: 0;
-      box-shadow: none;
-      min-height: 69px;
-      padding: 7px 21px;
-      border-top: 1px solid rgba(0,0,0,0.05);
-  }
-  .Card.Row .CardText {
-      font-size: 21px;
-      line-height: 40px;
-  }
-  .CardTokenSymbol {
-      width: 40%;
-      min-width: 0;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-  }
-  .CardTokenName {
-      text-align: right;
-      opacity: 0.5;
-      width: 60%;
-      min-width: 0;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-  }
-  .Card.Row .CardTokenName .CardText {
-      font-size: 17px;
-  }
-  .Card.Row .CardImage {
-      width: 40px;
-  }
-  .Card.Row .CardImage img {
-      height: 30px;
-      width: 30px;
-  }
-  a.Card, a.Card * {
-      color: inherit;
-      text-decoration: none;
-  }
-  .Card.transparent {
-      background: none;
-      box-shadow: none;
-  }
-  .Card.small {
-      min-height: auto;
-      padding: 8px 8px;
-      margin: 0;
-  }
-  .CardImage.small {
-      width: 27px;
-  }
-  .CardImage.small img {
-      height: 27px;
-      width: 27px;
-  }
-  .Card.disabled {
-      cursor: default;
-  }
-  .Card:hover:not(.disabled) {
-      background: rgb(240,240,240);
-      box-shadow: 0 0 0 rgba(0,0,0,0);
-  }
-  .Card:active:not(.disabled) {
-      background: rgb(235,235,235);
-      box-shadow: inset 0 0 6px rgba(0,0,0,0.02);
-      color: inherit;
-  }
-  .Card:hover:not(.disabled) .CardAction {
-      opacity: 0.4;
-  }
-  .CardImage, .CardBody, .CardAction, .CardInfo {
-      align-items: center;
-      display: flex;
-      min-width: 0;
-      padding: 0 7px;
-  }
-  .CardImage {
-      flex-basis: auto;
-      flex-grow: 0;
-      flex-shrink: 0;
-      justify-content: center;
-      position: relative;
-      width: 58px;
-  }
-  .CardBody {
-      flex-basis: auto;
-      flex-grow: 1;
-      flex-shrink: 1;
-      line-height: 27px;
-      padding-left: 10px;
-      text-align: left;
-  }
-  .CardBodyWrapper {
-      min-width: 0;
-  }
-  .CardAction {
-      flex-basis: auto;
-      flex-shrink: 0;
-      flex-grow: 0;
-      padding-right: 0;
-      margin-left: auto;
-  }
-  .Card.disabled .CardAction {
-      opacity: 0;
-  }
-  .CardInfo {
-      display: flex;
-      flex-basis: auto;
-      flex-direction: column;
-      flex-grow: 0;
-      flex-shrink: 1;
-      justify-content: center;
-      margin-left: auto;
-      padding-right: 0;
-  }
-  .CardImage img {
-      background: white;
-      border-radius: 9999px;
-      border: 1px solid white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      height: 45px;
-      position: relative;
-      vertical-align: middle;
-      width: 45px;
-  }
-  .CardImage.square img {
-      border-radius: 0;
-  }
-  .CardImage img.transparent {
-      border: none;
-      background: none;
-      box-shadow: none;
-  }
-  .CardImage .BlockchainLogo {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-  }
-  .CardTitle {
-      font-size: 15px;
-      color: rgb(150,150,150);
-      line-height: 20px;
-  }
-  .CardText, a .CardText {
-      color: #212529;
-      flex: 1;
-      font-size: 21px;
-      line-height: 25px;
-  }
-  .CardText strong {
-      font-weight: 500;
-  }
-  .CardText.small, .CardText.small small {
-      font-size: 18px;
-      color: rgb(150,150,150);
-      line-height: 20px;
-  }
-  .CardAction {
-      opacity: 0.2;
-  }
-  .Card.More {
-      display: inline-block;
-      text-align: center;
-  }
-  .PoweredByWrapper {
-      display: block;
-      left: 0;
-      padding-top: 3px;
-      position: fixed;
-      right: 0;
-      text-align: center;
-      top: 0;
-  }
-  .contained .PoweredByWrapper {
-      position: absolute;
-  }
-  .PoweredByLink {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-      color: white;
-      opacity: 0.4;
-      display: inline-block;
-      font-size: 14px;
-      font-style: italic;
-      font-weight: bold;
-      letter-spacing: -0.2px;
-      margin-left: 8px;
-      text-decoration: none;
-  }
-  .PoweredByLink:hover, .PoweredByLink:active {
-      opacity: 1.0;
-      color: #ea357a;
-  }
-  .GraphicWrapper {
-      display: block;
-  }
-  .Graphic {
-      width: 50%;
-      position: relative;
-  }
-  .Skeleton {
-      background: rgb(230,230,230) !important;
-      border: 0px solid transparent !important;
-      box-shadow: none !important;
-      cursor: inherit !important;
-      line-height: 0;
-      overflow: hidden;
-      position: relative;
-  }
-  @keyframes SkeletonBackgroundAnimation {
-      from {
-          left: -500px;
-      }
-      to {
-          left: +120%;
-      }
-  }
-  .SkeletonBackground {
-      animation: 2s SkeletonBackgroundAnimation 0.2s ease infinite;
-      background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
-      height: 100%;
-      left: -140%;
-      position: absolute;
-      top: 0;
-      width: 400px;
-  }
-  .SkeletonWrapper {
-      line-height: 0;
-  }
-  .TokenAmountRow {
-      min-width: 0;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-  }
-  .TokenAmountCell {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-  }
-  .TokenSymbolCell {
-  }
-  * {
-      color: #212529;
-  }
-  h1, h2, h3, h4, h5, h6 {
-      display: block;
-  }
-  .Text {
-      font-size: 16px;
-      line-height: 24px
-  }
-  .TextLeft, .TextLeft * {
-      text-align: left;
-  }
-  .TextCenter, .TextCenter * {
-      text-align: center;
-  }
-  .LineHeightL {
-      line-height: 32px;
-  }
-  .ErrorSnippetText {
-      background: rgb(30, 30, 20);
-      border-radius: 19px;
-      border: 8px solid rgb(30, 30, 20);
-      color: #00FF41;
-      font-size: 15px;
-      font-style: italic;
-      max-height: 100px;
-      padding: 6px;
-      overflow-wrap: break-word;
-      overflow-y: auto;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-  }
-  .FontSizeS {
-      font-size: 16px;
-  }
-  .FontSizeM {
-      font-size: 19px;
-  }
-  .FontSizeL {
-      font-size: 23px;
-  }
-  .FontSizeXL {
-      font-size: 32px;
-  }
-  .FontWeightBold {
-      font-weight: bold;
-  }
-  .FontItalic {
-      font-style: italic;
-  }
-  .Icon {
-      fill : #000000;
-      stroke : #000000;
-  }
-  .ChevronLeft, .ChevronRight {
-      position: relative;
-      top: 1px;
-  }
-  .Checkmark {
-      height: 24px;
-      position: relative;
-      top: -1px;
-      vertical-align: middle;
-      width: 24px;
-  }
-  .AlertIcon {
-      height: 20px;
-      position: relative;
-      top: -1px;
-      vertical-align: middle;
-      width: 20px;
-      fill: #e42626;
-      stroke: transparent;
-  }
-  .CheckMark.small {
-      height: 16px;
-      width: 16px;
-  }
-  .DigitalWalletIcon {
-      height: 24px;
-      position: relative;
-      top: -1px;
-      vertical-align: middle;
-      width: 24px;
-  }
-  .ButtonPrimary .Icon {
-      fill : #ffffff;
-      stroke : #ffffff;
-  }
-  .Loading {
-      border: 3px solid #ea357a;
-      border-top: 3px solid rgba(0,0,0,0.1);
-      border-radius: 100%;
-      position: relative;
-      left: -1px;
-      width: 18px;
-      height: 18px;
-      animation: spin 1.5s linear infinite;
-  }
-  @keyframes spin {
-      0% {
-           transform: rotate(0deg);
-      }
-      100% {
-           transform: rotate(360deg);
-      }
-  }
-  .Opacity05 {
-      opacity: 0.5;
-  }
-  .PaddingTopXS {
-      padding-top: 3px;
-  }
-  .PaddingRightXS {
-      padding-right: 3px;
-  }
-  .PaddingBottomXS {
-      padding-bottom: 3px;
-  }
-  .PaddingLeftXS {
-      padding-left: 3px;
-  }
-  .PaddingTopS {
-      padding-top: 13px;
-  }
-  .PaddingRightS {
-      padding-right: 13px;
-  }
-  .PaddingBottomS {
-      padding-bottom: 13px;
-  }
-  .PaddingLeftS {
-      padding-left: 13px;
-  }
-  .PaddingTopM {
-      padding-top: 19px;
-  }
-  .PaddingRightM {
-      padding-right: 19px;
-  }
-  .PaddingBottomM {
-      padding-bottom: 19px;
-  }
-  .PaddingLeftM {
-      padding-left: 19px;
-  }
-  .PaddingTopL {
-      padding-top: 29px;
-  }
-  .PaddingRightL {
-      padding-right: 29px;
-  }
-  .PaddingBottomL {
-      padding-bottom: 29px;
-  }
-  .PaddingLeftL {
-      padding-left: 29px;
-  }
-  .MaxHeight {
-      max-height: 320px;
-      overflow-y: auto;
-  }
-  .LoadingText {
-      color: #ffffff;
-      display: inline-block;
-      text-decoration: none;
-  }
-  @keyframes blink {
-      0% {
-           opacity: .2;
-      }
-      20% {
-           opacity: 1;
-      }
-      100% {
-           opacity: .2;
-      }
-  }
-  .LoadingText .dot {
-      animation-name: blink;
-      animation-duration: 1.4s;
-      animation-iteration-count: infinite;
-      animation-fill-mode: both;
-  }
-  .LoadingText .dot:nth-child(2) {
-      animation-delay: .2s;
-  }
-  .LoadingText .dot:nth-child(3) {
-      animation-delay: .4s;
-  }
-  .rangeslider {
-      margin: 20px 0;
-      position: relative;
-      background: #e6e6e6;
-      -ms-touch-action: none;
-      touch-action: none;
-  }
-  .rangeslider,.rangeslider__fill {
-      display: block;
-      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
-  }
-  .rangeslider__handle {
-      outline: none;
-      cursor: pointer;
-      display: inline-block;
-      position: absolute;
-      border-radius: 50%;
-      background-color: #ea357a;
-      border: 1px solid white;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  }
-  .rangeslider__handle:hover {
-      box-shadow: inset 0 0 300px rgba(0,0,0,0.2);
-  }
-  .rangeslider__handle:active {
-      box-shadow: inset 0 0 300px rgba(0,0,0,0.3);
-  }
-  .rangeslider__active {
-      opacity: 1;
-  }
-  .rangeslider__handle-tooltip {
-      display: none;
-  }
-  .rangeslider-horizontal {
-      height: 12px;
-      border-radius: 10px;
-  }
-  .rangeslider-horizontal .rangeslider__fill {
-      height: 100%;
-      background-color: #ea357a;
-      border-radius: 10px;
-      top: 0;
-  }
-  .rangeslider-horizontal .rangeslider__handle {
-      width: 18px;
-      height: 18px;
-      border-radius: 30px;
-      top: 50%;
-      transform: translate3d(-50%, -50%, 0);
-  }
-  .rangeslider-horizontal .rangeslider__handle-tooltip {
-      top: -55px;
-  }
-  .Input {
-      background: none;
-      border: 1px solid transparent;
-      margin: 0;
-      outline: none !important;
-      padding: 0 0 0 14px;
-      width: 100%;
-  }
-  .Input::placeholder {
-      color: rgb(210,210,210);
-  }
-  .TextButton {
-      cursor: pointer;
-      font-size: 16px;
-      color: #ea357a
-  }
-  .TextButton:hover * {
-      opacity: 1.0;
-  }
-  .MaxAmountImage {
-      display: inline-block;
-      padding-right: 6px;
-  }
-  .MaxAmountImage img {
-      height: 16px;
-      width: 16px;
-      position: relative;
-      top: 3px;
-  }
-  .BlockchainLogo {
-      border-radius: 999px;
-  }
-  .BlockchainLogo.small {
-      height: 18px;
-      width: 18px;
-  }
-  .Search {
-      border-radius: 13px;
-      border: 1px solid rgba(0,0,0,0.2);
-      outline: none !important;
-      color: #212529;
-      font-size: 19px;
-      padding: 13px;
-      width: 100%;
-  }
-  .Search::placeholder {
-      color: rgb(180,180,180);
-  }
-  .Search:focus, .Search:focus-visible {
-      border: 1px solid #ea357a;
-  }
-  .TokenImage img {
-      border-radius: 9999px;
-      border: 1px solid white;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      height: 45px;
-      position: relative;
-      vertical-align: middle;
-      width: 45px;
-  }
-  .TokenImage.medium img {
-      height: 93px;
-      width: 93px;
-  }
-  .Alert {
-      background: rgba(0,0,0,0.08);
-      border-radius: 7px;
-      font-weight: 500;
-      padding: 8px;
-  }
-  .Table {
-      border-collapse: separate;
-      border-radius: 7px;
-      border-style: hidden;
-      border: 1px solid rgba(0,0,0,0.1);
-      width: 100%;
-  }
-  .Table tr.small td {
-      font-size: 14px;
-  }
-  .Table tr td {
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-      word-break: break-all;
-  }
-  .Table tr:last-child td {
-      border-bottom: none;
-  }
-  .Table tr td {
-      padding: 8px 15px;
-      text-align: left;
-  }
-  .Table tr td:first-child {
-      width: 30%
-  }
-  .Table tr td:last-child {
-      width: 70%
-  }
-  .Table .TableSubTitle {
-      font-weight: 300;
-      opacity: 0.7;
-  }
-  .Table tr td:last-child {
-      font-weight: 500;
-  }
-  .Link {
-      color: #ea357a;
-      cursor: pointer;
-      text-decoration: none;
-  }
-  .Link:hover {
-      filter: brightness(0.8);
-  }
-  .Link:active {
-      filter: brightness(1.0);
-  }
-  .Tooltip {
-      background: #ea357a;
-      border-radius: 10px;
-      color: #ffffff;
-      padding: 10px 13px;
-      position: relative;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  }
-  .TooltipArrowUp {
-      border-bottom: 10px solid #ea357a;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      height: 0;
-      left: 12px;
-      position: absolute;
-      top: -8px;
-      width: 0;
-  }
+        width: 420px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        border-radius: 13px;
+        background: rgb(248,248,248);
+    }
+    @media (max-width: 450px) {
+        .Dialog {
+            border-radius: 0;
+            width: 100%;
+        }
+    }
+    @media (orientation: portrait) and (max-width: 800px) {
+        .ReactDialogAnimation {
+            width: 100%;
+        }
+        .ReactDialog {
+            height: 100%;
+            min-height: 100%;
+        }
+        .ReactDialogStack {
+            align-items: flex-end;
+        }
+        .Dialog {
+            align-content: stretch;
+            border-radius: 13px;
+            border-top-radius: 13px;
+            display: flex;
+            flex-direction: column;
+        }
+        .DialogBody {
+            flex: 1;
+            align-items: flex-end;
+        }
+        .DialogFooter {
+            padding-bottom: 20px;
+        }
+        .ReactDialogAnimation {
+            margin-bottom: -100px !important;
+            top: inherit !important;
+            position: relative;
+            transition: opacity 0.4s ease, margin-bottom 0.4s ease;
+        }
+        .ReactDialog.ReactDialogOpen .ReactDialogAnimation {
+            margin-bottom: 0px !important;
+        }
+        .DialogFooter {
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+        .ReactShadowDOMInsideContainer > .ReactDialog {
+            align-items: flex-end;
+        }
+    }
+    .DialogBody {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .DialogBody.ScrollHeight {
+        height: 30vh !important;
+        max-height: 30vh !important;
+    }
+    .DialogHeader {
+        border-top-left-radius: 13px;
+        border-top-right-radius: 13px;
+        min-height: 45px;
+        position: relative;
+        width: 100%;
+    }
+    .DialogHeaderActionRight {
+        position: absolute;
+        top: 0;
+        right: 8px;
+        height: 48px;
+
+        .Icon {
+          position: relative;
+          top: -2px;
+        }
+    }
+    .DialogHeaderActionLeft {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 48px;
+    }
+    .DialogFooter {
+        border-bottom-left-radius: 13px;
+        border-bottom-right-radius: 13px;
+        line-height: 24px;
+        min-height: 32px;
+        position: relative;
+        text-align: center;
+    }
+    .ButtonCircular {
+        border-radius: 9999px;
+        cursor: pointer;
+        height: 34px;
+        opacity: 0.5;
+        padding: 5px 4px 4px 4px;
+        width: 34px;
+    }
+    .ButtonCircular:hover {
+        background: rgba(0,0,0,0.1);
+        opacity: 1;
+    }
+    .ButtonCircular:active {
+        background: rgba(0,0,0,0.25);
+        opacity: 1;
+    }
+    .ButtonPrimary {
+        align-items: center;
+        align-self: center;
+        background: #ea357a;
+        border-radius: 13px;
+        border: 1px solid transparent;
+        box-shadow: 0 0 16px rgba(0,0,0,0.1);
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 45px;
+        height: 58px;
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+        padding: 7px 0;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        transition: background 0.1s;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    .ButtonPrimary, .ButtonPrimary * {
+        color: #ffffff;
+    }
+    .ButtonPrimary.disabled {
+        background: rgb(210,210,210);
+        color: rgb(140,140,140);
+    }
+    .ButtonPrimary:not(.disabled){
+        cursor: pointer;
+    }
+    .ButtonPrimary:not(.disabled):hover {
+        box-shadow: inset 0 0 300px rgba(0,0,0,0.1);
+    }
+    .ButtonPrimary:not(.disabled):active {
+        box-shadow: inset 0 0 300px rgba(0,0,0,0.2);
+    }
+    .Card {
+        align-items: center;
+        background: rgb(255,255,255);
+        border-radius: 13px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.03);
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 8px;
+        min-height: 76px;
+        padding: 16px 10px;
+        width: 100%;
+    }
+    .Card.Row {
+        border-radius: 0;
+        margin-bottom: 0;
+        box-shadow: none;
+        min-height: 69px;
+        padding: 7px 21px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
+    .Card.Row .CardText {
+        font-size: 21px;
+        line-height: 40px;
+    }
+    .CardTokenSymbol {
+        width: 40%;
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .CardTokenName {
+        text-align: right;
+        opacity: 0.5;
+        width: 60%;
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .Card.Row .CardTokenName .CardText {
+        font-size: 17px;
+    }
+    .Card.Row .CardImage {
+        width: 40px;
+    }
+    .Card.Row .CardImage img {
+        height: 30px;
+        width: 30px;
+    }
+    a.Card, a.Card * {
+        color: inherit;
+        text-decoration: none;
+    }
+    .Card.transparent {
+        background: none;
+        box-shadow: none;
+    }
+    .Card.small {
+        min-height: auto;
+        padding: 8px 8px;
+        margin: 0;
+    }
+    .CardImage.small {
+        width: 27px;
+    }
+    .CardImage.small img {
+        height: 27px;
+        width: 27px;
+    }
+    .Card.disabled {
+        cursor: default;
+    }
+    .Card:hover:not(.disabled) {
+        background: rgb(240,240,240);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+    .Card:active:not(.disabled) {
+        background: rgb(235,235,235);
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.02);
+        color: inherit;
+    }
+    .Card:hover:not(.disabled) .CardAction {
+        opacity: 0.4;
+    }
+    .CardImage, .CardBody, .CardAction, .CardInfo {
+        align-items: center;
+        display: flex;
+        min-width: 0;
+        padding: 0 7px;
+    }
+    .CardImage {
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+        justify-content: center;
+        position: relative;
+        width: 58px;
+    }
+    .CardBody {
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+        line-height: 27px;
+        padding-left: 10px;
+        text-align: left;
+    }
+    .CardBodyWrapper {
+        min-width: 0;
+    }
+    .CardAction {
+        flex-basis: auto;
+        flex-shrink: 0;
+        flex-grow: 0;
+        padding-right: 0;
+        margin-left: auto;
+    }
+    .Card.disabled .CardAction {
+        opacity: 0;
+    }
+    .CardInfo {
+        display: flex;
+        flex-basis: auto;
+        flex-direction: column;
+        flex-grow: 0;
+        flex-shrink: 1;
+        justify-content: center;
+        margin-left: auto;
+        padding-right: 0;
+    }
+    .CardImage img {
+        background: white;
+        border-radius: 9999px;
+        border: 1px solid white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        height: 45px;
+        position: relative;
+        vertical-align: middle;
+        width: 45px;
+    }
+    .CardImage.square img {
+        border-radius: 0;
+    }
+    .CardImage img.transparent {
+        border: none;
+        background: none;
+        box-shadow: none;
+    }
+    .CardImage .BlockchainLogo {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    .CardTitle {
+        font-size: 15px;
+        color: rgb(150,150,150);
+        line-height: 20px;
+    }
+    .CardText, a .CardText {
+        color: #212529;
+        flex: 1;
+        font-size: 21px;
+        line-height: 25px;
+    }
+    .CardText strong {
+        font-weight: 500;
+    }
+    .CardText.small, .CardText.small small {
+        font-size: 18px;
+        color: rgb(150,150,150);
+        line-height: 20px;
+    }
+    .CardAction {
+        opacity: 0.2;
+    }
+    .Card.More {
+        display: inline-block;
+        text-align: center;
+    }
+    .PoweredByWrapper {
+        display: block;
+        left: 0;
+        padding-top: 3px;
+        position: fixed;
+        right: 0;
+        text-align: center;
+        top: 0;
+    }
+    .contained .PoweredByWrapper {
+        position: absolute;
+    }
+    .PoweredByLink {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+        color: white;
+        opacity: 0.4;
+        display: inline-block;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: bold;
+        letter-spacing: -0.2px;
+        margin-left: 8px;
+        text-decoration: none;
+    }
+    .PoweredByLink:hover, .PoweredByLink:active {
+        opacity: 1.0;
+        color: #ea357a;
+    }
+    .GraphicWrapper {
+        display: block;
+    }
+    .Graphic {
+        width: 50%;
+        position: relative;
+    }
+    .Skeleton {
+        background: rgb(230,230,230) !important;
+        border: 0px solid transparent !important;
+        box-shadow: none !important;
+        cursor: inherit !important;
+        line-height: 0;
+        overflow: hidden;
+        position: relative;
+    }
+    @keyframes SkeletonBackgroundAnimation {
+        from {
+            left: -500px;
+        }
+        to {
+            left: +120%;
+        }
+    }
+    .SkeletonBackground {
+        animation: 2s SkeletonBackgroundAnimation 0.2s ease infinite;
+        background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+        height: 100%;
+        left: -140%;
+        position: absolute;
+        top: 0;
+        width: 400px;
+    }
+    .SkeletonWrapper {
+        line-height: 0;
+    }
+    .TokenAmountRow {
+        min-width: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .TokenAmountCell {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .TokenSymbolCell {
+    }
+    * {
+        color: #212529;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        display: block;
+    }
+    .Text {
+        font-size: 16px;
+        line-height: 24px
+    }
+    .TextLeft, .TextLeft * {
+        text-align: left;
+    }
+    .TextCenter, .TextCenter * {
+        text-align: center;
+    }
+    .LineHeightL {
+        line-height: 32px;
+    }
+    .ErrorSnippetText {
+        background: rgb(30, 30, 20);
+        border-radius: 19px;
+        border: 8px solid rgb(30, 30, 20);
+        color: #00FF41;
+        font-size: 15px;
+        font-style: italic;
+        max-height: 100px;
+        padding: 6px;
+        overflow-wrap: break-word;
+        overflow-y: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    .FontSizeS {
+        font-size: 16px;
+    }
+    .FontSizeM {
+        font-size: 19px;
+    }
+    .FontSizeL {
+        font-size: 23px;
+    }
+    .FontSizeXL {
+        font-size: 32px;
+    }
+    .FontWeightBold {
+        font-weight: bold;
+    }
+    .FontItalic {
+        font-style: italic;
+    }
+    .Icon {
+        fill : #000000;
+        stroke : #000000;
+    }
+    .ChevronLeft, .ChevronRight {
+        position: relative;
+        top: 1px;
+    }
+    .Checkmark {
+        height: 24px;
+        position: relative;
+        top: -1px;
+        vertical-align: middle;
+        width: 24px;
+    }
+    .AlertIcon {
+        height: 20px;
+        position: relative;
+        top: -1px;
+        vertical-align: middle;
+        width: 20px;
+        fill: #e42626;
+        stroke: transparent;
+    }
+    .CheckMark.small {
+        height: 16px;
+        width: 16px;
+    }
+    .DigitalWalletIcon {
+        height: 24px;
+        position: relative;
+        top: -1px;
+        vertical-align: middle;
+        width: 24px;
+    }
+    .ButtonPrimary .Icon {
+        fill : #ffffff;
+        stroke : #ffffff;
+    }
+    .Loading {
+        border: 3px solid #ea357a;
+        border-top: 3px solid rgba(0,0,0,0.1);
+        border-radius: 100%;
+        position: relative;
+        left: -1px;
+        width: 18px;
+        height: 18px;
+        animation: spin 1.5s linear infinite;
+    }
+    @keyframes spin {
+        0% {
+             transform: rotate(0deg);
+        }
+        100% {
+             transform: rotate(360deg);
+        }
+    }
+    .Opacity05 {
+        opacity: 0.5;
+    }
+    .PaddingTopXS {
+        padding-top: 3px;
+    }
+    .PaddingRightXS {
+        padding-right: 3px;
+    }
+    .PaddingBottomXS {
+        padding-bottom: 3px;
+    }
+    .PaddingLeftXS {
+        padding-left: 3px;
+    }
+    .PaddingTopS {
+        padding-top: 13px;
+    }
+    .PaddingRightS {
+        padding-right: 13px;
+    }
+    .PaddingBottomS {
+        padding-bottom: 13px;
+    }
+    .PaddingLeftS {
+        padding-left: 13px;
+    }
+    .PaddingTopM {
+        padding-top: 19px;
+    }
+    .PaddingRightM {
+        padding-right: 19px;
+    }
+    .PaddingBottomM {
+        padding-bottom: 19px;
+    }
+    .PaddingLeftM {
+        padding-left: 19px;
+    }
+    .PaddingTopL {
+        padding-top: 29px;
+    }
+    .PaddingRightL {
+        padding-right: 29px;
+    }
+    .PaddingBottomL {
+        padding-bottom: 29px;
+    }
+    .PaddingLeftL {
+        padding-left: 29px;
+    }
+    .MaxHeight {
+        max-height: 320px;
+        overflow-y: auto;
+    }
+    .LoadingText {
+        color: #ffffff;
+        display: inline-block;
+        text-decoration: none;
+    }
+    @keyframes blink {
+        0% {
+             opacity: .2;
+        }
+        20% {
+             opacity: 1;
+        }
+        100% {
+             opacity: .2;
+        }
+    }
+    .LoadingText .dot {
+        animation-name: blink;
+        animation-duration: 1.4s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+    }
+    .LoadingText .dot:nth-child(2) {
+        animation-delay: .2s;
+    }
+    .LoadingText .dot:nth-child(3) {
+        animation-delay: .4s;
+    }
+    .rangeslider {
+        margin: 20px 0;
+        position: relative;
+        background: #e6e6e6;
+        -ms-touch-action: none;
+        touch-action: none;
+    }
+    .rangeslider,.rangeslider__fill {
+        display: block;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+    }
+    .rangeslider__handle {
+        outline: none;
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        border-radius: 50%;
+        background-color: #ea357a;
+        border: 1px solid white;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .rangeslider__handle:hover {
+        box-shadow: inset 0 0 300px rgba(0,0,0,0.2);
+    }
+    .rangeslider__handle:active {
+        box-shadow: inset 0 0 300px rgba(0,0,0,0.3);
+    }
+    .rangeslider__active {
+        opacity: 1;
+    }
+    .rangeslider__handle-tooltip {
+        display: none;
+    }
+    .rangeslider-horizontal {
+        height: 12px;
+        border-radius: 10px;
+    }
+    .rangeslider-horizontal .rangeslider__fill {
+        height: 100%;
+        background-color: #ea357a;
+        border-radius: 10px;
+        top: 0;
+    }
+    .rangeslider-horizontal .rangeslider__handle {
+        width: 18px;
+        height: 18px;
+        border-radius: 30px;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+    .rangeslider-horizontal .rangeslider__handle-tooltip {
+        top: -55px;
+    }
+    .Input {
+        background: none;
+        border: 1px solid transparent;
+        margin: 0;
+        outline: none !important;
+        padding: 0 0 0 14px;
+        width: 100%;
+    }
+    .Input::placeholder {
+        color: rgb(210,210,210);
+    }
+    .TextButton {
+        cursor: pointer;
+        font-size: 16px;
+        color: #ea357a
+    }
+    .TextButton:hover * {
+        opacity: 1.0;
+    }
+    .MaxAmountImage {
+        display: inline-block;
+        padding-right: 6px;
+    }
+    .MaxAmountImage img {
+        height: 16px;
+        width: 16px;
+        position: relative;
+        top: 3px;
+    }
+    .BlockchainLogo {
+        border-radius: 999px;
+    }
+    .BlockchainLogo.small {
+        height: 18px;
+        width: 18px;
+    }
+    .Search {
+        border-radius: 13px;
+        border: 1px solid rgba(0,0,0,0.2);
+        outline: none !important;
+        color: #212529;
+        font-size: 19px;
+        padding: 13px;
+        width: 100%;
+    }
+    .Search::placeholder {
+        color: rgb(180,180,180);
+    }
+    .Search:focus, .Search:focus-visible {
+        border: 1px solid #ea357a;
+    }
+    .TokenImage img {
+        border-radius: 9999px;
+        border: 1px solid white;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        height: 45px;
+        position: relative;
+        vertical-align: middle;
+        width: 45px;
+    }
+    .TokenImage.medium img {
+        height: 93px;
+        width: 93px;
+    }
+    .Alert {
+        background: rgba(0,0,0,0.08);
+        border-radius: 7px;
+        font-weight: 500;
+        padding: 8px;
+    }
+    .Table {
+        border-collapse: separate;
+        border-radius: 7px;
+        border-style: hidden;
+        border: 1px solid rgba(0,0,0,0.1);
+        width: 100%;
+    }
+    .Table tr.small td {
+        font-size: 14px;
+    }
+    .Table tr td {
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        word-break: break-all;
+    }
+    .Table tr:last-child td {
+        border-bottom: none;
+    }
+    .Table tr td {
+        padding: 8px 15px;
+        text-align: left;
+    }
+    .Table tr td:first-child {
+        width: 30%
+    }
+    .Table tr td:last-child {
+        width: 70%
+    }
+    .Table .TableSubTitle {
+        font-weight: 300;
+        opacity: 0.7;
+    }
+    .Table tr td:last-child {
+        font-weight: 500;
+    }
+    .Link {
+        color: #ea357a;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .Link:hover {
+        filter: brightness(0.8);
+    }
+    .Link:active {
+        filter: brightness(1.0);
+    }
+    .Tooltip {
+        background: #ea357a;
+        border-radius: 10px;
+        color: #ffffff;
+        padding: 10px 13px;
+        position: relative;
+        box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+    .TooltipArrowUp {
+        border-bottom: 10px solid #ea357a;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        height: 0;
+        left: 12px;
+        position: absolute;
+        top: -8px;
+        width: 0;
+    }
 
 
-}
+  }
 
 }
 

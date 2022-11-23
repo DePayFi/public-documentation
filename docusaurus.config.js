@@ -53,6 +53,7 @@ const config = {
         logo: {
           alt: 'DePay Documentation',
           src: 'img/logo.svg',
+          srcDark: 'img/logo.dark.svg'
         },
         items: [
           {
