@@ -11,7 +11,7 @@ Access user's payment data.
 
 Allows apps to access users' Shopify payments with a Shopify payment `id`.
 
-Only completed payments are returned via this endpoint.
+Only succeded payments are returned via this endpoint.
 
 ```apib
 ### GET https://api.depay.com/apps/payments/shopify/{id}
