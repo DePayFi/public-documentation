@@ -311,18 +311,6 @@ error: (error)=> {
 }
 ```
 
-### providers
-
-Allows to set providers to be used for making RPC calls to the individiual blockchains:
-
-```javascript
-providers: {
-  ethereum: ['http://localhost:8545'],
-  bsc: ['http://localhost:8545'],
-  polygon: ['http://localhost:8545']
-}
-```
-
 ### currency
 
 Allows you to enforce displayed local currency (instead of automatically detecting it):
