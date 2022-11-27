@@ -146,6 +146,22 @@ Once you've provided all required information the app will generate a **Payment 
 
 Send your users to the link in order to perform payments as configured.
 
+### Prefill Form Data
+
+If you select to "Collect Data" during [link creation](#create-new-link) you can prefill all form fields with passing get parameters:
+
+https://tip.depay.com/6KFBECVsokSt0UKOAug8CI?name=Max%20Musterman&country=CH
+
+`name`: The full name of the payment sender.
+
+`email`: The email of the payment sender.
+
+`shipping_address`: The shipping address of the payment sender.
+
+`country`: The ISO 3166-1 alpha-2 country code of the payment sender.
+
+`quantity`: The preselected item quantity.
+
 ### Inject Payload Data
 
 You can append get parameters to the generated payment link in order to inject payload data which will become part of the [payment callback request](#callback-request).
