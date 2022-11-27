@@ -150,7 +150,7 @@ Send your users to the link in order to perform payments as configured.
 
 If you select to "Collect Data" during [link creation](#create-new-link) you can prefill all form fields with passing get parameters:
 
-https://tip.depay.com/6KFBECVsokSt0UKOAug8CI?name=Max%20Musterman&country=CH
+https://buy.depay.com/201JapngwCukZzlvdZgR1K?name=Max%20Musterman&country=CH
 
 `name`: The full name of the payment sender.
 
