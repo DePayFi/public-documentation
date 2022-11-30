@@ -18,6 +18,8 @@ import {
     faSquareCheck,
     faRobot,
     faKey,
+    faRoute,
+    faSatelliteDish,
   } from '@fortawesome/free-solid-svg-icons'
 
 [
@@ -34,6 +36,8 @@ import {
   faSquareCheck,
   faRobot,
   faKey,
+  faRoute,
+  faSatelliteDish,
 ].forEach((icon)=>library.add(icon))
 
 let DePayButtons

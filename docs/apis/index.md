@@ -29,7 +29,6 @@ Explore DePay's Web3 APIs.
   </div>
 </div>
 
-
 <div className="row pt-5">
   <div className="col-12 ps-0 pe-0 col-md-4 pe-md-4">
     <a href="/docs/apis/payments/" className="d-block hover-card p-3">
