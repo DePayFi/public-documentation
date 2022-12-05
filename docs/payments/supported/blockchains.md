@@ -48,7 +48,7 @@ Payments on Ethereum typically take **18 seconds** in average to process and val
 
 DePay currently supports **3200+ tokens** on Ethereum.
 
-A payment transaction on Ethereum costs users between **$2-$50**.
+A payment transaction on Ethereum costs users between **$1-$50**.
 
 ## BNB Smart Chain
 
@@ -64,4 +64,4 @@ Payments on Polygon typically take **5 seconds** in average to process and valid
 
 DePay currently supports **380+ tokens** on Polygon.
 
-A payment transaction on Polygon costs users between **below $0.01**.
+A payment transaction on Polygon costs users **below $0.01**.
