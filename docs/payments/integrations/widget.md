@@ -114,6 +114,193 @@ After installation, import `DePayWidgets` from `@depay/widgets` wherever you nee
 import DePayWidgets from '@depay/widgets';
 ```
 
+## Flow
+
+Choose [normal payment tracking](/docs/payments/integrations/widget#normal-tracking) if you want the user to wait for the payment to be fully validated before a release.
+
+Choose [async payment tracking](/docs/payments/integrations/widget#async-tracking) if you want to release the user ASAP and your user flow allows for asynchronous payment validation & confirmation.
+
+### Normal Tracking
+
+During normal payment tracking, users will need to wait until the payment has been validated before being released.
+
+```mermaid
+sequenceDiagram
+  participant App as Your App
+  participant Widget
+  participant Wallet
+  participant Blockchain
+  participant DePay as DePay APIs
+  App->>Widget: open widget
+  Widget->>Wallet: sign transaction
+  Wallet->>Blockchain: submit transaction
+  Wallet->>Widget: return transaction
+  loop
+    Widget->>App: track payment
+    App->>DePay: track payment
+    DePay->>App: confirm tracking
+    App->>Widget: confirm tracking
+  end
+  loop
+    Widget->>Blockchain: check status
+    Blockchain->>Widget: return status
+  end
+  loop
+    DePay->>Blockchain: validate payment
+    Blockchain->>DePay: return validation
+  end
+  Widget->>Blockchain: check status
+  Blockchain->>Widget: transaction succeeded
+  DePay->>Blockchain: validate payment
+  Blockchain->>DePay: payment succeeded
+  loop
+    DePay->>App: sends callback
+  end
+  App->>DePay: confirms callback receipt
+  DePay->>Widget: release user
+  Widget->>App: release user
+```
+
+#### 1. Transaction submitted (Normal Tracking)
+
+![Transaction submitted](/img/flow/widget/normal/transaction-submitted.jpg)
+
+#### 2. Transaction succeeded (Normal Tracking)
+
+![Transaction confirmed](/img/flow/widget/normal/transaction-confirmed.jpg)
+
+#### 3. Payment validated (Normal Tracking)
+
+![Payment validated](/img/flow/widget/normal/payment-validated.jpg)
+
+#### Polling release
+
+In normal tracking mode your app should integrate an endpoint to poll release status. See: [polling](/docs/payments/integrations/widget#polling)
+
+This ensures that the user is released even in scenarios where the connection between DePay APIs and the widget (websockets) fails.
+
+```mermaid
+sequenceDiagram
+  participant App as Your App
+  participant Widget
+  participant Wallet
+  participant Blockchain
+  participant DePay as DePay APIs
+  loop
+    Widget->>App: polling release
+    App->>Widget: release status
+  end
+  loop
+    DePay->>App: sends callback
+  end
+  App->>DePay: confirms callback receipt
+  DePay-->>Widget: connection failed
+  Widget->>App: polling release
+  App->>Widget: release now
+  Widget->>App: release user
+```
+
+### Async Tracking
+
+During async payment tracking users will be released once the payment transaction has been confirmed once by the blockchain.
+
+Payment validation is performed asynchronously and you can sent a payment confirmation asynchronously to the user (e.g. email, notifcation etc.).
+
+```mermaid
+sequenceDiagram
+  participant App as Your App
+  participant Widget
+  participant Wallet
+  participant Blockchain
+  participant DePay as DePay APIs
+  App->>Widget: open widget
+  Widget->>Wallet: sign transaction
+  Wallet->>Blockchain: submit transaction
+  Wallet->>Widget: return transaction
+  loop
+    Widget->>App: track payment
+    App->>DePay: track payment
+    DePay->>App: confirm tracking
+    App->>Widget: confirm tracking
+  end
+  loop
+    Widget->>Blockchain: check status
+    Blockchain->>Widget: return status
+  end
+  loop
+    DePay->>Blockchain: check status
+    Blockchain->>DePay: return status
+  end
+  Widget->>Blockchain: check status
+  Blockchain->>Widget: transaction succeeded
+  Widget->>App: release user
+  DePay->>Blockchain: check status
+  Blockchain->>DePay: transaction succeeded
+  loop
+    DePay-->>App: sends callback
+  end
+  App-->>DePay: confirms callback receipt
+```
+
+#### 1. Transaction submitted (Async Tracking)
+
+![Transaction submitted](/img/flow/widget/async/transaction-submitted.jpg)
+
+#### 2. Transaction confirmed (Async Tracking)
+
+![Transaction confirmed](/img/flow/widget/async/transaction-confirmed.jpg)
+
+### Without Tracking
+
+Without payment tracking, users will be released immediately after the transaction has been confirmed by the blockchain.
+
+No payment tracking nor validation is performed through DePay APIs.
+
+```mermaid
+sequenceDiagram
+  participant App as Your App
+  participant Widget
+  participant Wallet
+  participant Blockchain
+  participant DePay as DePay APIs
+  App->>Widget: open widget
+  Widget->>Wallet: sign transaction
+  Wallet->>Blockchain: submit transaction
+  Wallet->>Widget: return transaction
+  loop
+    Widget->>Blockchain: check status
+    Blockchain->>Widget: return status
+  end
+  Widget->>Blockchain: check status
+  Blockchain->>Widget: transaction succeded
+  Widget->>App: 'succeeded' callback
+  Widget->>App: release user
+```
+
+### Failed Payments
+
+Failed payment transactions need to be retried. The widget prompts the user immediately to retry the transaction if it failed on the blockchain.
+
+```mermaid
+sequenceDiagram
+  participant App as Your App
+  participant Widget
+  participant Wallet
+  participant Blockchain
+  participant DePay as DePay APIs
+  loop
+    Widget->>Blockchain: check status
+    Blockchain->>Widget: return status
+  end
+  Widget->>Blockchain: check status
+  Blockchain->>Widget: transaction failed
+  Widget->>App: 'failed' callback
+  Widget->>App: release user
+  Widget->>App: ask to retry
+```
+
+![Failed transaction](/img/flow/widget/failed/failed-transaction.jpg)
+
 ## Configuration
 
 You need to pass a configuration object to `DePayWidgets.Payment` which needs to at least contain the `accept` field.

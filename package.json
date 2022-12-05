@@ -19,6 +19,7 @@
     "@depay/widgets": "^8.0.3",
     "@docusaurus/core": "2.2.0",
     "@docusaurus/preset-classic": "2.2.0",
+    "@docusaurus/theme-mermaid": "^2.2.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
