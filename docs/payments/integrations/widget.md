@@ -301,6 +301,14 @@ sequenceDiagram
 
 ![Failed transaction](/img/flow/widget/failed/failed-transaction.jpg)
 
+### Failed Tracking
+
+If tracking should fail, after retrying every 3 seconds for 2 minutes (40 attempts), the widget will show the following error messages:
+
+![Failed transaction](/img/flow/widget/failed/failed-tracking.jpg)
+
+Users are not released if tracking fails (even in async tracking mode).
+
 ## Configuration
 
 You need to pass a configuration object to `DePayWidgets.Payment` which needs to at least contain the `accept` field.
