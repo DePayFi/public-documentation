@@ -19,7 +19,9 @@ Returns a `200` status code if payment tracking already existed before.
 
 This method implements [idempotency](https://datacadamia.com/design/idempotence). It will not create multiple tracking instances but will continue to provide the information for the given payment if the request is executed repeatedly.
 
-We recommend to setup a `callback` to have the payment tracker call your systems once payments change status from `pending` to either `success` or `failed` (see [Payment Data Structure](/docs/apis/payments/data-structure)).
+It is required to setup a `callback`, as the payment tracker needs to make sure to persist the payment result with your systems before releasing the user to a confirmation.
+
+Payment status starts with `pending` and changes to either `success` or `failed` (see [Payment Data Structure](/docs/apis/payments/data-structure)).
 
 Make sure to re-attempt the `POST` request in case the request fails or returns anything but a `200/201`.
 
@@ -261,7 +263,7 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
 GET https://api.depay.com/v2/payments/{uuid}
 ```
 
-We recommend to setup a `callback` while [creating the payment tracking](/docs/apis/payments/tracking#post), but you can also retrieve the payment status via a GET request.
+We recommend to only rely on the payment `callback` while [creating the payment tracking](/docs/apis/payments/tracking#post), but you can also retrieve the payment status via a GET request.
 
 Just make sure you don't run into [API call limitations](/docs/apis/authentication#limitations) that way and use reasonable pauses between requests (we recommend 1 minute polling).
 
