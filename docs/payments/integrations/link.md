@@ -119,7 +119,7 @@ POST https://example.com/payments/depay/callback
   "token": "0xa0bed124a09ac2bd941b10349d8d224fe3c955eb",
   "decimals": 18,
   "confirmations": 13,
-  "after_block": 13609144,
+  "after_block": "13609144",
   "amount": "822.5",
   "fee_amount": undefined,
   "fee_receiver": undefined,

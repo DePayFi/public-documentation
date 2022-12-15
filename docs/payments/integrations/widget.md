@@ -388,8 +388,8 @@ BODY:
     "blockchain": "ethereum",
     "transaction": "0x4311a9820195c2a5af99c45c72c88848ed403a4020863c913feed81d15855ae4",
     "sender": "0x769794c94e9f113e357023dab73e81dbd6db201c",
-    "nonce": 103,
-    "after_block": 13230369,
+    "nonce": "103",
+    "after_block": "13230369",
     "to_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
   }
 ```
@@ -483,8 +483,8 @@ BODY:
     "blockchain": "ethereum",
     "transaction": "0x4311a9820195c2a5af99c45c72c88848ed403a4020863c913feed81d15855ae4",
     "sender": "0x769794c94e9f113e357023dab73e81dbd6db201c",
-    "nonce": 103,
-    "after_block": 13230369,
+    "nonce": "103",
+    "after_block": "13230369",
     "to_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
   }
 ```
