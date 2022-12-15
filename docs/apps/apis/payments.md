@@ -31,7 +31,7 @@ Only succeded payments are returned via this endpoint.
       "blockchain"=>"ethereum",
       "transaction"=>"0xe25ec56d630b2a626a32258b3c90a0ce8cd494e5",
       "sender"=>"0xcea76a7b223f268cc727fb3a2a93491817cee51a",
-      "nonce"=>84760897,
+      "nonce"=>"37",
       "receiver"=>"0x830807e11ee2ee50538302607f5f656d8449855d",
       "token"=>"0xd4e86ba0bab749c275f8423b84d59d5383d7591e",
       "decimals"=>18,

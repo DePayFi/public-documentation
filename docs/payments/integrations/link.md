@@ -114,7 +114,7 @@ POST https://example.com/payments/depay/callback
   "blockchain": "ethereum",
   "transaction": "0xd4a9424440f6010af1bec311dda4e23d4f0016f4cc215da84a41650150ecb8b7",
   "sender": "0x29b0d4cb9cffeb360067199cf026dfd4854a8ab0",
-  "nonce": 1,
+  "nonce": "1",
   "receiver": "0x29b0d4cb9cffeb360067199cf026dfd4854a8ab0",
   "token": "0xa0bed124a09ac2bd941b10349d8d224fe3c955eb",
   "decimals": 18,
