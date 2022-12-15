@@ -95,7 +95,7 @@ The confirmations (amount of blocks including the payment transaction) required 
 
 ## after_block
 
-The block after which to expect the payment to happen. The current block right before the payment was submitted. Required to scan for replaced payment transactions.
+The block after which to expect the payment to happen. The current block right before the payment was submitted. Required to scan for replaced payment transactions. As a string.
 
 ## amount
 
