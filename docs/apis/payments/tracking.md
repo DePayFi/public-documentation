@@ -73,9 +73,9 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
 
 [`payload`](/docs/apis/payments/data-structure#payload) - Allows to store additional, limited, payload information alongside the payment.
 
-[`forward_to`](/docs/apis/payments/data-structure#forward_to) - URL used to forward users to once payment tracking is completed.
+[`forward_to`](/docs/apis/payments/data-structure#forward_to) - URL used to forward users to, once payment tracking is completed. Users typically get to retry payments until they succeed and are only forwarded if payments succeed (default).
 
-[`forward_on_failure`](/docs/apis/payments/data-structure#forward_on_failure) - Boolean indicating if a user is to be forwarded to `forward_to` also in the case of a `failed` payment.
+[`forward_on_failure`](/docs/apis/payments/data-structure#forward_on_failure) - Boolean indicating if a user is to be forwarded to `forward_to` also in the case of a `failed` payment. If set to `false` user gets to retry the payment until it succeeds (recommended).
 
 [`fee_amount`](/docs/apis/payments/data-structure#fee_amount) - Expected payment fee amount. Human readable. As string, to prevent rounding issues.
 
