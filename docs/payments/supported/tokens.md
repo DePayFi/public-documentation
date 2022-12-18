@@ -15,8 +15,7 @@ Please check [DePay's Website > About > Tokens](https://depay.com/tokens) in ord
 
 ## Requirements
 
-In order for a token to be supported by DePay, that token needs to have a pair (liquidity pool) on a supported decentralized exchange (see [supported exchanges](/docs/payments/supported/exchanges)) with **at least USD 10k** reserves in order to be routable with DePay:
-
+In order for a token to be supported by DePay, that token needs to be a standard token (without any additions like fee's etc.), it needs to have a pair (liquidity pool) on a supported decentralized exchange (see [supported exchanges](/docs/payments/supported/exchanges)) with **at least USD 10k** reserves in order to be routable with DePay:
 
 - [Ethereum: Create Uniswap v2 Liquidity Pool](https://app.uniswap.org/#/add/v2/ETH)
 
