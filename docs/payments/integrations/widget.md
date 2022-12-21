@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: Widget
+title: Integrate Web3 Payment Widget
 ---
 
 # Web3 Payment Widget

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Link
+title: Integrate Web3 Payment Link
 ---
 
 # Web3 Payment Link

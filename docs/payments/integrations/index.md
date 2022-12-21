@@ -1,6 +1,7 @@
 ---
 sidebar_label: Integrations
 sidebar_position: 4
+title: DePay Integrations
 ---
 
 # Integrations

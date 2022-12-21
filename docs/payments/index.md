@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Overview
+title: Integrate Web3 Payments
 ---
 
 # Web3 Payments

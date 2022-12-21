@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: Button
+title: Integrate Web3 Payment Button
 ---
 
 # Web3 Payment Button
