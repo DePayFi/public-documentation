@@ -193,3 +193,19 @@ Those values will reappear in the [payment callback request](#callback-request) 
     }
   }
 ```
+
+### Forward Parameters
+
+If you have configured a redirect as part of your link, any passed GET-paramter will be forward. This allows you to forward certain paramters to your system through the link payment.
+
+#### Example
+
+Redirect is `https://example.com?step=confirmation`
+
+You add the following GET-parameter when sending users to the payment link:
+
+`https://buy.depay.com/xxNdddVnbN02f0Enrav8?user=123`
+
+Users will be redirected after successful payment to the following URL:
+
+`https://example.com?user=123&step=confirmation`
