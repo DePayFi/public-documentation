@@ -158,13 +158,15 @@ Those values will reappear in the [payment callback request](#callback-request) 
 
 If you have configured a redirect as part of your link, any passed GET-paramter will be forward. This allows you to forward certain paramters to your system through the link payment.
 
+`payload` GET-parameters will NOT be forward upon redirect. They are only used to enrich the callback payload.
+
 #### Example
 
 Redirect is `https://example.com?step=confirmation`
 
 You add the following GET-parameter when sending users to the payment link:
 
-`https://donate.depay.com/xxNdddVnbN02f0Enrav8?user=123`
+`https://buy.depay.com/xxNdddVnbN02f0Enrav8?user=123`
 
 Users will be redirected after successful payment to the following URL:
 
