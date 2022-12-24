@@ -133,6 +133,11 @@ sequenceDiagram
   participant Blockchain
   participant DePay as DePay APIs
   App->>Widget: open widget
+  Widget->>Widget: user clicks pay
+  Widget->>App: store trace
+  App->>DePay: store trace
+  DePay->>App: confirm trace
+  App->>Widget: confirm trace
   Widget->>Wallet: sign transaction
   Wallet->>Blockchain: submit transaction
   Wallet->>Widget: return transaction
@@ -215,6 +220,11 @@ sequenceDiagram
   participant Blockchain
   participant DePay as DePay APIs
   App->>Widget: open widget
+  Widget->>Widget: user clicks pay
+  Widget->>App: store trace
+  App->>DePay: store trace
+  DePay->>App: confirm trace
+  App->>Widget: confirm trace
   Widget->>Wallet: sign transaction
   Wallet->>Blockchain: submit transaction
   Wallet->>Widget: return transaction
@@ -301,6 +311,12 @@ sequenceDiagram
 ```
 
 ![Failed transaction](/img/flow/widget/failed/failed-transaction.jpg)
+
+### Failed Tracing
+
+If tracing should fail once, the widget will hand over the transaction to the users wallet, instead it will show an error message:
+
+![Failed transaction](/img/flow/widget/failed/failed-tracking.jpg)
 
 ### Failed Tracking
 
