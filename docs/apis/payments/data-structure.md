@@ -26,7 +26,7 @@ Learn how DePay Payment objects are structured.
   "payload": {
     "somekey": "somevalue"
   },
-  "uuid": "74417770-e6ac-4ae8-b027-0657600d7bad",
+  "secret_id": "74417770-e6ac-4ae8-b027-0657600d7bad",
   "callback": "https://webhook.site/74417770-e6ac-4ae8-b027-0657600d7bad",
   "release": true,
   "forward_to": "https://example.com/payments/depay/confirmation",
@@ -113,9 +113,9 @@ Expected payment fee receiver address.
 
 Arbitrary payload stored along with the payment.
 
-## uuid
+## secret_id
 
-Secret, initially provided universal unique identifier of the payment. Suposed to identify the payment within your systems. Do not expose this to the public! UUID needs to be unguessable!
+Secret, universal unique identifier of the payment attempt. Suposed to identify the payment attempt within your systems. Do not expose this to the public! secret_id needs to be unguessable!
 
 ## callback
 

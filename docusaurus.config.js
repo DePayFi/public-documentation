@@ -80,6 +80,12 @@ const config = {
             position: 'left',
             label: 'Apps',
           },
+          {
+            type: 'doc',
+            docId: 'examples/index',
+            position: 'left',
+            label: 'Examples',
+          },
         ],
       },
       footer: {}, // edit src/theme/Footer/index.js instead

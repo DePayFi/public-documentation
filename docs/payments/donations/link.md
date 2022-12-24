@@ -102,7 +102,7 @@ POST https://example.com/payments/depay/callback
   "payload": {
     "somekey": "somevalue"
   },
-  "uuid": "74417770-e6ac-4ae8-b027-0657600d7bad",
+  "secret_id": "74417770-e6ac-4ae8-b027-0657600d7bad",
   "callback": "https://webhook.site/74417770-e6ac-4ae8-b027-0657600d7bad",
   "release": true,
   "forward_to": "https://example.com/payments/depay/confirmation",

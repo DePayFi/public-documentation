@@ -237,7 +237,7 @@ A function that will be called before the donation is handed over to the wallet.
 Allows you to stop the donation if this methods returns false.
 
 ```javascript
-before: (donation)=> {
+before: async(donation)=> {
   alert('Something went wrong')
   return false // stop
 }

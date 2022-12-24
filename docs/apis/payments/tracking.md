@@ -41,7 +41,7 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
   "callback": "https://webhook.site/4d4cd30f-d393-40f0-b909-85578a722ad7",
   "forward_to": "https://example.com/continue/after/74417770-e6ac-4ae8-b027-0657600d7bad",
   "payload": { "somekey": "somevalue" },
-  "uuid": "74417770-e6ac-4ae8-b027-0657600d7bad"
+  "secret_id": "74417770-e6ac-4ae8-b027-0657600d7bad"
 }
 ```
 
@@ -65,7 +65,7 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
 
 [`after_block`](/docs/apis/payments/data-structure#after_block) - The block after which to expect the payment to happen. The current block right before the payment was submitted.
 
-[`uuid`](/docs/apis/payments/data-structure#uuid) - Secret uuid referencing the payment identifcator in your system. Do not expose this to the public! UUID needs to be unguessable!
+[`secret_id`](/docs/apis/payments/data-structure#secret_id) - Secret uuid referencing the payment attempt in your system. Do not expose this to the public! secret_id needs to be unguessable!
 
 [`callback`](/docs/apis/payments/data-structure#callback) - Secret callback url. Needs to be hidden from the public and needs to be unguessable. Will be called once the payment status completes either with `success` or `failed`.
 
@@ -100,7 +100,7 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
   "payload": {
       "somekey": "somevalue"
   },
-  "uuid": "74417770-e6ac-4ae8-b027-0657600d7bad",
+  "secret_id": "74417770-e6ac-4ae8-b027-0657600d7bad",
   "callback": "https://webhook.site/4d4cd30f-d393-40f0-b909-85578a722ad7",
   "forward_to": "https://example.com/continue/after/74417770-e6ac-4ae8-b027-0657600d7bad",
   "forward_on_failure": false,
@@ -150,7 +150,7 @@ POST <YOUR PROVIDED CALLBACK ENDPOINT>
   "payload": {
       "somekey": "somevalue"
   },
-  "uuid": "74417770-e6ac-4ae8-b027-0657600d7bad",
+  "secret_id": "74417770-e6ac-4ae8-b027-0657600d7bad",
   "callback": "https://webhook.site/4d4cd30f-d393-40f0-b909-85578a722ad7",
   "forward_to": "https://example.com/continue/after/74417770-e6ac-4ae8-b027-0657600d7bad",
   "forward_on_failure": false,
@@ -166,7 +166,7 @@ Learn more about the [Payment Data Structure](/docs/apis/payments/data-structure
 
 In order to validate the origin of the payment callback request, and to make sure the payment callback request did not originate from another third party, you need to:
 
-- Validate that the provided `uuid` in the callback request matches with what you've stored within your systems.
+- Validate that the provided `secret_id` in the callback request matches with what you've stored within your systems.
 
 - (Optional) Validate the `x-signature` header to also cryptographically ensure the request came from DePay's APIs.
 
@@ -241,7 +241,7 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
   "transaction": "0xd4a9424440f6010af1bec311dda4e23d4f0016f4cc215da84a41650150ecb8b7",
   "sender": "0x29b0d4cb9cFfEB360067199cf026dfD4854A8aB0",
   "nonce": "1",
-  "uuid": "74417770-e6ac-4ae8-b027-0657600d7bad"
+  "secret_id": "74417770-e6ac-4ae8-b027-0657600d7bad"
 }
 ```
 
@@ -255,12 +255,12 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
 
 [`nonce`](/docs/apis/payments/data-structure#nonce) - The sender nonce of the expected payment transaction.
 
-[`uuid`](/docs/apis/payments/data-structure#uuid) - Secret uuid referencing the payment identifcator in your system. Do not expose this to the public! UUID needs to be unguessable!
+[`secret_id`](/docs/apis/payments/data-structure#secret_id) - Secret uuid referencing the payment identifcator in your system. Do not expose this to the public! secret_id needs to be unguessable!
 
 ## GET
 
 ```
-GET https://api.depay.com/v2/payments/{uuid}
+GET https://api.depay.com/v2/payments/{secret_id}
 ```
 
 We recommend to only rely on the payment `callback` while [creating the payment tracking](/docs/apis/payments/tracking#post), but you can also retrieve the payment status via a GET request.
@@ -292,7 +292,7 @@ GET https://api.depay.com/v2/payments/45b55d24-60d0-45ba-9800-c61835494dc8-3
   "payload": {
       "somekey": "somevalue"
   },
-  "uuid": "74417770-e6ac-4ae8-b027-0657600d7bad",
+  "secret_id": "74417770-e6ac-4ae8-b027-0657600d7bad",
   "callback": "https://webhook.site/4d4cd30f-d393-40f0-b909-85578a722ad7",
   "forward_to": "https://example.com/continue/after/74417770-e6ac-4ae8-b027-0657600d7bad",
   "forward_on_failure": false,

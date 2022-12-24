@@ -41,7 +41,7 @@ Only succeded payments are returned via this endpoint.
       "fee_amount": nil,
       "fee_receiver": nil,
       "payload": nil,
-      "uuid": "d81b7658-b5ed-477e-9865-96c7f63278eb",
+      "secret_id": "d81b7658-b5ed-477e-9865-96c7f63278eb",
       "callback": nil,
       "release": nil,
       "forward_to": nil,
