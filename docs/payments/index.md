@@ -68,23 +68,23 @@ There are multiple ways to integrate DePay. Explore all of them and pick the one
     </a>
   </div>
   <div className="col-12 col-md-4 pe-4">
-    <a href="/docs/payments/integrations/button" className="d-block hover-card p-3">
-      <div className="bg-contrast p-2 rounded-2">
-        <img src="/docs/img/payments/button.png" />
-      </div>
-      <div className="pt-4">
-        <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Button</h5></a></div>
-        <div className="pb-2"><small className="text-light">Place HTML and receive payments with just a click.</small></div>
-      </div>
-    </a>
-  </div>
-  <div className="col-12 col-md-4 pe-4">
     <a href="/docs/payments/integrations/widget" className="d-block hover-card p-3">
       <div className="bg-contrast p-2 rounded-2">
         <img src="/docs/img/payments/widget.png" />
       </div>
       <div className="pt-4">
         <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Widget</h5></a></div>
+        <div className="pb-2"><small className="text-light">Fully controll payment flows within your app.</small></div>
+      </div>
+    </a>
+  </div>
+  <div className="col-12 col-md-4 pe-4">
+    <a href="/docs/payments/integrations/button" className="d-block hover-card p-3">
+      <div className="bg-contrast p-2 rounded-2">
+        <img src="/docs/img/payments/button.png" />
+      </div>
+      <div className="pt-4">
+        <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Button</h5></a></div>
         <div className="pb-2"><small className="text-light">Place HTML and receive payments with just a click.</small></div>
       </div>
     </a>

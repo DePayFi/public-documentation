@@ -11,11 +11,11 @@ High-level explanation of basic Web3 Payment concepts.
 
 The (payment) attempt starts as soon a user clicks something which will lead to a payment screen or opens the payment widget.
 
-The attempt is supposed to carry the [secret_id needed to track and validate a payment](/docs/apis/payments/data-structure#secret_id).
+The attempt is supposed to carry the [secret_id](/docs/apis/payments/data-structure#secret_id). The [secret_id](/docs/apis/payments/data-structure#secret_id) is needed to [track and validate a payment](/docs/apis/payments/tracking#validate-requests).
 
 Each attempt needs to have its own `secret_id`.
 
-If a payment fails, a new attempt needs to be created, including assigning a new `secret_id` that is shared with DePay APIs.
+If a payment fails, a new attempt needs to be created, including assigning a new `secret_id` to the new attempt.
 
 ## Trace
 

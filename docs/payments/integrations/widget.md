@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 sidebar_label: Widget
 title: Integrate Web3 Payment Widget
 ---
@@ -97,6 +97,16 @@ or if you use npm
 
 ```
 npm install @depay/widgets --save
+```
+
+Make sure you install DePay widgets peer dependencies, too, in case your project does not have them installed yet:
+
+```
+yarn add ethers react react-dom
+```
+
+```
+npm install ethers react react-dom --save
 ```
 
 ### CDN
