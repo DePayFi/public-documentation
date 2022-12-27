@@ -406,7 +406,25 @@ track: {
 }
 ```
 
-Once the payment has been signed and submitted by the user, the widget will call the configured endpoint with:
+Once a user clicks "Pay" in the widget, and before the transaction is handed over to the wallet, the widget will send a payment trace (without transaction_id) to the configured endpoint:
+
+```javascript
+POST /track/payments
+BODY:
+  {
+    "blockchain": "ethereum",
+    "sender": "0x769794c94e9f113e357023dab73e81dbd6db201c",
+    "nonce": "103",
+    "after_block": "13230369",
+    "to_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+  }
+```
+
+If the endpoint does not confirm the receival (with `200`) the widget will not hand over the transaction to the wallet.
+
+Make sure to forward the payment trace to the [DePay API](/docs/apis/payments/tracking).
+
+Once the payment has been signed and submitted by the user wallet, the widget will call the configured endpoint to start the payment tracking:
 
 ```javascript
 POST /track/payments

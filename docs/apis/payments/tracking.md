@@ -49,8 +49,6 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
 
 [`blockchain`](/docs/apis/payments/data-structure#blockchain) - The name of the blockchain
 
-[`transaction`](/docs/apis/payments/data-structure#transaction) - The transaction id expected to perform the payment
-
 [`sender`](/docs/apis/payments/data-structure#sender) - The address of the payment sender.
 
 [`nonce`](/docs/apis/payments/data-structure#nonce) - The sender nonce of the expected payment transaction.
@@ -70,6 +68,8 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
 [`callback`](/docs/apis/payments/data-structure#callback) - Secret callback url. Needs to be hidden from the public and needs to be unguessable. Will be called once the payment status completes either with `success` or `failed`.
 
 ### Optional Attributes
+
+[`transaction`](/docs/apis/payments/data-structure#transaction) - The transaction id/hash performing the payment. If transaction id is not provided payment will be tracked as a trace (before payment is actually made).
 
 [`payload`](/docs/apis/payments/data-structure#payload) - Allows to store additional, limited, payload information alongside the payment.
 
