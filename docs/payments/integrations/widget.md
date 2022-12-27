@@ -114,7 +114,7 @@ npm install ethers react react-dom --save
 If you don't want to install the package or don't want to build DePay Widgets as part of your application, you can also load DePay Widgets via our CDN:
 
 ```html
-<script defer async src="https://integrate.depay.com/widgets/v8.js"></script>
+<script defer async src="https://integrate.depay.com/widgets/v9.js"></script>
 ```
 
 ## Usage

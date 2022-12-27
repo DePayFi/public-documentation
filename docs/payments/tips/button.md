@@ -26,7 +26,7 @@ DePay's Web3 Tip Button allows you to directly accept Web3 Tips without any requ
   widget="Donation"
   configuration='{"title": "Tip", "accept":[{"blockchain":"ethereum","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"bsc","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"}]}'
 />
-<script src="https://integrate.depay.com/buttons/v8.js"></script>
+<script src="https://integrate.depay.com/buttons/v9.js"></script>
 <noscript><a href="https://depay.com">Web3 Payments</a> are only supported with JavaScript enabled.</noscript>
 <script>DePayButtons.init({ document });</script>
 ```
@@ -46,7 +46,7 @@ Change the `label` attribute of the `div` container in order to change the butto
   widget="Donation"
   configuration='{"title": "Tip", "accept":[{"blockchain":"ethereum","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"bsc","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"}]}'
 />
-<script src="https://integrate.depay.com/buttons/v8.js"></script>
+<script src="https://integrate.depay.com/buttons/v9.js"></script>
 <noscript><a href="https://depay.com">Web3 Payments</a> are only supported with JavaScript enabled.</noscript>
 <script>DePayButtons.init({ document });</script>
 ```
@@ -70,7 +70,7 @@ Change the `widget` attribute if you want to open another widget type upon click
   widget="Donation"
   configuration='{"title": "Tip", "accept":[{"blockchain":"ethereum","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"bsc","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"}]}'
 />
-<script src="https://integrate.depay.com/buttons/v8.js"></script>
+<script src="https://integrate.depay.com/buttons/v9.js"></script>
 <noscript><a href="https://depay.com">Web3 Payments</a> are only supported with JavaScript enabled.</noscript>
 <script>DePayButtons.init({ document });</script>
 ```
@@ -103,7 +103,7 @@ You can also change the design of the button by setting a `css` attribute:
   configuration='{"title": "Tip", "accept":[{"blockchain":"ethereum","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"bsc","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"}]}'
   css="button { background: blue; border-radius: 0.2rem; }"
 />
-<script src="https://integrate.depay.com/buttons/v8.js"></script>
+<script src="https://integrate.depay.com/buttons/v9.js"></script>
 <noscript><a href="https://depay.com">Web3 Payments</a> are only supported with JavaScript enabled.</noscript>
 <script>DePayButtons.init({ document });</script>
 ```
