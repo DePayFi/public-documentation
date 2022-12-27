@@ -462,7 +462,7 @@ track: {
 }
 ```
 
-Your endpoint needs to make sure to forward this to the [Payment Tracking API](/docs/apis/payments/tracking).
+Your endpoint needs to make sure to forward the payload of the tracking request to DePay's [Payment Tracking API](/docs/apis/payments/tracking).
 
 Also make sure to add `token`, `amount`, `confirmations` and `receiver` when forwarding the request to the [Payment Tracking API](/docs/apis/payments/tracking).
 Those values are supposed to be set by your backend not the widget nor the fronted because any user could set these values to their liking otherwise, having you confirm payment amounts and tokens that you didn't intend to receive!
