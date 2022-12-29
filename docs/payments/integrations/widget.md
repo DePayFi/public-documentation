@@ -406,7 +406,9 @@ track: {
 }
 ```
 
-Once a user clicks "Pay" in the widget, and before the transaction is handed over to the wallet, the widget will send a payment trace (without transaction_id) to the configured endpoint:
+Once a user clicks "Pay" in the widget, and before the transaction is handed over to the wallet, the widget will send a payment trace (without transaction_id) to the configured endpoint.
+
+This is where the payment tracing starts:
 
 ```javascript
 POST /track/payments
@@ -424,7 +426,9 @@ If the endpoint does not confirm the receival (with `200`) the widget will not h
 
 Make sure to forward the payment trace to the [DePay API](/docs/apis/payments/tracking).
 
-Once the payment has been signed and submitted by the user wallet, the widget will call the configured endpoint to start the payment tracking:
+Once the payment has been signed and submitted by the user wallet, the widget will call the configured endpoint to start the payment tracking.
+
+This is where the payment tracking starts:
 
 ```javascript
 POST /track/payments

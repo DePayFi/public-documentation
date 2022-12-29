@@ -125,7 +125,7 @@ POST https://example.com/payments/depay/callback
   "fee_amount": undefined,
   "fee_receiver": undefined,
   "payload": {
-    "somekey": "somevalue"
+    "link_id": "xxNdddVnbN02f0Enrav8L"
   },
   "secret_id": "74417770-e6ac-4ae8-b027-0657600d7bad",
   "callback": "https://webhook.site/74417770-e6ac-4ae8-b027-0657600d7bad",
