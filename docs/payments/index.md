@@ -51,6 +51,12 @@ In order to receive Web3 Payments directly, you need to have a wallet and an add
 
 [Get ready to integrate DePay](/docs/payments/preparation)
 
+## Concepts
+
+Learn the difference between Attempt -> Trace -> Payment.
+
+[Web3 Payment Concepts](/docs/payments/concepts)
+
 ## Integration Options
 
 There are multiple ways to integrate DePay. Explore all of them and pick the one that is right for you:
