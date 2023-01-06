@@ -324,13 +324,13 @@ sequenceDiagram
 
 ### Failed Tracing
 
-If tracing should fail once, the widget will NOT hand over the transaction to the users wallet, instead it will show an error message and the user can not perform the payment:
+If tracing fails, the widget will NOT hand over the transaction to the user's wallet, instead it will show an error message and the user can not perform the payment:
 
 ![Failed transaction](/img/flow/widget/failed/failed-tracking.jpg)
 
 ### Failed Tracking
 
-If tracking should fail, after retrying every 3 seconds for 2 minutes (40 attempts), the widget will show the following error messages:
+If tracking fails, after retrying every 3 seconds for 2 minutes (40 attempts), the widget will show the following error messages:
 
 ![Failed transaction](/img/flow/widget/failed/failed-tracking.jpg)
 
