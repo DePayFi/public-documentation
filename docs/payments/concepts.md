@@ -21,13 +21,15 @@ If a payment fails, a new attempt needs to be created, including assigning a new
 
 A trace will be recorded right before the widget hands over the payment transaction to the user's wallet.
 
-A trace makes sure that a payment will be tracked even if the tracking of the payment fails after payment submission (to the blockchain).
+A trace makes sure that a payment will be tracked even if the tracking of the payment after payment submission (to the blockchain) should fail.
+
+If a trace is not submitted succesfully, the widget shows an error message and will not allow the user to submit the payment.
 
 ## Payment
 
 The actual payment will be tracked as soon as:
 
-1. The user's wallet reports the submitted transaction id back to the payment widget which will report it to your app which will need to send it to the DePay API.
+1. The user's wallet reports the submitted `transaction_id` back to the payment widget which will report it to your app which will need to send it to the DePay API.
 
 2. The payment trace (recorded prior to submitting the payment) finds a matching payment on the blockchain and converts it to a tracked payment.
 
@@ -59,6 +61,49 @@ sequenceDiagram
   App->>Widget: confirm tracking
   Widget->>Blockchain: check status
   Blockchain->>Widget: transaction succeeded
+  loop
+    DePay->>Blockchain: validate payment
+    Blockchain->>DePay: return validation
+  end
+  loop
+    DePay->>App: sends callback
+  end
+  App->>App: marks attempt as successful
+  App->>DePay: confirms callback receipt
+  DePay->>Widget: release user
+  Widget->>App: release user
+```
+
+### Trace to Payment Conversion
+
+In case the payment tracking after payment submission (to the blockchain) fails, this is the flow of how a trace is converted to a payment:
+
+```mermaid
+sequenceDiagram
+  participant App as Your App
+  participant Widget
+  participant Wallet
+  participant Blockchain
+  participant DePay as DePay APIs
+  App->>App: create new attempt
+  App->>Widget: open widget
+  Widget->>Widget: user clicks pay
+  Widget->>App: store trace
+  App->>DePay: store trace
+  DePay->>App: confirms trace
+  App->>Widget: confirms trace
+  Widget->>Wallet: sign transaction
+  Wallet->>Blockchain: submit transaction
+  Blockchain->>Wallet: confirms submission
+  Wallet->>Widget: reports transaction id
+  Widget-->>App: track payment (fails)
+  Widget->>Blockchain: check status
+  Blockchain->>Widget: transaction succeeded
+  loop
+    DePay->>Blockchain: search payment by trace
+    Blockchain->>DePay: payment found
+  end
+  DePay->>DePay: create payment
   loop
     DePay->>Blockchain: validate payment
     Blockchain->>DePay: return validation
