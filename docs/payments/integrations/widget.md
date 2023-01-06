@@ -324,7 +324,7 @@ sequenceDiagram
 
 ### Failed Tracing
 
-If tracing should fail once, the widget will hand over the transaction to the users wallet, instead it will show an error message:
+If tracing should fail once, the widget will NOT hand over the transaction to the users wallet, instead it will show an error message and the user can not perform the payment:
 
 ![Failed transaction](/img/flow/widget/failed/failed-tracking.jpg)
 
