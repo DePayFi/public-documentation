@@ -25,7 +25,11 @@ A trace makes sure that a payment will be tracked even if the tracking of the pa
 
 ## Payment
 
-The actual payment will be tracked as soon as the user's wallet reports the submitted transaction id back to the payment widget which will report it to your app which will need to send it to the DePay API.
+The actual payment will be tracked as soon as:
+
+1. The user's wallet reports the submitted transaction id back to the payment widget which will report it to your app which will need to send it to the DePay API.
+
+2. The payment trace (recorded prior to submitting the payment) finds a matching payment on the blockchain and converts it to a tracked payment.
 
 ## Flow
 
