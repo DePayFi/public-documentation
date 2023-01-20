@@ -119,6 +119,16 @@ Other codes but 200 or 202 will be considered a failed callback and will be retr
 
 Payment callbacks will retry failures with an exponential backoff using the formula (retry_count ** 4) + 15 + (rand(30) * (retry_count + 1)) (i.e. 15, 16, 31, 96, 271, ... seconds + a random amount of time).
 
+### Discounts
+
+You can add discounts to your payment link. 
+
+Set the percentage of the applied discount and select the condition that needs to be met in order to apply the discount.
+
+- Select **"Owns Token"** as condition in order to apply the discount to customers owning the selected token.
+
+- Select **"Owns NFT"** as condition in order to apply the discount to customers owning the selected NFT.
+
 ### Integrate
 
 Once you've provided all required information the app will generate a **Payment Link** that you can use.
