@@ -55,6 +55,8 @@ DePay only supports auto-conversion for tokens that are convertible on-the-fly t
 
 [Learn more about what it takes for a token to be auto-convertible.](/docs/payments/supported/tokens)
 
+This means that individuals can still use this token as a means of payment if they already have it in their wallet, but they are unable to convert other tokens on-the-fly while making payments.
+
 ### Why should I select as few tokens per chain as possible?
 
 As DePay converts automatically it's not required to select a lot of tokens. 
