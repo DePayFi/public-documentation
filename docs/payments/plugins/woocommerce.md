@@ -46,3 +46,20 @@ Now click "Add Token" and add the tokens on the blockchains that you accept as m
 Please make sure to save your settings. Click "Save Settings".
 
 Your customers can now select "DePay" as payment option during checkout.
+
+## FAQ
+
+### Why are some tokens not supported for auto-conversion?
+
+DePay only supports auto-conversion for tokens that are convertible on-the-fly through supported decentralized exchanges.
+
+[Learn more about what it takes for a token to be auto-convertible.](/docs/payments/supported/tokens)
+
+### Why should I select as few tokens per chain as possible?
+
+As DePay converts automatically it's not required to select a lot of tokens. 
+
+Focus on selecting the tokens you want to receive and dont worry about the tokens customers can use (as DePay takes care of the auto-conversion).
+
+The more tokens you select, the more calculations need to be peformed during checkout which can slow down the checkout experience.
+
