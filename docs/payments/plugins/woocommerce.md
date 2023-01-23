@@ -63,3 +63,5 @@ Focus on selecting the tokens you want to receive and dont worry about the token
 
 The more tokens you select, the more calculations need to be peformed during checkout which can slow down the checkout experience.
 
+A configuration with an excessive number of tokens can result in timeouts, making it impossible to complete checkout using DePay.
+
