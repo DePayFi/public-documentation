@@ -47,6 +47,16 @@ Please make sure to save your settings. Click "Save Settings".
 
 Your customers can now select "DePay" as payment option during checkout.
 
+### Change Checkout
+
+You can alter the presentation of the payment method during the checkout process by modifying the payment method name that is displayed or by adding a descriptive explanation of the payment method that will appear when a customer selects it.
+
+### Denomination
+
+You can also list your WooCommerce items in a cryptocurrency token.
+
+Prices for conversion are obtained from integrated [decentralized exchanges](/docs/payments/supported/exchanges).
+
 ## FAQ
 
 ### Why are some tokens not supported for auto-conversion?
