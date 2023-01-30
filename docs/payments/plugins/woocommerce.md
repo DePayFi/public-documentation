@@ -59,13 +59,15 @@ Prices for conversion are obtained from integrated [decentralized exchanges](/do
 
 ## FAQ
 
-### Why are some tokens not supported for auto-conversion?
+### Why are some tokens not supported for conversion?
 
-DePay only supports auto-conversion for tokens that are convertible on-the-fly through supported decentralized exchanges.
+DePay only supports conversion for tokens that are fullfilling the requirements:
 
-[Learn more about what it takes for a token to be auto-convertible.](/docs/payments/supported/tokens)
+[Learn more about what it takes for a token to be convertible.](/docs/payments/supported/tokens)
 
-This means that individuals can still use this token as a means of payment if they already have it in their wallet, but they are unable to convert other tokens on-the-fly while making payments.
+This means fiat currencies can't be converted to an unsupported token and customers will not be able to pay during checkout.
+
+Customers could still use this token to perform payments if you denominate your items in that token (and not fiat).
 
 ### Why should I select as few tokens per chain as possible?
 
