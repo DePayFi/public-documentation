@@ -23,8 +23,14 @@ Only succeded payments are returned via this endpoint.
 + Request (application/json)
   
   GET https://api.depay.com/apps/payments/shopify/r0jveQYVIoqGGcXM7JjAap1u4
+
+  + Headers
+
+    x-api-key: {api_key}
+    Authorization: Bearer {access_token}
   
   + Body
+  
     {
       "status": "success",
       "failed_reason": nil,
