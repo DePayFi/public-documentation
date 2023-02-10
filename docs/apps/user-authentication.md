@@ -24,6 +24,14 @@ Right after creating your app or after navigating your app on [app.depay.com](ht
 
 Now select the permissions your app requires.
 
+#### payments.read
+
+Allows your app to access all payment data connected to the user's account.
+
+#### integrations.read
+
+Allows your app to access all integration data connected to the user's account.
+
 ### Redirect URL
 
 Now set the redirect URL where users should be send to after they have granted your app permissions.

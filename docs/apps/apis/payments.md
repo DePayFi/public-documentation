@@ -1,11 +1,13 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 sidebar_label: Payments
 ---
 
 # Payments
 
 Access user's payment data.
+
+You app is required to have the [`payments.read`](/docs/apps/user-authentication#paymentsread) permission from the user's account.
 
 ## Shopify
 
