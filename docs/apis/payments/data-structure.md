@@ -53,7 +53,6 @@ In case a payment failed, the reason it failed will be provided via `failed_reas
 - `TOKEN_MISMATCH` in cases where the token mismatches with the expected token address
 - `SENDER_MISMATCH` in cases where the sender mismatches with the expected sender address
 - `RECEIVER_MISMATCH` in cases where the receiver mismatches with the expected receiver address
-- `NONCE_MISMATCH` in cases where the nonce mismatches with the expected nonce
 - `AMOUNT_MISMATCH` in cases where the amount mismatches with the expected amount
 - `TRACKING_TIMED_OUT` in cases where the tracking could not be completed within 24h
 
