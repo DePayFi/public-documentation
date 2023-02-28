@@ -144,6 +144,31 @@ Other codes but 200 or 202 will be considered a failed callback and will be retr
 
 Payment callbacks will retry failures with an exponential backoff using the formula (retry_count ** 4) + 15 + (rand(30) * (retry_count + 1)) (i.e. 15, 16, 31, 96, 271, ... seconds + a random amount of time).
 
+### Form Data
+
+Form data entered during the payment is transported via the `payload` attribute:
+
+```javascript
+{
+
+  "payload": {
+
+    "full_name": "Mister Smith",
+    "email": "test@example.com",
+    "shipping_address": "738 S. Wentworth Street, Bronx, NY 10466",
+    "billing_address": "738 S. Wentworth Street, Bronx, NY 10466",
+    "country": "US",
+    "quantity": 5,
+    "usd_value_received": 100.10,
+    "custom_values": [
+      { name: "Discord Name", value: "Ninja#123" },
+      { name: "Age", value: 18 }
+    ]
+
+  }
+}
+```
+
 ### Discounts
 
 You can add discounts to your payment link. 
