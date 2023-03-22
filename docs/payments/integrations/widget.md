@@ -127,9 +127,9 @@ import DePayWidgets from '@depay/widgets';
 
 ## Flow
 
-Choose [normal payment tracking](/docs/payments/integrations/widget#normal-tracking) if you want the user to wait for the payment to be fully validated before a release.
+Choose [normal payment tracking](/docs/payments/integrations/widget#normal-tracking) if you want the user to wait for the payment to be fully validated before a release. [Normal payment tracking](/docs/payments/integrations/widget#normal-tracking) allows users to immediately retry a payment if it [failed](#failed-payments).
 
-Choose [async payment tracking](/docs/payments/integrations/widget#async-tracking) if you want to release the user ASAP and your user flow allows for asynchronous payment validation & confirmation.
+Choose [async payment tracking](/docs/payments/integrations/widget#async-tracking) if you want to release the user ASAP and your user flow allows for asynchronous payment validation & confirmation. [Async payment tracking](/docs/payments/integrations/widget#async-tracking) DOES NOT allow users to immediately retry the payment if it [failed](#failed-payments). You would need to ask users to try to perform the payment again.
 
 ### Normal Tracking
 
