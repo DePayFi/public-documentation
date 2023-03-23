@@ -466,6 +466,8 @@ track: {
 }
 ```
 
+Make sure that your `track->method` throws an error in case the tracking request was not succesful. `fetch` does NOT throw an error if a request fails. e.g. `axios` does throw an error if a request fails.
+
 Your endpoint needs to make sure to forward the payload of the tracking request to DePay's [Payment Tracking API](/docs/apis/payments/tracking).
 
 Also make sure to add `token`, `amount`, `confirmations` and `receiver` when forwarding the request to the [Payment Tracking API](/docs/apis/payments/tracking).
