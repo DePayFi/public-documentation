@@ -27,6 +27,7 @@ Learn how DePay Payment objects are structured.
     "somekey": "somevalue"
   },
   "secret_id": "74417770-e6ac-4ae8-b027-0657600d7bad",
+  "integration_id": "ef223b83-86c9-423f-9a0e-47a079d20f9d",
   "callback": "https://webhook.site/74417770-e6ac-4ae8-b027-0657600d7bad",
   "release": true,
   "forward_to": "https://example.com/payments/depay/confirmation",
@@ -115,6 +116,10 @@ Arbitrary payload stored along with the payment.
 ## secret_id
 
 Secret, universal unique identifier of the payment attempt. Suposed to identify the payment attempt within your systems. Do not expose this to the public! secret_id needs to be unguessable!
+
+## integration_id
+
+Assigns incoming payments to the given integration_id.
 
 ## callback
 

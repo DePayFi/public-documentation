@@ -418,7 +418,8 @@ BODY:
     "sender": "0x769794c94e9f113e357023dab73e81dbd6db201c",
     "nonce": "103",
     "after_block": "13230369",
-    "to_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+    "to_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "integration_id": "ef223b83-86c9-423f-9a0e-47a079d20f9d"
   }
 ```
 
@@ -439,7 +440,8 @@ BODY:
     "sender": "0x769794c94e9f113e357023dab73e81dbd6db201c",
     "nonce": "103",
     "after_block": "13230369",
-    "to_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+    "to_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "integration_id": "ef223b83-86c9-423f-9a0e-47a079d20f9d"
   }
 ```
 
