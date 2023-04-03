@@ -51,12 +51,6 @@ In order to receive Web3 Payments directly, you need to have a wallet and an add
 
 [Get ready to integrate DePay](/docs/payments/preparation)
 
-## Concepts
-
-Learn the difference between Attempt -> Trace -> Payment.
-
-[Web3 Payment Concepts](/docs/payments/concepts)
-
 ## Integration Options
 
 There are multiple ways to integrate DePay. Explore all of them and pick the one that is right for you:
@@ -80,7 +74,7 @@ There are multiple ways to integrate DePay. Explore all of them and pick the one
       </div>
       <div className="pt-4">
         <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Widget</h5></a></div>
-        <div className="pb-2"><small className="text-light">Fully controll payment flows within your app.</small></div>
+        <div className="pb-2"><small className="text-light">Fully controll the payment flow within your app.</small></div>
       </div>
     </a>
   </div>

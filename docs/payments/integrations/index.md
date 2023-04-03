@@ -27,7 +27,7 @@ Discover all available options to integrate DePay.
       </div>
       <div className="pt-4">
         <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Widget</h5></a></div>
-        <div className="pb-2"><small className="text-light">Fully controll payment flows within your app.</small></div>
+        <div className="pb-2"><small className="text-light">Fully controll the payment flow within your app.</small></div>
       </div>
     </a>
   </div>
