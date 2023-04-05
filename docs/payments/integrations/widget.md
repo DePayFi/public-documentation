@@ -153,7 +153,7 @@ Make sure to also report back to the widget if tracking the payment via the DePa
 
 If the payment failed, ask the user to retry the payment. The payment flow will restart, starting with a new trace and a new [`secret_id`](/docs/apis/payments/data-structure#secret_id).
 
-### Tracking Example
+#### Tracking Example
 
 _Continuing with the previous trace example, after the user chose USDC as a payment option, he clicks "Pay" the trace gets succesfully submitted and your app returns an HTTP 200 back to the widget. The widget now hands over the payment transaction to the wallet to sign & submit it. After the wallet submitted the transaction to the blockchain, it will share the [`transaction`](/docs/apis/payments/data-structure#transaction) with the widget, which will send it to your app for tracking the payment. Make sure to submit the payment tracking including the [`transaction`](/docs/apis/payments/data-structure#transaction) and the [`secret_id`](/docs/apis/payments/data-structure#secret_id). The submitted [`secret_id`](/docs/apis/payments/data-structure#secret_id) needs to match the foregone trace's [`secret_id`](/docs/apis/payments/data-structure#secret_id)!_
 
