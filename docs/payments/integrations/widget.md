@@ -159,6 +159,44 @@ _Continuing with the previous trace example, after the user chose USDC as a paym
 
 _Make sure to responds with a HTTP status code 200 back to the widget if the payment tracking succeeded or with an HTTP status code 400-500 if it did not. Do NOT return the API body back to the widget!_
 
+```mermaid
+sequenceDiagram
+  participant App as Your App
+  participant Widget
+  participant Wallet
+  participant Blockchain
+  participant DePay as DePay APIs
+  App->>Widget: open widget
+  Widget->>Widget: user clicks pay
+  Widget->>App: store trace
+  App->>DePay: store trace (secret_id No. 1)
+  DePay->>App: confirm trace
+  App->>Widget: confirm trace
+  Widget->>Widget: user changes payment option
+  Widget->>Widget: user clicks pay
+  Widget->>App: store trace
+  App->>DePay: store trace (secret_id No. 2)
+  DePay->>App: confirm trace
+  App->>Widget: confirm trace
+  Widget->>Widget: user changes payment option
+  Widget->>Widget: user clicks pay
+  Widget->>App: store trace
+  App->>App: secret_id No. 3
+  App->>DePay: store trace
+  DePay->>App: confirm trace
+  App->>Widget: confirm trace
+  Widget->>Widget: user changes payment option
+  Widget->>Wallet: sign transaction
+  Wallet->>Blockchain: submit transaction
+  Wallet->>Widget: return transaction
+  loop
+    Widget->>App: track payment
+    App->>DePay: track payment (secret_id No. 3 + transaction)
+    DePay->>App: confirm tracking
+    App->>Widget: confirm tracking
+  end
+```
+
 ## Flow
 
 Choose [normal payment tracking](/docs/payments/integrations/widget#normal-tracking) if you want the user to wait for the payment to be fully validated before a release. [Normal payment tracking](/docs/payments/integrations/widget#normal-tracking) allows users to immediately retry a payment if it [failed](#failed-payments).
