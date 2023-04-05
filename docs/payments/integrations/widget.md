@@ -185,7 +185,7 @@ sequenceDiagram
   App->>DePay: store trace
   DePay->>App: confirm trace
   App->>Widget: confirm trace
-  Widget->>Widget: user changes payment option
+  Widget->>Widget: user clicks pay
   Widget->>Wallet: sign transaction
   Wallet->>Blockchain: submit transaction
   Wallet->>Widget: return transaction
