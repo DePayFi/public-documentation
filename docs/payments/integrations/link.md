@@ -36,7 +36,7 @@ You can denominate your product either in a fiat- or a crypto-currency.
 
 #### Fiat Currency
 
-If you choose to denominate your product in a fiat-currency, you will need to enter the price for the procuct in the selected fiat-currency.
+If you choose to denominate your product in a fiat-currency, you will need to enter the price for the product in the selected fiat-currency.
 Real-time conversion rates are calculated the moment a customer visits the link in order to pay for the product.
 
 **Example**
@@ -48,7 +48,7 @@ Real-time conversion rates are calculated the moment a customer visits the link 
 
 #### Crypto Currency
 
-If you choose to denominate your product in a crypto-currency, you will need to enter the price for the procuct in every crypto-currency you are accepting as means of payment.
+If you choose to denominate your product in a crypto-currency, you will need to enter the price for the product in every crypto-currency you are accepting as means of payment.
 Real-time conversion rates are calculated the moment a customer visits the link in order to pay for the product.
 
 **Example**
