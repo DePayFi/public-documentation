@@ -10,4 +10,4 @@ Use DePay's Payment Link APIs to access payments recieved with Payment Links.
 
 ## Payments
 
-[Accesses payments received with payment links via API](/docs/links/payments).
+[Accesses payments received with payment links via API](/docs/apis/links/payments).

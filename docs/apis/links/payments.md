@@ -15,11 +15,11 @@ GET https://api.depay.com/v2/links/:link_id/payments
 
 ### Required Parameters
 
-[`link_id`] - (string) Link id. Get your link id from https://app.depay.com.
+`link_id` - (string) Link id. Get your link id from https://app.depay.com.
 
 ### Optional Parameters
 
-[`after`] - (string, ISO 8601) Used to paginate payments by time. Paginates payments that have been confirmed after the given time.
+`after` - (string, ISO 8601) Used to paginate payments by time. Paginates payments that have been confirmed after the given time.
 
 ### Example Request
 
