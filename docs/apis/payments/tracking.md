@@ -183,6 +183,23 @@ Once you've issued an API public key, DePay APIs will start sending a signature 
 
 DePay uses RSA-PSS, salt length 64, SHA256 to sign callback bodies, sending the signature base64 safe url encoded via the `x-signature` header.
 
+##### Pass Integration ID
+
+In order for DePay's APIs to use your own account api secret to sign request bodies, you need to make sure to create an integration via **[DePay App](https://app.depay.com)** > **Integrations** > **New**
+and to pass the `integration` id for every tracking request via `payload`: 
+
+```
+POST https://api.depay.com/v2/payments
+```
+
+```javascript
+//...
+payload: {
+  //...
+  integration: 'MY-INTEGRATION-ID'
+}
+```
+
 ##### Javascript & Node
 
 You can use the following libraries to verify signatures sent by DePay APIs:
