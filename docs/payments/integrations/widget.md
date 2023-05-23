@@ -544,7 +544,7 @@ Make sure that your `track->method` throws an error in case the tracking request
 
 Your endpoint needs to make sure to forward the payload of the tracking request to DePay's [Payment Tracking API](/docs/apis/payments/tracking).
 
-Also make sure to add `token`, `amount`, `confirmations` and `receiver` when forwarding the request to the [Payment Tracking API](/docs/apis/payments/tracking).
+Also make sure to add `token`, `amount`, `confirmation` and `receiver` when forwarding the request to the [Payment Tracking API](/docs/apis/payments/tracking).
 Those values are supposed to be set by your backend not the widget nor the fronted because any user could set these values to their liking otherwise, having you confirm payment amounts and tokens that you didn't intend to receive!
 
 Make sure you read the [Payment Tracking API](/docs/apis/payments/tracking) documentation for further details on how to integrate payment tracking.

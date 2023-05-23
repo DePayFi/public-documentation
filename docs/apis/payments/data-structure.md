@@ -18,7 +18,8 @@ Learn how DePay Payment objects are structured.
   "receiver": "0x29b0d4cb9cFfEB360067199cf026dfD4854A8aB0",
   "token": "0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb",
   "decimals": 18,
-  "confirmations": 13,
+  "commitment": "confirmed",
+  "confirmations": 1,
   "after_block": "13609144",
   "amount": "822.5",
   "fee_amount": undefined,
@@ -88,6 +89,10 @@ The received token of the payment.
 ## decimals
 
 The decimals of the token received.
+
+## commitment
+
+The level of commitment required: `confirmed` (the transaction has been at least confirmed once by the network) or `finalized` (highly unlikely that it will be reversed or altered).
 
 ## confirmations
 

@@ -36,7 +36,8 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
   "receiver": "0x29b0d4cb9cFfEB360067199cf026dfD4854A8aB0",
   "token": "0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb",
   "amount": "822.5",
-  "confirmations": 13,
+  "commitment": "confirmed",
+  "confirmations": 1,
   "after_block": "13609144",
   "secret_id": "74417770-e6ac-4ae8-b027-0657600d7bad"
   "integration_id": "ef223b83-86c9-423f-9a0e-47a079d20f9d",
@@ -60,8 +61,6 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
 
 [`amount`](/docs/apis/payments/data-structure#amount) - Human readable expected payment amount (as string, to prevent rounding issues).
 
-[`confirmations`](/docs/apis/payments/data-structure#confirmations) - The amount of block confirmations required before considering a payment completed.
-
 [`after_block`](/docs/apis/payments/data-structure#after_block) - The block after which to expect the payment to happen. The current block right before the payment was submitted.
 
 [`secret_id`](/docs/apis/payments/data-structure#secret_id) - Secret uuid referencing the payment attempt in your system. Do not expose this to the public! secret_id needs to be unguessable!
@@ -69,6 +68,10 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
 [`callback`](/docs/apis/payments/data-structure#callback) - Secret callback url. Needs to be hidden from the public and needs to be unguessable. Will be called once the payment status completes either with `success` or `failed`.
 
 ### Optional Attributes
+
+[`commitment`](/docs/apis/payments/data-structure#commitment) - Default: `confirmed`. The level of commitment required: `confirmed` (the transaction has been at least confirmed once by the network) or `finalized` (highly unlikely that it will be reversed or altered). If `finalized` is set, you can't set `confirmations`. `finalized` can take multiple minutes on some blockchains (e.g. Ethereum). Only use `finalized` for high-value payment transactions or fallback to control the individual amount of `confirmations`.
+
+[`confirmations`](/docs/apis/payments/data-structure#confirmations) - Default: `1`. The amount of block confirmations required before considering a payment completed. If `finalized` (commitment) is set, you can't set `confirmations`.
 
 [`transaction`](/docs/apis/payments/data-structure#transaction) - The transaction id/hash performing the payment. If transaction id is not provided payment will be tracked as a trace (before payment is actually made).
 
@@ -97,7 +100,8 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
   "receiver": "0x29b0d4cb9cFfEB360067199cf026dfD4854A8aB0",
   "token": "0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb",
   "decimals": 18,
-  "confirmations": 13,
+  "commitment": "confirmed",
+  "confirmations": 1,
   "after_block": "13609144",
   "amount": "822.5",
   "payload": {
@@ -147,7 +151,8 @@ POST <YOUR PROVIDED CALLBACK ENDPOINT>
   "receiver": "0x29b0d4cb9cFfEB360067199cf026dfD4854A8aB0",
   "token": "0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb",
   "decimals": 18,
-  "confirmations": 13,
+  "commitment": "confirmed",
+  "confirmations": 1,
   "after_block": "13609144",
   "amount": "822.5",
   "payload": {
@@ -306,7 +311,8 @@ GET https://api.depay.com/v2/payments/45b55d24-60d0-45ba-9800-c61835494dc8-3
   "receiver": "0x29b0d4cb9cFfEB360067199cf026dfD4854A8aB0",
   "token": "0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb",
   "decimals": 18,
-  "confirmations": 13,
+  "commitment": "confirmed",
+  "confirmations": 1,
   "after_block": "13609144",
   "amount": "822.5",
   "payload": {
