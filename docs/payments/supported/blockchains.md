@@ -40,6 +40,17 @@ The following blockchains are currently supported by DePay.
       </div>
     </div>
   </div>
+
+  <div className="pb-1 pt-4">
+    <div className="d-flex">
+      <div className="text-center position-relative pe-2" style={{width: "2.3rem"}}>
+        <img style={{ width: '1.8rem', height: '1.8rem', position: 'relative', top: '-0.2rem' }} src="/docs/img/blockchains/Solana.svg"/>
+      </div>
+      <div className="ps-3">
+        <div className="text-light"><strong>Solana</strong></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 ## Ethereum
@@ -65,3 +76,11 @@ Payments on Polygon typically take **5 seconds** in average to process and valid
 DePay currently supports **380+ tokens** on Polygon.
 
 A payment transaction on Polygon costs users **below $0.01**.
+
+## Solana
+
+Payments on Solana typically take **1 second** in average to process and validate.
+
+DePay currently supports **60+ tokens** on Solana.
+
+A payment transaction on Solana costs users **below $0.001**.

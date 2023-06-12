@@ -22,3 +22,5 @@ In order for a token to be supported by DePay, that token needs to be a standard
 - [BNB Smart Chain: Create Pancakeswap Liquidity Pool](https://pancakeswap.finance/add)
 
 - [Polygon: Create Quickswap Liquidity Pool](https://quickswap.exchange/#/add/ETH)
+
+- [Solana: Create Orca Liquidity Pool](https://v1.orca.so/liquidity/create)

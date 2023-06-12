@@ -218,9 +218,36 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/SOL.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>SOL</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
                   <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/SHIB.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>SHIB</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/BONK.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>BONK</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/SAMO.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>SAMO</strong></div>
                   </div>
                 </div>
               </div>
@@ -279,9 +306,36 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Phantom.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>Phantom</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
                   <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Coinbase.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Coinbase Wallet</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Backpack.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>Backpack</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Solflare.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>Solflare</strong></div>
                   </div>
                 </div>
               </div>
@@ -371,6 +425,15 @@ export default function Home() {
                   <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Polygon.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Polygon</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Solana.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>Solana</strong></div>
                   </div>
                 </div>
               </div>

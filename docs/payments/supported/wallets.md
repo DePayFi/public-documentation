@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 
 # Wallets
-The following wallets are currently supported by DePay.
+DePay supports most crypto wallets.
 
 <div className="pb-1 pt-1">
   <div className="d-flex p-2 text-decoration-none">
@@ -19,6 +19,33 @@ The following wallets are currently supported by DePay.
     <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Coinbase.svg"/>
     <div className="ps-3">
       <div className="text-light"><strong>Coinbase Wallet</strong></div>
+    </div>
+  </div>
+</div>
+
+<div className="pb-1 pt-1">
+  <div className="d-flex p-2 text-decoration-none">
+    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Phantom.svg"/>
+    <div className="ps-3">
+      <div className="text-light"><strong>Phantom</strong></div>
+    </div>
+  </div>
+</div>
+
+<div className="pb-1 pt-1">
+  <div className="d-flex p-2 text-decoration-none">
+    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Backpack.svg"/>
+    <div className="ps-3">
+      <div className="text-light"><strong>Backpack</strong></div>
+    </div>
+  </div>
+</div>
+
+<div className="pb-1 pt-1">
+  <div className="d-flex p-2 text-decoration-none">
+    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Solflare.svg"/>
+    <div className="ps-3">
+      <div className="text-light"><strong>Solflare</strong></div>
     </div>
   </div>
 </div>
@@ -66,25 +93,49 @@ The following wallets are currently supported by DePay.
       <div className="text-light"><strong>Ledger Live</strong></div>
     </div>
   </div>
+</div>
 
-  <div className="pb-1 pt-1">
-    <div className="d-flex p-2 text-decoration-none">
-      <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/WalletConnect.svg"/>
-      <div className="ps-3">
-        <div className="text-light">100+ additional wallets via <strong>WalletConnect</strong></div>
-      </div>
+<div className="pb-1 pt-1">
+  <div className="d-flex p-2 text-decoration-none">
+    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Ethereum.svg"/>
+    <div className="ps-3">
+      <div className="text-light">100+ additional wallets via <strong>Ethereum Wallet Standard</strong></div>
     </div>
   </div>
 </div>
 
-## Wallet Integrations
+<div className="pb-1 pt-1">
+  <div className="d-flex p-2 text-decoration-none">
+    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Solana.svg"/>
+    <div className="ps-3">
+      <div className="text-light">20+ additional wallets via <strong>Solana Wallet Standard</strong></div>
+    </div>
+  </div>
+</div>
 
-DePay integrates with the following provider standards: 
+<div className="pb-1 pt-1">
+  <div className="d-flex p-2 text-decoration-none">
+    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/WalletConnect.svg"/>
+    <div className="ps-3">
+      <div className="text-light">100+ additional wallets via <strong>WalletConnect</strong></div>
+    </div>
+  </div>
+</div>
 
-- `window.ethereum` provider standard for EVM-Blockchains
+## Ethereum Wallet Standard
 
-It fully integrates the **MetaMask**, **Coinbase Wallet** and **WalletConnect** interface.
+DePay integrates the Ethereum Wallet Standard (`window.ethereum`).
 
-Via WalletConnect, DePay supports more than **100 wallets**, including **mobile wallets**.
+## Solana Wallet Standard
+
+DePay integrates the Solana Wallet Standard (`window.solana`).
+
+## Solana Mobile Wallet Adapter
+
+DePay integrates the Solana Mobile Wallet Adapter to easily interact with mobile wallets on Android and Saga.
+
+## WalletConnect
+
+DePay integrates WalletConnect via DePay's own WalletConnect bridge/relay.
 
 
