@@ -39,11 +39,11 @@ Make sure to re-attempt the `POST` request in case the request fails or returns 
   "commitment": "confirmed",
   "confirmations": 1,
   "after_block": "13609144",
-  "secret_id": "74417770-e6ac-4ae8-b027-0657600d7bad"
+  "secret_id": "74417770-e6ac-4ae8-b027-0657600d7bad",
   "integration_id": "ef223b83-86c9-423f-9a0e-47a079d20f9d",
   "callback": "https://webhook.site/4d4cd30f-d393-40f0-b909-85578a722ad7",
   "forward_to": "https://example.com/continue/after/74417770-e6ac-4ae8-b027-0657600d7bad",
-  "payload": { "somekey": "somevalue" },
+  "payload": { "somekey": "somevalue" }
 }
 ```
 
