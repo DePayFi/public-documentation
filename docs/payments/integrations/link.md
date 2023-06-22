@@ -66,7 +66,7 @@ Select as few tokens per blockchain as possible, but select at least 1 token per
 
 ### Receiver
 
-Enter what address is supposed to receive the payments. Double-check the entered addresse as an incorrect address can lead to a loss of payments.
+Enter the addresses that are supposed to receive the payments. One per token. You can use the same address for multiple tokens if that address supports receiving these tokens. Double-check the entered addresses, as an incorrect address can lead to a loss of payments.
 
 ### Branding/Colors
 
