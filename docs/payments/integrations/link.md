@@ -18,17 +18,17 @@ https://buy.depay.com/201JapngwCukZzlvdZgR1K
 
 Go to the DePay App on https://app.depay.com and create a Payment Link via **Links** > **New Link** and select **Payment Link**.
 
-### Product
-
-Enter a name for the product in order to allow users to understand what they are paying for.
-
-You can also upload an image to represent the product visually.
-
 ### Seller
 
 Enter a name for the seller in order to allow users to understand who they are paying.
 
 You can also upload an image to represent the seller visually.
+
+### Product
+
+Enter a name for the product in order to allow users to understand what they are paying for.
+
+You can also upload an image to represent the product visually.
 
 ### Denomination
 

@@ -17,17 +17,17 @@ https://donate.depay.com/1Ylujunhrm59HyLFuv7WwZ
 
 Go to the DePay App on https://app.depay.com and create a Payment Link via **Links** > **New Link** and select **Donation Link**.
 
-### Cause/Project
-
-Enter a name for the cause/project in order to allow users to understand what they are donating for.
-
-You can also upload an image to represent the cause/project visually.
-
 ### Charity/Foundation
 
 Enter a name for the charity/foundation in order to allow users to understand who is receiving the donation.
 
 You can also upload an image to represent the charity/foundation visually.
+
+### Cause/Project
+
+Enter a name for the cause/project in order to allow users to understand what they are donating for.
+
+You can also upload an image to represent the cause/project visually.
 
 ### Tokens
 
