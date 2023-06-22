@@ -17,7 +17,7 @@ Learn what blockchains, wallets, tokens & exchanges are supported by DePay.
       </div>
       <div className="ps-3 pt-1">
         <div className="text-light"><strong>Blockchains</strong></div>
-        <div className="text-light">3 Blockchains</div>
+        <div className="text-light">4 Blockchains</div>
       </div>
     </a>
   </div>
@@ -53,7 +53,7 @@ Learn what blockchains, wallets, tokens & exchanges are supported by DePay.
       </div>
       <div className="ps-3 pt-1">
         <div className="text-light"><strong>Exchanges</strong></div>
-        <div className="text-light">3 Exchanges</div>
+        <div className="text-light">4 Exchanges</div>
       </div>
     </a>
   </div>
