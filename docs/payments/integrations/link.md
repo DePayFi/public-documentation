@@ -176,6 +176,8 @@ You can add discounts to your payment link.
 
 Set the percentage of the applied discount and select the condition that needs to be met in order to apply the discount.
 
+- Select **"Enters Code"** as condition in order to apply the discount for customers entering the provided discount code.
+
 - Select **"Owns Token"** as condition in order to apply the discount to customers owning the selected token.
 
 - Select **"Owns NFT"** as condition in order to apply the discount to customers owning the selected NFT.
