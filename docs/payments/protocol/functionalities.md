@@ -177,7 +177,7 @@ route_orca_swap_sol_out(  // anchorDescriminator: "13662217913752830165"
 ```
 
 ```
-route_orca_swap_sol_out(  // anchorDescriminator: "15695720599845325801"
+route_orca_two_hop_swap(  // anchorDescriminator: "15695720599845325801"
   nonce(u64),
   amountIn(u64),
   amountSpecifiedIsInput(bool),
@@ -218,7 +218,7 @@ route_orca_swap_sol_out(  // anchorDescriminator: "15695720599845325801"
 ```
 
 ```
-route_orca_swap_sol_out(  // anchorDescriminator: "15074061855608091530"
+route_orca_two_hop_swap_sol_out(  // anchorDescriminator: "15074061855608091530"
   nonce(u64),
   amountIn(u64),
   amountSpecifiedIsInput(bool),
