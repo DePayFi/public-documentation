@@ -11,8 +11,8 @@ The DePay payment protocol enables on-the-fly token conversion during a payment,
 
 ## Deployments
 
-[See all deployments of the DePay Payment Router](/docs/protocol/deployments) on all available blockchains.
+[See all deployments of the DePay Payment Router](/docs/payments/protocol/deployments) on all available blockchains.
 
 ## Functionalities
 
-[Learn in detail how the DePay Payment Router functions](/docs/protocol/functionalities).
+[Learn in detail how the DePay Payment Router functions](/docs/payments/protocol/functionalities).
