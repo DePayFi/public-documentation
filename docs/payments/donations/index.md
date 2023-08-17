@@ -1,6 +1,6 @@
 ---
 sidebar_label: Donations
-sidebar_position: 8
+sidebar_position: 7
 ---
 
 # Web3 Donations

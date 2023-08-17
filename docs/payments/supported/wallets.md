@@ -121,10 +121,17 @@ DePay supports most crypto wallets.
     </div>
   </div>
 </div>
+<br/>
+
+You will find a [list of supported wallets](https://depay.com/wallets) on the DePay website.
 
 ## Ethereum Wallet Standard
 
 DePay integrates the Ethereum Wallet Standard (`window.ethereum`).
+
+## WalletConnect
+
+DePay integrates WalletConnect via DePay's own WalletConnect v1 bridge/relay and WalletConnect v2 cloud relayer.
 
 ## Solana Wallet Standard
 
@@ -134,8 +141,6 @@ DePay integrates the Solana Wallet Standard (`window.solana`).
 
 DePay integrates the Solana Mobile Wallet Adapter to easily interact with mobile wallets on Android and Saga.
 
-## WalletConnect
+## Solana Pay
 
-DePay integrates WalletConnect via DePay's own WalletConnect bridge/relay.
-
-
+DePay supportes the Solana Pay QR-code-based hand-over protocol.

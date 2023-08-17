@@ -1,6 +1,6 @@
 ---
 sidebar_label: Gateways
-sidebar_position: 10
+sidebar_position: 9
 ---
 
 # Web3 Payment Gateways

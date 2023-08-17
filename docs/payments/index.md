@@ -45,6 +45,12 @@ There are plenty of benefits using DePay over other providers:
 
 [All benefits of using DePay](/docs/payments/benefits)
 
+## Support
+
+Learn what blockchains, tokens, exchanges and wallets are supported by DePay.
+
+[Learn what DePay supports](/docs/payments/supported)
+
 ## Preparation
 
 In order to receive Web3 Payments directly, you need to have a wallet and an address on each blockchain you want to support.
@@ -93,6 +99,11 @@ There are multiple ways to integrate DePay. Explore all of them and pick the one
 
 [See all DePay integration options](/docs/payments/integrations/)
 
+## Plugins
+
+DePay provides plugins for existing platforms to easily start accepting Web3 payments without any integration efforts.
+
+[See all DePay plugins](/docs/payments/plugins/)
 
 ## Payment APIs
 
@@ -131,3 +142,9 @@ Use DePay's Payment APIs complementary to the integration options:
 </div>
 
 [Learn more about DePay's Payment APIs](/docs/apis/)
+
+## Payment Protocol
+
+Learn about DePay's underlying payment protocol and integrate it into your smartcontract, protocol or platform.
+
+[Learn more about DePay's Payment Protocol](/docs/payments/protocol)
