@@ -15,7 +15,7 @@ Please check [DePay's Website > About > Tokens](https://depay.com/tokens) in ord
 
 ## Requirements
 
-In order for a token to be supported by DePay, that token needs to be a standard token (e.g. ERC20). Any additions to the token logic (e.g. transfer fees etc.) are not supported. The token also needs to have a pair (liquidity pool) on a supported decentralized exchange (see [supported exchanges](/docs/payments/supported/exchanges)) with **at least USD 10k** reserves in order to be convertible with DePay:
+In order for a token to be supported by DePay, that token needs to be a standard token (e.g. ERC20, BEP20 etc.). Any customizations or additions to the token standard are not supported by DePay. The token also needs to have a pair (liquidity pool) on a supported decentralized exchange (see [supported exchanges](/docs/payments/supported/exchanges)) with **at least USD 10k** reserves in order to be convertible with DePay:
 
 - [Ethereum: Create Uniswap v2 Liquidity Pool](https://app.uniswap.org/#/add/v2/ETH)
 
