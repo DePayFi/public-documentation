@@ -6,7 +6,7 @@ title: DePay Integrations
 
 # Integrations
 
-Discover all available options to integrate DePay.
+Explore the myriad of integration options available with DePay.
 
 <div className="row pt-5">
   <div className="col-12 col-md-4">
@@ -16,7 +16,7 @@ Discover all available options to integrate DePay.
       </div>
       <div className="pt-4">
         <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Link</h5></a></div>
-        <div className="pb-2"><small className="text-light">Start without any code. Create a link and send customers to it.</small></div>
+        <div className="pb-2"><small className="text-light">Start no-code: Just generate a link and direct your customers to it.</small></div>
       </div>
     </a>
   </div>
@@ -27,7 +27,7 @@ Discover all available options to integrate DePay.
       </div>
       <div className="pt-4">
         <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Widget</h5></a></div>
-        <div className="pb-2"><small className="text-light">Fully controll the payment flow within your app.</small></div>
+        <div className="pb-2"><small className="text-light">Embed payments and retain full control over the payment flow within your app.</small></div>
       </div>
     </a>
   </div>
@@ -38,7 +38,7 @@ Discover all available options to integrate DePay.
       </div>
       <div className="pt-4">
         <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Button</h5></a></div>
-        <div className="pb-2"><small className="text-light">Place HTML and receive payments with just a click.</small></div>
+        <div className="pb-2"><small className="text-light">Embed simple HTML and enable one-click payments for your users.</small></div>
       </div>
     </a>
   </div>

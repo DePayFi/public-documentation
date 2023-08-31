@@ -8,22 +8,25 @@ Discover all the great benefits of using DePay.
 
 ## Direct Wallet Payments
 
-Payments performed with DePay are **peer-to-peer**.
-You will receive every single payment directly into your wallet, **without any intermediary**.
-Nobody but you holds your funds at any time.
+Payments through DePay are **peer-to-peer**. Every payment goes directly into your wallet **without intermediaries**.
+Only you have control over your funds at all times.
 
 ## Auto-Conversion
 
-DePay uses **decentralized finance** (DeFi) to convert payments if necessary.
-This allows to **accept thousands of tokens** as means of payment while always receiving the ones you've configured.
+DePay leverages **decentralized finance** (DeFi) for payment conversions when needed.
+This enables you to **accept thousands of tokens** and always receive your preferred ones.
 
 ## "One-click" Payments
 
-DePay connects to your user's wallet directly.
-After scanning for all available tokens on all blockchains DePay suggest's the **most cost-efficient** payment to users,
-ultimately offering a seamless **"One-click" Web3 Payment solution**.
+DePay directly connects to your user's wallet, scanning for available tokens across all blockchains.
+It then suggests the most **cost-efficient** payment option, providing a seamless **"One-click" Web3 Payment** solution.
+
+## Kickstart
+
+Integrate DePay once, and you'll support crypto payments across **10 blockchains**, **hundreds of wallets**, and **thousands of tokens**.
+
 
 ## Simple to Integrate
 
-DePay has been designed from the start for simple integration.
-Typically you just place a small code snippet into whatever you're building and you're ready to accept and perform Web3 Payments.
+DePay is designed for **effortless integration**.
+Simply insert a small code snippet into your project, and you're set to accept and execute **Web3 Payments**.

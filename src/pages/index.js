@@ -30,9 +30,9 @@ export default function Home() {
             
             <div className="col-12 col-md-6 pe-0 pe-md-4">
               <h2 className="h3 pt-0">Web3 Payments</h2>
-              <p className="lead">Offer seamless blockchain-powered payment experiences to your users.</p>
+              <p className="lead">Offer seamless, blockchain-powered payment experiences to your users.</p>
               <div className="pt-2">
-                <a className="button btn btn-primary mt-1" href="/docs/payments/">
+                <a className="button btn btn-lg btn-primary mt-1" href="/docs/payments/">
                   Get started
                   <FontAwesomeIcon icon={ faArrowRightLong } className="ms-2" />
                 </a>
@@ -164,15 +164,6 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/BUSD.svg"/>
-                  <div className="ps-3">
-                    <div className="text-light"><strong>BUSD</strong></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pb-1 pt-1">
-                <div className="d-flex p-2 text-decoration-none">
                   <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/USDT.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>USDT</strong></div>
@@ -227,6 +218,33 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/AVA.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>AVA</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/XDAI.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>XDAI</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/FTM.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>FTM</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
                   <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/SHIB.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>SHIB</strong></div>
@@ -272,6 +290,69 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/OP.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>OP</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/WLD.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>WLD</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/ARB.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>ARB</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/AAVE.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>AAVE</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/CRV.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>CRV</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/GNO.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>GNO</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/UNI.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>UNI</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
                   <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/tokens/APE.svg"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>APE</strong></div>
@@ -282,7 +363,7 @@ export default function Home() {
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
                   <div className="ps-0">
-                    <div className="text-light">8'000+ accepted tokens</div>
+                    <div className="text-light">10'000+ accepted tokens<br/><strong>via Auto-conversion</strong></div>
                     <div className="pt-3">
                       <a href="/docs/payments/supported/tokens" className="text-decoration-none">Learn more</a>
                     </div>
@@ -306,18 +387,36 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Phantom.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Coinbase.svg"/>
                   <div className="ps-3">
-                    <div className="text-light"><strong>Phantom</strong></div>
+                    <div className="text-light"><strong>Coinbase Wallet</strong></div>
                   </div>
                 </div>
               </div>
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Coinbase.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Binance.svg"/>
                   <div className="ps-3">
-                    <div className="text-light"><strong>Coinbase Wallet</strong></div>
+                    <div className="text-light"><strong>Binance Defi Wallet</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Uniswap.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>Uniswap Wallet</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Phantom.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>Phantom</strong></div>
                   </div>
                 </div>
               </div>
@@ -389,9 +488,36 @@ export default function Home() {
                     <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/WalletConnect.svg"/>
                     <div className="ps-3">
                       <div className="text-light">100+ additional wallets via <strong>WalletConnect</strong></div>
-                      <div className="pt-3">
-                        <a href="/docs/payments/supported/wallets" className="text-decoration-none">Learn more</a>
-                      </div>
+                    </div>
+                  </div>
+                  <div className="d-flex p-2 text-decoration-none">
+                    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Ethereum.svg"/>
+                    <div className="ps-3">
+                      <div className="text-light">100+ additional wallets via <br/><strong>Ethereum Extension Standard</strong></div>
+                    </div>
+                  </div>
+                  <div className="d-flex p-2 text-decoration-none">
+                    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Solana.svg"/>
+                    <div className="ps-3">
+                      <div className="text-light">10+ additional wallets via <br/><strong>Solana Extension Standard</strong></div>
+                    </div>
+                  </div>
+                  <div className="d-flex p-2 text-decoration-none">
+                    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Solana.svg"/>
+                    <div className="ps-3">
+                      <div className="text-light">10+ additional wallets via <br/><strong>Solana Mobile Wallet Adapter</strong></div>
+                    </div>
+                  </div>
+                  <div className="d-flex p-2 text-decoration-none">
+                    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Solana.svg"/>
+                    <div className="ps-3">
+                      <div className="text-light">2+ additional wallets via <br/><strong>Solana Pay</strong></div>
+                    </div>
+                  </div>
+                  <div className="d-flex p-2 text-decoration-none">
+                    <span style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }}/>
+                    <div className="ps-3">
+                      <a href="/docs/payments/supported/wallets" className="text-decoration-none">Learn more</a>
                     </div>
                   </div>
                 </div>
@@ -401,30 +527,57 @@ export default function Home() {
             <div className="col-12 col-md-4">
             
               <h3 className="h4 pt-3 pb-3">Blockchains</h3>
-              
+
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Ethereum.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Base.svg"/>
                   <div className="ps-3">
-                    <div className="text-light"><strong>Ethereum</strong></div>
+                    <div className="text-light"><strong>Base</strong></div>
                   </div>
                 </div>
               </div>
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/BSC.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Optimism.svg"/>
                   <div className="ps-3">
-                    <div className="text-light"><strong>BNB Smart Chain</strong></div>
+                    <div className="text-light"><strong>Optimism</strong></div>
                   </div>
                 </div>
               </div>
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
-                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Polygon.svg"/>
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Arbitrum.svg"/>
                   <div className="ps-3">
-                    <div className="text-light"><strong>Polygon</strong></div>
+                    <div className="text-light"><strong>Arbitrum</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Avalanche.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>Avalanche</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Fantom.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>Fantom</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Gnosis.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>Gnosis</strong></div>
                   </div>
                 </div>
               </div>
@@ -440,8 +593,35 @@ export default function Home() {
 
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Polygon.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>Polygon</strong> (POS)</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/BSC.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>BNB Smart Chain</strong></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
+                  <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Ethereum.svg"/>
+                  <div className="ps-3">
+                    <div className="text-light"><strong>Ethereum</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pb-1 pt-1">
+                <div className="d-flex p-2 text-decoration-none">
                   <div className="ps-0">
-                    <div className="text-light">10+ additional blockchains <strong>coming soon</strong></div>
+                    <div className="text-light">Adding new blockchains continuously</div>
                     <div className="pt-3">
                       <a href="/docs/payments/supported/blockchains" className="text-decoration-none">Learn more</a>
                     </div>

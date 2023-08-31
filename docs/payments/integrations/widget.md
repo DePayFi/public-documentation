@@ -89,884 +89,413 @@ Self-host and controll the entire payment flow within your app.
 
 You can install DePay Widgets via `yarn` or `npm` and build it as part of your application:
 
-```
+<Tabs>
+
+<TabItem value="yarn" label="Yarn" default>
+
+```bash
 yarn add @depay/widgets
 ```
 
-or if you use npm
+</TabItem>
 
-```
+<TabItem value="npm" label="NPM" default>
+
+```bash
 npm install @depay/widgets --save
 ```
 
+</TabItem>
+
+</Tabs>
+
 Make sure you install DePay widgets peer dependencies, too, in case your project does not have them installed yet:
 
-```
+<Tabs>
+
+<TabItem value="yarn" label="Yarn" default>
+
+```bash
 yarn add ethers react react-dom
 ```
 
-```
+</TabItem>
+
+<TabItem value="npm" label="NPM" default>
+
+```bash
 npm install ethers react react-dom --save
 ```
+
+</TabItem>
+
+</Tabs>
 
 ### CDN
 
 If you don't want to install the package or don't want to build DePay Widgets as part of your application, you can also load DePay Widgets via our CDN:
 
 ```html
-<script defer async src="https://integrate.depay.com/widgets/v10.js"></script>
+<script defer async src="https://integrate.depay.com/widgets/v12.js"></script>
 ```
 
-## Usage
+## Create an integration
 
-After installation, import `DePayWidgets` from `@depay/widgets` wherever you need it:
+Go to https://app.depay.com/dev/integrations and click "New Integration".
 
-```javascript
-import DePayWidgets from '@depay/widgets';
-```
+Give your integration a name so that you can identify it later on.
 
-## Concepts
+## Set price
 
-Learn about the 2 important steps for integrating the Web3 Payment Widget: Trace -> Tracking
+Enter the price that needs to be paid.
 
-### Trace
+If you need to configure dynamic pricing, continue reading how to setup [dynamic configurations](#dynamic-configuration).
 
-A trace will be recorded right before the widget hands over the payment transaction to the user's wallet.
+If not, proceed with dynamic configuration turned off.
 
-A trace makes sure that a payment will be tracked even if there is no further payment information submitted back to your app after signing a payment transaction.
+### Denominate in currency
 
-If a trace is not submitted succesfully, the widget shows an error message and will not allow the user to submit the payment to prevent untracked payments.
+If you set a price in a specific currency, real-time rates will be applied to ensure you receive an amount of the accepted tokens that corresponds to your configured currency price.
 
-Each trace needs to have its own [`secret_id`](/docs/apis/payments/data-structure#secret_id).
+### Denominate in tokens
 
-#### Trace Example
+If you set a price in tokens, you'll receive the precise amount specified for each token.
 
-_A user selects USDC as a payment option, clicks "Pay", the trace is submitted to your app (without a [`transaction`](/docs/apis/payments/data-structure#transaction)), and your app needs to make sure to forward the trace to the DePay API and it needs to respond with an HTTP success code (200) if creating the trace in the DePay API succeeded, otherwise it needs to reponds an error code (400-500) to the widget if creating the trace failed. Do NOT return the API body back to the widget!_
+## Accepted tokens/blockchains
 
-_If the user changes his mind after handing over to the wallet, e.g. cancels the transaction in his wallet prior to signing/submitting it and selects another payment option e.g. ETH a new trace will be submitted to your app, that new trace needs to have a new [`secret_id`](/docs/apis/payments/data-structure#secret_id) it can not have the previous trace [`secret_id`](/docs/apis/payments/data-structure#secret_id)_
+Choose the tokens you wish to accept as payment methods. Ensure you provide a receiving wallet address for every selected token.
 
-### Tracking
+## Place integration code
 
-As soon as the user's wallet reports the submitted [`transaction`](/docs/apis/payments/data-structure#transaction) back to the payment widget it will report it to your app which will need to send it to the DePay API with the same [`secret_id`](/docs/apis/payments/data-structure#secret_id) of the foregone trace.
-
-Make sure to also report back to the widget if tracking the payment via the DePay API succeeded (with a HTTP status code 200) or failed (with a HTTP status code 400-500). Do NOT return the API body back to the widget!
-
-If the payment failed, ask the user to retry the payment. The payment flow will restart, starting with a new trace and a new [`secret_id`](/docs/apis/payments/data-structure#secret_id).
-
-#### Tracking Example
-
-_Continuing with the previous trace example, after the user chose USDC as a payment option, he clicks "Pay" the trace gets succesfully submitted and your app returns an HTTP 200 back to the widget. The widget now hands over the payment transaction to the wallet to sign & submit it. After the wallet submitted the transaction to the blockchain, it will share the [`transaction`](/docs/apis/payments/data-structure#transaction) with the widget, which will send it to your app for tracking the payment. Make sure to submit the payment tracking including the [`transaction`](/docs/apis/payments/data-structure#transaction) and the [`secret_id`](/docs/apis/payments/data-structure#secret_id). The submitted [`secret_id`](/docs/apis/payments/data-structure#secret_id) needs to match the foregone trace's [`secret_id`](/docs/apis/payments/data-structure#secret_id)!_
-
-_Make sure to responds with a HTTP status code 200 back to the widget if the payment tracking succeeded or with an HTTP status code 400-500 if it did not. Do NOT return the API body back to the widget!_
-
-```mermaid
-sequenceDiagram
-  participant App as Your App
-  participant Widget
-  participant Wallet
-  participant Blockchain
-  participant DePay as DePay APIs
-  App->>Widget: open widget
-  Widget->>Widget: user clicks pay
-  Widget->>App: store trace
-  App->>DePay: store trace (secret_id No. 1)
-  DePay->>App: confirm trace
-  App->>Widget: confirm trace
-  Widget->>Widget: user changes payment option
-  Widget->>Widget: user clicks pay
-  Widget->>App: store trace
-  App->>DePay: store trace (secret_id No. 2)
-  DePay->>App: confirm trace
-  App->>Widget: confirm trace
-  Widget->>Widget: user changes payment option
-  Widget->>Widget: user clicks pay
-  Widget->>App: store trace
-  App->>App: secret_id No. 3
-  App->>DePay: store trace
-  DePay->>App: confirm trace
-  App->>Widget: confirm trace
-  Widget->>Widget: user clicks pay
-  Widget->>Wallet: sign transaction
-  Wallet->>Blockchain: submit transaction
-  Wallet->>Widget: return transaction
-  loop
-    Widget->>App: track payment
-    App->>DePay: track payment (secret_id No. 3 + transaction)
-    DePay->>App: confirm tracking
-    App->>Widget: confirm tracking
-  end
-```
-
-## Flow
-
-Choose [normal payment tracking](/docs/payments/integrations/widget#normal-tracking) if you want the user to wait for the payment to be fully validated before a release. [Normal payment tracking](/docs/payments/integrations/widget#normal-tracking) allows users to immediately retry a payment if it [failed](#failed-payments).
-
-Choose [async payment tracking](/docs/payments/integrations/widget#async-tracking) if you want to release the user ASAP and your user flow allows for asynchronous payment validation & confirmation. [Async payment tracking](/docs/payments/integrations/widget#async-tracking) DOES NOT allow users to immediately retry the payment if it [failed](#failed-payments). You would need to ask users to try to perform the payment again.
-
-### Normal Tracking
-
-During normal payment tracking, users will need to wait until the payment has been validated before being released.
-
-```mermaid
-sequenceDiagram
-  participant App as Your App
-  participant Widget
-  participant Wallet
-  participant Blockchain
-  participant DePay as DePay APIs
-  App->>Widget: open widget
-  Widget->>Widget: user clicks pay
-  Widget->>App: store trace
-  App->>DePay: store trace
-  DePay->>App: confirm trace
-  App->>Widget: confirm trace
-  Widget->>Wallet: sign transaction
-  Wallet->>Blockchain: submit transaction
-  Wallet->>Widget: return transaction
-  loop
-    Widget->>App: track payment
-    App->>DePay: track payment
-    DePay->>App: confirm tracking
-    App->>Widget: confirm tracking
-  end
-  loop
-    Widget->>Blockchain: check status
-    Blockchain->>Widget: return status
-  end
-  loop
-    DePay->>Blockchain: validate payment
-    Blockchain->>DePay: return validation
-  end
-  Widget->>Blockchain: check status
-  Blockchain->>Widget: transaction succeeded
-  DePay->>Blockchain: validate payment
-  Blockchain->>DePay: payment succeeded
-  loop
-    DePay->>App: sends callback
-  end
-  App->>DePay: confirms callback receipt
-  DePay->>Widget: release user
-  Widget->>App: release user
-```
-
-#### 1. Transaction submitted (Normal Tracking)
-
-![Transaction submitted](/img/flow/widget/normal/transaction-submitted.jpg)
-
-#### 2. Transaction succeeded (Normal Tracking)
-
-![Transaction confirmed](/img/flow/widget/normal/transaction-confirmed.jpg)
-
-#### 3. Payment validated (Normal Tracking)
-
-![Payment validated](/img/flow/widget/normal/payment-validated.jpg)
-
-#### Polling release
-
-In normal tracking mode your app should integrate an endpoint to poll release status. See: [polling](/docs/payments/integrations/widget#polling)
-
-This ensures that the user is released even in scenarios where the connection between DePay APIs and the widget (websockets) fails.
-
-```mermaid
-sequenceDiagram
-  participant App as Your App
-  participant Widget
-  participant Wallet
-  participant Blockchain
-  participant DePay as DePay APIs
-  loop
-    Widget->>App: polling release
-    App->>Widget: release status
-  end
-  loop
-    DePay->>App: sends callback
-  end
-  App->>DePay: confirms callback receipt
-  DePay-->>Widget: connection failed
-  Widget->>App: polling release
-  App->>Widget: release now
-  Widget->>App: release user
-```
-
-### Async Tracking
-
-During async payment tracking users will be released once the payment transaction has been confirmed once by the blockchain.
-
-Payment validation is performed asynchronously and you can sent a payment confirmation asynchronously to the user (e.g. email, notifcation etc.).
-
-```mermaid
-sequenceDiagram
-  participant App as Your App
-  participant Widget
-  participant Wallet
-  participant Blockchain
-  participant DePay as DePay APIs
-  App->>Widget: open widget
-  Widget->>Widget: user clicks pay
-  Widget->>App: store trace
-  App->>DePay: store trace
-  DePay->>App: confirm trace
-  App->>Widget: confirm trace
-  Widget->>Wallet: sign transaction
-  Wallet->>Blockchain: submit transaction
-  Wallet->>Widget: return transaction
-  loop
-    Widget->>App: track payment
-    App->>DePay: track payment
-    DePay->>App: confirm tracking
-    App->>Widget: confirm tracking
-  end
-  loop
-    Widget->>Blockchain: check status
-    Blockchain->>Widget: return status
-  end
-  loop
-    DePay->>Blockchain: check status
-    Blockchain->>DePay: return status
-  end
-  Widget->>Blockchain: check status
-  Blockchain->>Widget: transaction succeeded
-  Widget->>App: release user
-  DePay->>Blockchain: check status
-  Blockchain->>DePay: transaction succeeded
-  loop
-    DePay-->>App: sends callback
-  end
-  App-->>DePay: confirms callback receipt
-```
-
-#### 1. Transaction submitted (Async Tracking)
-
-![Transaction submitted](/img/flow/widget/async/transaction-submitted.jpg)
-
-#### 2. Transaction confirmed (Async Tracking)
-
-![Transaction confirmed](/img/flow/widget/async/transaction-confirmed.jpg)
-
-### Without Tracking
-
-Without payment tracking, users will be released immediately after the transaction has been confirmed by the blockchain.
-
-No payment tracking nor validation is performed through DePay APIs.
-
-```mermaid
-sequenceDiagram
-  participant App as Your App
-  participant Widget
-  participant Wallet
-  participant Blockchain
-  participant DePay as DePay APIs
-  App->>Widget: open widget
-  Widget->>Wallet: sign transaction
-  Wallet->>Blockchain: submit transaction
-  Wallet->>Widget: return transaction
-  loop
-    Widget->>Blockchain: check status
-    Blockchain->>Widget: return status
-  end
-  Widget->>Blockchain: check status
-  Blockchain->>Widget: transaction succeded
-  Widget->>App: 'succeeded' callback
-  Widget->>App: release user
-```
-
-### Failed Payments
-
-Failed payment transactions need to be retried. The widget prompts the user immediately to retry the transaction if it failed on the blockchain.
-
-```mermaid
-sequenceDiagram
-  participant App as Your App
-  participant Widget
-  participant Wallet
-  participant Blockchain
-  participant DePay as DePay APIs
-  loop
-    Widget->>Blockchain: check status
-    Blockchain->>Widget: return status
-  end
-  Widget->>Blockchain: check status
-  Blockchain->>Widget: transaction failed
-  Widget->>App: 'failed' callback
-  Widget->>App: release user
-  Widget->>App: ask to retry
-```
-
-![Failed transaction](/img/flow/widget/failed/failed-transaction.jpg)
-
-### Failed Tracing
-
-If tracing fails, the widget will NOT hand over the transaction to the user's wallet, instead it will show an error message and the user can not perform the payment:
-
-![Failed transaction](/img/flow/widget/failed/failed-tracking.jpg)
-
-### Failed Tracking
-
-If tracking fails, after retrying every 3 seconds for 2 minutes (40 attempts), the widget will show the following error messages:
-
-![Failed transaction](/img/flow/widget/failed/failed-tracking.jpg)
-
-Users are not released if tracking fails (even in async tracking mode).
-
-## Configuration
-
-You need to pass a configuration object to `DePayWidgets.Payment` which needs to at least contain the `accept` field.
+Now you can place the integration code into your app and open the DePay Payment widget:
 
 ```javascript
 DePayWidgets.Payment({
-
-  accept: [{
-    blockchain: 'ethereum',
-    amount: 20,
-    token: '0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb',
-    receiver: '0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02'
-  }]
+  integration: 'YOUR-INTEGRATION-ID'
 });
 ```
 
-This declares to accept 20 DEPAY tokens (`0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb`) as payment on `ethereum` to `0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02`.
+## Redirect after payment
 
-You can also accept multiple payments on multiple blockchains:
+Enter the URL to which users should be redirected after a successful payment.
+
+If you need to configure dynamic redirects, continue reading how to setup [dynamic configurations](#dynamic-configuration).
+
+## Configure callbacks
+
+Set up an endpoint to be called upon each successful payment.
+
+The callbacks will execute a `POST` request to the specified URL.
+
+Ensure you provide an HTTPS URL.
+
+The callback's request body will be structured as follows:
+
+```json
+{
+  "blockchain": "polygon",
+  "transaction": "0x053279fcb2f52fd66a9367416910c0bf88ae848dca769231098c4d9e240fcf56",
+  "sender": "0x317D875cA3B9f8d14f960486C0d1D1913be74e90",
+  "receiver": "0x08B277154218CCF3380CAE48d630DA13462E3950",
+  "token": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+  "amount": "0.0985",
+  "payload": null,
+  "after_block": "46934392",
+  "commitment": "confirmed",
+  "confirmations": 1,
+  "created_at": "2023-08-30T11:37:30.157555Z",
+  "confirmed_at": "2023-08-30T11:37:35.492041Z"
+}
+```
+
+## Verify communication
+
+Copy the provided public key, store and use it in your application to verify all communications from DePay's APIs to your systems are authentic.
+
+DePay APIs include an `x-signature` header with all requests sent to your systems.
+
+Use that `x-signature` header together with the stored public key to verify the request is authentic.
+
+DePay employs RSA-PSS with a salt length of 64 and SHA256 to sign request bodies. The signature is then sent base64 safe URL-encoded via the `x-signature` header.
+
+<Tabs>
+
+<TabItem value="javascript" label="JavaScript" default>
+
+Use DePay's [verify-js-signature](https://github.com/DePayFi/js-verify-RSA-PSS-SHA256#functionoality) package for JavaScript & Node:
 
 ```javascript
-DePayWidgets.Payment({
+import { verify } from '@depay/js-verify-signature'
 
-  accept: [
-    { // 20 USDT on ethereum
-      blockchain: 'ethereum',
-      amount: 20,
-      token: '0xdac17f958d2ee523a2206206994597c13d831ec7',
-      receiver: '0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02'
-    },{ // 20 BUSD on bsc
-      blockchain: 'bsc',
-      amount: 20,
-      token: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      receiver: '0x552C2a5a774CcaEeC036d41c983808E3c76477e6'
+let verified = await verify({
+  signature: req.headers['x-signature'],
+  data: req.body,
+  publicKey,
+});
+
+if(!verified){ throw('Request was not authentic!') }
+```
+
+</TabItem>
+
+<TabItem value="ruby" label="Ruby" default>
+
+```ruby
+public_key = OpenSSL::PKey::RSA.new(STORED_PUBLIC_KEY)
+signature_decoded = Base64.urlsafe_decode64(request.headers["X-Signature"])
+data = request.raw_post
+
+verified = public_key.verify_pss(
+  "SHA256",
+  signature_decoded,
+  data,
+  salt_length: :auto,
+  mgf1_hash: "SHA256"
+)
+
+raise 'Request was not authentic' unless verified
+```
+
+</TabItem>
+
+<TabItem value="php" label="PHP" default>
+
+```php
+use phpseclib3\Crypt\RSA;
+use phpseclib3\Crypt\PublicKeyLoader;
+
+$signature = $request->get_header('x-signature');
+$signature = str_replace("_","/",  $signature);
+$signature = str_replace("-", "+",  $signature);
+$key = PublicKeyLoader::load($public_key)->withHash('sha256')->withPadding(RSA::SIGNATURE_PSS)->withMGFHash('sha256')->withSaltLength(64);
+
+if( !$key->verify($request->get_body(), base64_decode($signature)) ) {
+  throw new Exception("Request was not authentic");
+}
+```
+
+</TabItem>
+
+<TabItem value="other" label="Other" default>
+
+You can read up on how to verify RSA PSS signatures in other programming languages: [here](https://cloud.google.com/kms/docs/samples/kms-verify-asymmetric-signature-rsa).
+
+</TabItem>
+
+</Tabs>
+
+## Restrict domains
+
+Integrations permit usage and embedding exclusively on websites hosted on specified domains.
+
+If no domain is entered, domain restriction is entirely deactivated.
+
+Once you specify even a single domain, restriction enforcement is activated.
+
+It's essential to list each domain and subdomain you wish to support separately.
+
+For instance: `example.com`, `www.example.com`, `pay.example.com`.
+
+## Dynamic configuration
+
+To pass a dynamic configuration to the widget, such as for conveying dynamic prices or for initiating dynamic redirects after successful payments, you'll need to activate dynamic configurations for the specified integration.
+
+After activation, your dynamic configuration - supplied via an API endpoint from your system - must return a valid widget configuration. This configuration should, at a minimum, detail the accepted payments, including blockchains, tokens, amount, and receiver.
+
+### Set endpoint
+
+First, you must specify an HTTPS URL endpoint that the integration will call each time someone attempts to make a payment.
+
+:::caution
+
+Endpoints need to respond a dynamic configuration under **2 seconds** or requests will be dropped otherwise and the widget will not load.
+
+:::
+
+### Sign responses
+
+Similarly to how DePay APIs ensure the authenticity of requests to your systems by cryptographically signing request bodies with RSA-PSS, you'll need to employ the same method when implementing dynamic configurations.
+
+To begin signing your dynamic configuration responses, first generate a private key.
+
+Ensure you have [OpenSSL](https://www.openssl.org/) installed to generate private keys.
+
+#### Install OpenSSL
+
+<Tabs>
+
+<TabItem value="mac" label="macOS" default>
+
+Best to use [Homebrew](https://brew.sh/).
+
+```bash
+brew update
+brew install openssl
+```
+
+</TabItem>
+
+<TabItem value="windows" label="Windows" default>
+
+```bash
+
+```
+
+</TabItem>
+
+<TabItem value="debian" label="Debian/Ubuntu" default>
+
+```bash
+sudo apt update
+sudo apt install openssl
+```
+
+</TabItem>
+
+</Tabs>
+
+
+#### Generate private key
+
+```bash
+openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
+```
+
+:::danger
+
+Ensuring you adhere to the highest security standards when working with private keys. Never share or publicly disclose the private key.
+
+:::
+
+#### Generate public key
+
+```bash
+openssl rsa -pubout -in private_key.pem -out public_key.pem
+```
+
+#### Store public key
+
+Now take the content of the `public_key.pem` (not the private key!) and store it with your integration on https://app.depay.com.
+
+The public key format looks like:
+
+```
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4PlPK+oM4nQX5TcmnWAE
+UMtd5hL8irx1Fbmwtpg4P7aQA1Y7RJ7/JwEMKs4+kJcgSQqqBoil+YgP2WSGtDnp
+ar4jIFIPDWY+eWBe3kGqqse+OxyuVMG/k4iMyQG7wB/9l4gY2udi6qciBiSDlNpo
+cs7X+zPrnL1jaO9C85yaEBAe4qpRUXhyjZ32DfduDeCP7p2O+cNHXzNwppsWApnE
+L8LOX/UkSlSaduJL2pOEv3zcTupOo38fds7V3MmqaxJfMfH9mWMbvVPfEJ2eeEx6
+GKnXhyKyW3MH69iEFCrFgAEk/HKI2bAck4DOyh5wVD4bdks0a9cXRWHI747auCeZ
+sQIDAQAB
+-----END PUBLIC KEY-----
+```
+
+### Integrate responses
+
+After setting up an endpoint and registering a public key with the integration, you can begin tailoring your endpoint to return dynamic configurations.
+
+Incoming requests will have the following headers:
+
+```
+Accept: application/json,application/vnd.api+json
+Accept-Charset: utf-8
+Content-Type: application/json; charset=utf-8
+X-Signature: 0Lt-bOwigLB_tPzWev5Iwe1YeWFWQ1fTi31wolfisWXuSKfuj53MujGfxkDli_A3R4IgFpgfEF6KmU1tDqYn2bId2HiFG6MYf5v25bhLscJnwAlGyVYMVmnxYyuPYsHMTZvZx61LSxC52TavRw4LN5wq9ux4nw4B30rnqCAaYKAZcUgpKgUwsMRToY0D8AwwW2mkkFk5rJKdx0LAnhz0dpGx5b5lc1v7UbcdzvteU8PBzyXcT2hQ-lMo8dTcdFM6tr_xJRrlxEOzeAKB3b2EfOKS_H9AtzICXT-NGc-HvgWKI56NURAheJweKdAvV7AF5atWTjSLnTFAHFl4NkLFsg==
+```
+
+Ensure you verify the incoming `x-signature` header to confirm the request's authenticity. [How to verify communication](#verify-communication).
+
+### Basic response
+
+Responses need to be formatted in JSON.
+
+A basic response includes a fundamental widget configuration detailing the list of accepted tokens for the respective payment. In a basic setup, payments are denominated in tokens:
+
+```json
+{
+  "accept": [
+    {
+      "blockchain": "ethereum",
+      "amount": 20,
+      "token": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "receiver": "0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"
     }
   ]
-});
-```
-
-The [DePay App](https://app.depay.com) helps you to create a basic valid configuration: **[DePay App](https://app.depay.com)** > **Integrations** > **New Integration** > **Payment Widget**
-
-### accept
-
-The `accept` attribute describes what is accepted as a payment. It needs to be an array and needs to contain at least one entry.
-
-#### Required Attributes
-
-`blockchain` - The name of the blockchain (e.g. `ethereum`, `bsc`, `polygon` etc.)
-
-`token` - The address of the token you want to receive
-
-`receiver` - The address receiving the payment. Always double check that you've set the right address.
-
-#### Optional Attributes
-
-`amount` - The amount of tokens you want to receive. Needs to be passed as a human-readable number e.g. 20 or "20".
-The BigNumber of that amount will be calculated internally including finding the right amount of decimals for the given token. Just pass the amount in a human readable form as Number/Decimal: e.g. 20 for 20 USDT or 20.25 etc.
-If you do not pass an amount, the user will be able to select an amount within the widget.
-
-
-### track
-
-Allows to track and validate payments via [DePay APIs](/docs/apis).
-
-```javascript
-track: {
-  endpoint: '/track/payments' // your endpoint to forward the payment tracking to the payments api
 }
 ```
 
-Once a user clicks "Pay" in the widget, and before the transaction is handed over to the wallet, the widget will send a payment trace (without [`transaction`](/docs/apis/payments/data-structure#transaction)) to the configured endpoint.
+This configuration accepts 20 USDT on the Ethereum blockchain sent to `0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02` as payment.
 
-This is where the payment tracing starts:
+:::info
 
-```javascript
-POST /track/payments
-BODY:
-  {
-    "blockchain": "ethereum",
-    "sender": "0x769794c94e9f113e357023dab73e81dbd6db201c",
-    "nonce": "103",
-    "after_block": "13230369",
-    "to_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-    "integration_id": "ef223b83-86c9-423f-9a0e-47a079d20f9d"
-  }
-```
+When interacting with DePay, you always pass human readable amounts (not BigNumbers).
 
-If the endpoint does not confirm the receival (with `200`) the widget will not hand over the transaction to the wallet.
+:::
 
-Make sure to forward the payment trace to the [DePay API](/docs/apis/payments/tracking).
+Consult the [widget documentation](https://github.com/DePayFi/widgets#configuration) for a deeper understanding of how widget configurations operate.
 
-Once the payment has been signed and submitted by the user wallet, the widget will call the configured endpoint to start the payment tracking.
+### Currency denomination
 
-This is where the payment tracking starts:
+To denominate accepted payments in a currency, such as USD, EUR, etc., use the `amount` attribute. The integration will then calculate and apply the amounts for each specified accepted token.
 
-```javascript
-POST /track/payments
-BODY:
-  {
-    "blockchain": "ethereum",
-    "transaction": "0x4311a9820195c2a5af99c45c72c88848ed403a4020863c913feed81d15855ae4",
-    "sender": "0x769794c94e9f113e357023dab73e81dbd6db201c",
-    "nonce": "103",
-    "after_block": "13230369",
-    "to_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-    "integration_id": "ef223b83-86c9-423f-9a0e-47a079d20f9d"
-  }
-```
-
-Alternatively you can pass a `method` to `track` that performs the tracking request to your backend if you need to handle the request yourself (e.g. to add additional headers etc.):
-
-```javascript
-track: {
-  method: async (payment)=>{
-    let response = await fetch('/track/payments', {
-      method: 'POST',
-      body: JSON.stringify(payment),
-      headers: { "Content-Type": "application/json", "X-CSRF-TOKEN": document.querySelector('[name=csrf-token]').content }
-    })
-    if(response.status != 200) {
-      throw 'TRACKING FAILED'
+```json
+{
+  "amount": {
+    "currency": "USD",
+    "fix": 100
+  },
+  "accept": [
+    {
+      "blockchain": "ethereum",
+      "token": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "receiver": "0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"
+    },
+    {
+      "blockchain": "ethereum",
+      "token": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      "receiver": "0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"
     }
-  }
+  ]
 }
 ```
 
-```javascript
-track: {
-  method: (payment)=>axios('/track/payments', payment)
-}
-```
+This configuration will accept USD$100 worth of USDT or Ether (Ethereum's native token), send to `0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02`.
 
-Make sure that your `track->method` throws an error in case the tracking request was not succesful. `fetch` does NOT throw an error if a request fails. e.g. `axios` does throw an error if a request fails.
+:::info
 
-Your endpoint needs to make sure to forward the payload of the tracking request to DePay's [Payment Tracking API](/docs/apis/payments/tracking).
+`0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE` represents the native token of the respective chain. e.g. Ether on Ethereum, BNB on BSC, Matic on Polygon etc.
 
-Also make sure to add `token`, `amount`, `confirmation` and `receiver` when forwarding the request to the [Payment Tracking API](/docs/apis/payments/tracking).
-Those values are supposed to be set by your backend not the widget nor the fronted because any user could set these values to their liking otherwise, having you confirm payment amounts and tokens that you didn't intend to receive!
+:::
 
-Make sure you read the [Payment Tracking API](/docs/apis/payments/tracking) documentation for further details on how to integrate payment tracking.
+### Passthrough payload
 
-Payment tracking requests will be attempted indefinitely. After 2 minutes a warning dialog will be presented to users asking them to ensure an internet connection so that the payment tracking request can be performed.
-
-##### async
-
-For user flows where you can release the user immediatelly, we recommend performing payment validation asynchronously as in certain situation in can take up to multiple minutes to validate a payment:
-
-You can configure the widget to track/validate the payment asynchronously:
+If your dynamic configuration depends on data initially provided to the widget (on the frontend) and this data needs to be relayed to your backend for determining the dynamic configuration, pass your payload to the widget during initialization:
 
 ```javascript
 DePayWidgets.Payment({
-
-  track: {
-    endpoint: '/track',
-    async: true
+  integration: 'YOUR-INTEGRATION-ID',
+  payload: {
+    items: [
+      { id: 1, amount: 2 },
+      { id: 2, amount: 1 }
+    ]
   }
 })
 ```
 
-Which will release the user right after the payment transaction has been confirmed on the user's machine.
+By doing so, the payload will be included when calling your configured endpoint. The request body directed towards your configured endpoint will now encompass:
 
-It still tracks and validates the payment asynchronously (in the background) and calls back your endpoints as soon as it has been validated.
-
-This allows you to release the user immediately, showing him some confirmation and reconfirming his payment in an asynchronous step (like a notification or email).
-
-### polling
-
-In order to ensure a 100% coverage that users are released and forwarded within your payment flow, you will need to implement polling in addition to tracking.
-
-The `track.poll` configuration either takes an `enpoint` or a `method` (similiar to track itself).
-
-It will use the endpoint or the method to request a release every 5 seconds.
-
-You need to make sure to respond to this request with a status `404` in case the user is not to be released just yet (payment and processing on your side are not complete yet)
-or `200` if the payment has been completed and the processing on your side is done and the user can be released and forwarded withing your payment flow.
-
-In case you want to redirect the user to the next step in your system, the poll endpoint needs to respond with a body containing json like: `{ forward_to: 'https://example.com/next_step_url' }`.
-
-It is not enough to rely on setting `forward_to` initially with the tracking request, you will also need to respond with `forward_to` when implementing polling
-as the entire reason for polling is to cover cases where websockets fail and the initial `forward_to` can not be communicated to the client.
-
-If you use a method for additional polling, make sure you return a promise. Polling will continue as long as you resolve this promise with anything that resolves to true:
-
-```javascript
-track: {
-  poll: {
-    endpoint: '/payments/status'
-  }
-}
-```
-
-It will continously make the following request to your endpoint:
-
-```javascript
-POST /payments/status
-BODY:
-  {
-    "blockchain": "ethereum",
-    "transaction": "0x4311a9820195c2a5af99c45c72c88848ed403a4020863c913feed81d15855ae4",
-    "sender": "0x769794c94e9f113e357023dab73e81dbd6db201c",
-    "nonce": "103",
-    "after_block": "13230369",
-    "to_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
-  }
-```
-
-Alternatively you can pass a `method` to `poll` that performs the tracking request to your backend if you need to handle the request yourself (e.g. to add additional headers etc.):
-
-```javascript
-track: {
-  poll: {
-    method: async (payment)=>{
-      let response = await fetch('/payments/123/release', {
-        method: 'POST',
-        body: JSON.stringify(payment),
-        headers: { "Content-Type": "application/json", "X-CSRF-TOKEN": document.querySelector('[name=csrf-token]').content }
-      })
-      if(response.status == 200) {
-        let json = await response.json()
-        return json // { "forward_to": "https://mywebsite.com/payments/123/confirmation" }
-      }
-    }
-  }
-}
-```
-
-```javascript
-track: {
-  poll: {
-    method: async (payment)=>{
-      let response = await axios('/payments/123/release', payment)
-      return response // { "forward_to": "https://mywebsite.com/payments/123/confirmation" }
-    }
-  }
-}
-```
-
-### connected
-
-A callback that will be executed once the user connects a wallet.
-
-This function will be called with the connected wallet address as the main argument:
-
-```javascript
-connected: (address)=> {
-  // do something with the address
-}
-```
-
-#### closed
-
-`closed`
-
-A function that will be called once the user closes the widget (no matter if before or after the payment).
-
-```javascript
-closed: ()=> {
-  // do something if user closed the widget
-}
-
-```
-
-### before
-
-`before`
-
-A function that will be called before the payment is handed over to the wallet.
-
-Allows you to stop the payment if this methods returns false.
-
-```javascript
-before: (payment)=> {
-  alert('Something went wrong')
-  return false // stops payment
-}
-```
-
-### sent
-
-`sent`
-
-A function that will be called once the payment has been sent to the network (but still needs to be mined/confirmed).
-
-The widget will call this function with a transaction as single argument (see: [depay-web3-wallets](https://github.com/depayfi/depay-web3-wallets#transaction) for more details about the structure)
-
-```javascript
-sent: (transaction)=> {
-  // called when payment transaction has been sent to the network
-}
-```
-
-### succeeded
-
-`succeeded`
-
-A function that will be called once the payment has succeeded on the network (checked client-side).
-
-The widget will call this function passing a transaction as single argument (see: [depay-web3-wallets](https://github.com/depayfi/depay-web3-wallets#transaction) for more details)
-
-```javascript
-succeeded: (transaction)=> {
-  // called when payment transaction has been confirmed once by the network
-}
-```
-
-### validated
-
-`validated`
-
-A function that will be called once the payment has been validated by DePay Apis (server-side).
-
-```javascript
-validated: (successful)=> {
-  // successful (true or false)
-}
-```
-
-### failed
-
-`failed`
-
-A function that will be called if the payment execution failed on the blockchain (after it has been sent/submitted).
-
-The widget will call this function passing a transaction as single argument (see: [depay-web3-wallets](https://github.com/depayfi/depay-web3-wallets#transaction) for more details)
-
-```javascript
-failed: (transaction)=> {
-  // called when payment transaction failed on the blockchain
-  // handled by the widget, no need to display anything
-}
-```
-
-### critical
-
-`critical`
-
-A function that will be called if the widget throws an critical internal error that it can't handle and display on it's own:
-
-```javascript
-critical: (error)=> {
-  // render and display the error with error.toString()
-}
-```
-
-### error
-
-`error`
-
-A function that will be called if the widget throws an non-critical internal error that it can and will handle and display on it's own:
-
-```javascript
-error: (error)=> {
-  // maybe do some internal tracking with error.toString()
-  // no need to display anything as widget takes care of displaying the error
-}
-```
-
-### currency
-
-Allows you to enforce displayed local currency (instead of automatically detecting it):
-
-```javascript
+```json
 {
-  currency: 'USD'
-}
-```
-
-### whitelist
-
-Allows only the configured tokens to be eligible as means of payment (from the sender):
-
-```javacript
-whitelist: {
-  ethereum: [
-    '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // ETH
-    '0xdac17f958d2ee523a2206206994597c13d831ec7', // USDT
-    '0x6b175474e89094c44da98b954eedeac495271d0f'  // DAI
-  ],
-  bsc: [
-    '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // BNB
-    '0xe9e7cea3dedca5984780bafc599bd69add087d56', // BUSD
-    '0x55d398326f99059ff775485246999027b3197955'  // BSC-USD
-  ],
-  polygon: [
-    '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // MATIC
-    '0x2791bca1f2de4661ed88a30c99a7a9449aa84174', // USDC
-  ]
-}
-```
-
-### blacklist
-
-Allows to blacklist tokens so that they will not be suggested as means of payment (from the sender):
-
-```javacript
-blacklist: {
-  ethereum: [
-    '0x82dfDB2ec1aa6003Ed4aCBa663403D7c2127Ff67',  // akSwap
-    '0x1368452Bfb5Cd127971C8DE22C58fBE89D35A6BF',  // JNTR/e
-    '0xC12D1c73eE7DC3615BA4e37E4ABFdbDDFA38907E',  // KICK
-  ],
-  bsc: [
-    '0x119e2ad8f0c85c6f61afdf0df69693028cdc10be', // Zepe
-    '0xb0557906c617f0048a700758606f64b33d0c41a6', // Zepe
-    '0x5190b01965b6e3d786706fd4a999978626c19880', // TheEver
-    '0x68d1569d1a6968f194b4d93f8d0b416c123a599f', // AABek
-    '0xa2295477a3433f1d06ba349cde9f89a8b24e7f8d', // AAX
-    '0xbc6675de91e3da8eac51293ecb87c359019621cf', // AIR
-    '0x5558447b06867ffebd87dd63426d61c868c45904', // BNBW
-    '0x569b2cf0b745ef7fad04e8ae226251814b3395f9', // BSCTOKEN
-    '0x373233a38ae21cf0c4f9de11570e7d5aa6824a1e', // ALPACA
-    '0x7269163f2b060fb90101f58cf724737a2759f0bb', // PUPDOGE
-    '0xb16600c510b0f323dee2cb212924d90e58864421', // FLUX
-    '0x2df0b14ee90671021b016dab59f2300fb08681fa', // SAFEMOON.is
-    '0xd22202d23fe7de9e3dbe11a2a88f42f4cb9507cf', // MNEB
-    '0xfc646d0b564bf191b3d3adf2b620a792e485e6da', // PIZA
-    '0xa58950f05fea2277d2608748412bf9f802ea4901', // WSG
-    '0x12e34cdf6a031a10fe241864c32fb03a4fdad739' // FREE
-  ]
-}
-```
-
-### event
-
-If set to `ifSwapped`, emits a [payment event](https://github.com/depayfi/depay-evm-router#depayrouterv1paymentevent02) if payments are routed through [router smart contract](https://github.com/depayfi/depay-evm-router).
-Payments are routed through the DePayPaymentRouter if swapping tokens is required in order to perform the payment. If payments are not routed through the router, e.g. direct transfer, no event is emited if `event` is set to `ifSwapped`.
-
-```javascript
-{
-  event: 'ifSwapped'
-}
-```
-
-### container
-
-Allows you to pass a container element that is supposed to contain the widget:
-
-```javascript
-{
-  container: document.getElementById('my-container')
-}
-```
-
-Make sure to set the css value `position: relative;` for the container element. Otherwise it can not contain the widget.
-
-React example:
-
-```javascript
-let CustomComponentWithWidget = (props)=>{
-  let container = useRef()
-
-  useEffect(()=>{
-    if(container.current) {
-      DePayWidgets.Payment({ ...defaultArguments, document,
-        container: container.current
-      })
-    }
-  }, [container])
-
-  return(
-    <div ref={container} style={{ position: 'relative', border: '1px solid black', width: "600px", height: "600px" }}></div>
-  )
-}
-```
-
-### style
-
-Allows you to change the style of the widget.
-
-```javascript
-{
-  style: {
-    colors: {
-      primary: '#ffd265',
-      text: '#e1b64a',
-      buttonText: '#000000',
-      icons: '#ffd265'
-    },
-    fontFamily: '"Cardo", serif !important',
-    css: `
-      @import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap");
-
-      .ReactDialogBackground {
-        background: rgba(0,0,0,0.8);
-      }
-    `
-  }
-}
-```
-
-### recover
-
-Allows you to recover a previous made payment. E.g. useful if you need to continue to show a pending payment progress if user rearrives or reloads a page:
-
-```javascript
-{
-  recover: {
-    blockchain: 'ethereum',
-    transaction: '0x081ae81229b2c7df586835e9e4c16aa89f8a15dc118fac31b7521477c53ed2a9',
-    sender: '0x317d875ca3b9f8d14f960486c0d1d1913be74e90',
-    nonce: 2865,
-    afterBlock: 14088130,
-    token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-    amount: 0.0001
-  }
-}
-```
-
-### fee
-
-You can configure a fee which will be applied to every payment with it's own dedicated fee receiver address.
-
-The fee will be taken from the target token and target amount (after swap, depending on your `accept` configuration).
-
-`amount`: Either percentage (e.g. `5%`, or absolute amount as BigNumber string ('100000000000000000') or pure number (2.5)
-
-`receiver`: The address that is supposed to receive the fee.
-
-```javascript
-{
-  fee: {
-    amount: '3%',
-    receiver: '0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02'
-  }
-}
-```
-
-## Unmount
-
-Allows you to unmount (the React safe way) the entire widget from the outside:
-
-```javascript
-let { unmount } = await DePayWidgets.Payment({})
-
-unmount()
-```
-
-## Preload
-
-To optimize initialization speed of the Payment Widget you can preload payment routes as soon as you become aware of the users wallet address.
-
-Typically right after the users conncets his wallet, or in cases the user has his wallet already connected you can preload immediately:
-
-```javascript
-let address = '0x4aD374e0836c26BeC213a19D3e030F8b3A8AcDE4' // e.g. retrieve it right when you perform wallet connect
-DePayWidgets.Payment.preload({
-  account: address,
-  accept: [
+  "items": [
     {
-      blockchain: 'ethereum',
-      amount: 10,
-      token: '0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb',
-      receiver: '0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02'
+      "id": 1,
+      "amount": 2
     },{
-      blockchain: 'bsc',
-      amount: 10,
-      token: '0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb',
-      receiver: '0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02'
+      "id": 2,
+      "amount": 1
     }
   ]
-});
+}
 ```

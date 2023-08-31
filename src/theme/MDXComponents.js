@@ -2,6 +2,8 @@ import BrowserOnly from '@docusaurus/BrowserOnly'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import MDXComponents from '@theme-original/MDXComponents'
 import React from 'react'
+import TabItem from '@theme/TabItem'
+import Tabs from '@theme/Tabs'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -65,4 +67,6 @@ export default {
   ...MDXComponents,
   DePayButton,
   FontAwesomeIcon,
+  Tabs,
+  TabItem,
 }

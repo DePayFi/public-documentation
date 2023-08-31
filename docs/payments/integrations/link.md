@@ -12,6 +12,8 @@ Just create a link and send users to it.
 
 https://buy.depay.com/201JapngwCukZzlvdZgR1K
 
+![DePay Payment Link](/img/examples/link.png)
+
 ## Step by step
 
 ### Create new link
@@ -29,6 +31,10 @@ You can also upload an image to represent the seller visually.
 Enter a name for the product in order to allow users to understand what they are paying for.
 
 You can also upload an image to represent the product visually.
+
+### Description
+
+Optionally, you can provide a description to clarify the specifics of the purchase.
 
 ### Denomination
 
