@@ -11,6 +11,8 @@ Just create a link and start receiving tips.
 
 https://tip.depay.com/6KFBECVsokSt0UKOAug8CI
 
+![DePay Tip Link](/img/examples/tip-link.png)
+
 ## Step by step
 
 ### Create new link

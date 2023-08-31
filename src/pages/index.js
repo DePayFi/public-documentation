@@ -101,7 +101,7 @@ export default function Home() {
               </div>
 
               <div className="pb-1">
-                <a href="/docs/payments/integrations/link" className="d-flex hover-card p-3">
+                <a href="/docs/payments/integrate/link" className="d-flex hover-card p-3">
                   <img style={{ width: '2.4rem', height: '2.4rem', position: 'relative', top: '0.2rem' }} src="/docs/img/products/DePay-Links.png"/>
                   <div className="ps-3">
                     <div className="text-light"><strong>Links</strong></div>

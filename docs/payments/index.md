@@ -57,41 +57,41 @@ In order to receive Web3 Payments directly, you need to have a wallet and an add
 
 [Get ready to integrate DePay](/docs/payments/preparation)
 
-## Integration Options
+## Integrate
 
 DePay offers a variety of integration methods. Explore each option and choose the one that best suits your needs:
 
 <div className="row pt-2 pb-4">
   <div className="col-12 col-md-4">
-    <a href="/docs/payments/integrations/link" className="d-block hover-card p-3">
+    <a href="/docs/payments/integrate/link" className="d-block hover-card p-3">
       <div className="bg-contrast p-2 rounded-2">
         <img src="/docs/img/payments/link.png" />
       </div>
       <div className="pt-4">
-        <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Link</h5></a></div>
+        <div><a href="/docs/payments/integrate/link"><h5 className="pb-1 mb-0">Link</h5></a></div>
         <div className="pb-2"><small className="text-light">Start no-code: Just generate a link and direct your customers to it.</small></div>
       </div>
     </a>
   </div>
   <div className="col-12 col-md-4 pe-4">
-    <a href="/docs/payments/integrations/widget" className="d-block hover-card p-3">
-      <div className="bg-contrast p-2 rounded-2">
-        <img src="/docs/img/payments/widget.png" />
-      </div>
-      <div className="pt-4">
-        <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Widget</h5></a></div>
-        <div className="pb-2"><small className="text-light">Embed payments and retain full control over the payment flow within your app.</small></div>
-      </div>
-    </a>
-  </div>
-  <div className="col-12 col-md-4 pe-4">
-    <a href="/docs/payments/integrations/button" className="d-block hover-card p-3">
+    <a href="/docs/payments/integrate/button" className="d-block hover-card p-3">
       <div className="bg-contrast p-2 rounded-2">
         <img src="/docs/img/payments/button.png" />
       </div>
       <div className="pt-4">
-        <div><a href="/docs/payments/integrations/link"><h5 className="pb-1 mb-0">Button</h5></a></div>
+        <div><a href="/docs/payments/integrate/link"><h5 className="pb-1 mb-0">Button</h5></a></div>
         <div className="pb-2"><small className="text-light">Embed simple HTML and enable one-click payments for your users.</small></div>
+      </div>
+    </a>
+  </div>
+  <div className="col-12 col-md-4 pe-4">
+    <a href="/docs/payments/integrate/widget" className="d-block hover-card p-3">
+      <div className="bg-contrast p-2 rounded-2">
+        <img src="/docs/img/payments/widget.png" />
+      </div>
+      <div className="pt-4">
+        <div><a href="/docs/payments/integrate/link"><h5 className="pb-1 mb-0">Widget</h5></a></div>
+        <div className="pb-2"><small className="text-light">Embed payments and retain full control over the payment flow within your app.</small></div>
       </div>
     </a>
   </div>
@@ -107,7 +107,7 @@ DePay offers plugins for established platforms, allowing you to accept Web3 paym
 
 ## Payment APIs
 
-Use DePay's Payment APIs complementary to the integration options:
+Use DePay's Payment APIs complementary to an integration:
 
 <div className="row pt-2 pb-4">
   <div className="col-12 ps-0 pe-0 col-md-4 pe-md-4">

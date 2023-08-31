@@ -1,6 +1,6 @@
 ---
 sidebar_label: Donations
-sidebar_position: 7
+sidebar_position: 6
 ---
 
 # Web3 Donations
@@ -76,7 +76,7 @@ DePay Donations is a variant of the DePay Payments product.
                   <div className="DialogFooter">
                     <div className="PaddingTopXS PaddingRightM PaddingLeftM PaddingBottomM">
                       <div>
-                        <button className="ButtonPrimary">Pay $10.00</button>
+                        <button className="ButtonPrimary">Pay</button>
                       </div>
                     </div>
                   </div>

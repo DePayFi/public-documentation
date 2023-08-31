@@ -4,6 +4,7 @@ import MDXComponents from '@theme-original/MDXComponents'
 import React from 'react'
 import TabItem from '@theme/TabItem'
 import Tabs from '@theme/Tabs'
+import DePayWidgets from '@depay/widgets'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -63,9 +64,25 @@ function DePayButton(props){
   )
 }
 
+function DePayWidgetTest(props){
+  return(
+    <div className={props.className}>
+      <button
+        type='button'
+        className="btn btn-link fw-bold"
+        onClick={(event)=>{
+          event.preventDefault()
+          DePayWidgets.Payment(props.configuration)
+        }}
+      >{ props.label || "Click to test" }</button>
+    </div>
+  )
+}
+
 export default {
   ...MDXComponents,
   DePayButton,
+  DePayWidgetTest,
   FontAwesomeIcon,
   Tabs,
   TabItem,

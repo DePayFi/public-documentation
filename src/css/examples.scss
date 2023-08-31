@@ -124,7 +124,7 @@
         margin: 0 auto;
         position: relative;
         width: 420px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
         border-radius: 13px;
         background: rgb(248,248,248);
     }
@@ -239,8 +239,8 @@
         border-radius: 13px;
         border: 1px solid transparent;
         box-shadow: 0 0 16px rgba(0,0,0,0.1);
-        font-size: 21px;
-        font-weight: 400;
+        font-size: 23px;
+        font-weight: 600;
         line-height: 45px;
         height: 58px;
         justify-content: center;
@@ -520,6 +520,13 @@
         width: 100%;
         display: flex;
         flex-direction: row;
+        &.small {
+          font-size: 17px;
+          line-height: 17px;
+        }
+        &.grey {
+          opacity: 0.5;
+        }
     }
     .TokenAmountCell {
         white-space: nowrap;
