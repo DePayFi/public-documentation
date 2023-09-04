@@ -105,16 +105,16 @@ const config = {
           },
           {
             type: 'doc',
+            docId: 'wallets/index',
+            position: 'left',
+            label: 'Wallets',
+          },
+          {
+            type: 'doc',
             docId: 'apps/index',
             position: 'left',
             label: 'Apps',
           },
-          // {
-          //   type: 'doc',
-          //   docId: 'examples/index',
-          //   position: 'left',
-          //   label: 'Examples',
-          // },
         ],
       },
       footer: {}, // edit src/theme/Footer/index.js instead

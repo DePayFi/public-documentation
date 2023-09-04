@@ -74,6 +74,7 @@ export default function DocBreadcrumbs() {
   const location = useLocation();
   const mainNavigationMatch = location.pathname.match(/\/docs\/(.*?)\//);
   let mainNavigation = mainNavigationMatch ? location.pathname.match(/\/docs\/(.*?)\//)[1] : undefined;
+  if(!breadcrumbs) { return null }
   if(mainNavigation) {
     breadcrumbs = breadcrumbs.filter((crumb)=>{
       return crumb.href != `/docs/${mainNavigation.toLowerCase()}/`
