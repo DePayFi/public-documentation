@@ -621,7 +621,7 @@ export default function Home() {
               <div className="pb-1 pt-1">
                 <div className="d-flex p-2 text-decoration-none">
                   <div className="ps-0">
-                    <div className="text-light">Adding new blockchains continuously</div>
+                    <div className="text-light">DePay adds new blockchains continuously</div>
                     <div className="pt-3">
                       <a href="/docs/payments/supported/blockchains" className="text-decoration-none">Learn more</a>
                     </div>
