@@ -16,7 +16,7 @@
   "dependencies": {
     "@depay/buttons": "^10.2.12",
     "@depay/react-dialog": "^14.0.3",
-    "@depay/verify-payment": "^1.1.0",
+    "@depay/verify-payment": "^1.3.0",
     "@depay/widgets": "^10.2.13",
     "@docusaurus/core": "2.4.1",
     "@docusaurus/plugin-client-redirects": "^2.4.1",
