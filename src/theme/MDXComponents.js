@@ -1,10 +1,12 @@
+import Blockchains from '@depay/web3-blockchains'
 import BrowserOnly from '@docusaurus/BrowserOnly'
+import DePayWidgets from '@depay/widgets'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import MDXComponents from '@theme-original/MDXComponents'
 import React, { useState, useEffect } from 'react'
 import TabItem from '@theme/TabItem'
 import Tabs from '@theme/Tabs'
-import DePayWidgets from '@depay/widgets'
+import Token from '@depay/web3-tokens'
 import { decodePayment, PROTOCOL_ADDRESSES } from '@depay/verify-payment'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -85,13 +87,36 @@ function PaymentDecoder() {
   const [ address, setAddress ] = useState('')
   const [ callData, setCallData ] = useState('')
   const [ decodedPayment, setDecodedPayment ] = useState(null)
+  const [ tokenSymbol, setTokenSymbol ] = useState()
+  const [ tokenName, setTokenName ] = useState()
+  const [ readableAmount, setReadableAmount ] = useState()
 
   useEffect(()=>{
+    setTokenSymbol()
+    setTokenName()
+    setReadableAmount()
     if(address && callData) {
-      const blockchain = Object.keys(PROTOCOL_ADDRESSES).find(key => PROTOCOL_ADDRESSES[key] === address);
+      const blockchain = Object.keys(PROTOCOL_ADDRESSES).find(key => PROTOCOL_ADDRESSES[key] === address && !key.match(/\d/));
       const _decodedPayment = decodePayment({ blockchain, address, transaction: callData });
       if(_decodedPayment) {
-        setDecodedPayment(_decodedPayment)
+        setDecodedPayment({..._decodedPayment, blockchain })
+        let token = new Token({
+          blockchain,
+          address: _decodedPayment.token
+        })
+        Promise.all([
+          token.readable(_decodedPayment.amount),
+          token.name(),
+          token.symbol(),
+        ]).then(([
+          amount,
+          name,
+          symbol,
+        ])=>{
+          setReadableAmount(amount)
+          setTokenSymbol(symbol)
+          setTokenName(name)
+        })
       } else {
         setDecodedPayment(false)
       }
@@ -99,7 +124,7 @@ function PaymentDecoder() {
       setDecodedPayment(null)
     }
 
-  }, [address, callData])  
+  }, [address, callData])
 
   return(
     <div className="card p-4">
@@ -128,9 +153,9 @@ function PaymentDecoder() {
         { decodedPayment &&
           <strong>
             Payment<br/>
-            Amount: { decodedPayment.amount.toString() }<br/>
-            Token: { decodedPayment.token.toString() }<br/>
-            Receiver: { decodedPayment.receiver.toString() }<br/>
+            Amount: { readableAmount ? readableAmount : decodedPayment.amount.toString() }<br/>
+            Token: { (tokenName && tokenSymbol) ? <a target="_blank" href={ Blockchains[decodedPayment.blockchain].explorerUrlFor({ token: decodedPayment.token.toString() }) } rel="noopener noreferrer">{tokenSymbol} ({tokenName})</a> : decodedPayment.token.toString() }<br/>
+            Receiver: <a target="_blank" href={ Blockchains[decodedPayment.blockchain].explorerUrlFor({ address: decodedPayment.receiver.toString() }) } rel="noopener noreferrer">{ decodedPayment.receiver.toString() }</a><br/>
           </strong>
         }
       </pre>
