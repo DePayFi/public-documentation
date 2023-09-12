@@ -73,16 +73,18 @@ if (ExecutionEnvironment.canUseDOM) {
 function DePayWidgetTest(props){
   return(
     <BrowserOnly>
-      <div className={props.className}>
-        <button
-          type='button'
-          className="btn btn-link fw-bold"
-          onClick={(event)=>{
-            event.preventDefault()
-            DePayWidgets.Payment(props.configuration)
-          }}
-        >{ props.label || "Click to test" }</button>
-      </div>
+      {() =>
+        <div className={props.className}>
+          <button
+            type='button'
+            className="btn btn-link fw-bold"
+            onClick={(event)=>{
+              event.preventDefault()
+              DePayWidgets.Payment(props.configuration)
+            }}
+          >{ props.label || "Click to test" }</button>
+        </div>
+      }
     </BrowserOnly>
   )
 }
