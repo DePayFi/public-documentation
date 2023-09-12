@@ -210,15 +210,4 @@ DePay employs two distinct confirmation levels for payment validation based on t
 Payments below USD $1,000 are designated as "confirmed" after a single block confirmation.
 In contrast, payments valued at USD $1,000 or above receive the "finalized" status, which necessitates varying block confirmations depending on the specific blockchain in use:
 
-| Blockchain | Finalized (after X blocks) |
-|------------|----------------------------|
-| Ethereum   | 12                         |
-| BSC        | 15                         |
-| Polygon    | 256                        |
-| Solana     | 16                         |
-| Fantom     | 5                          |
-| Avalanche  | 2                          |
-| Gnosis     | 60                         |
-| Arbitrum   | 120                        |
-| Optimism   | 100                        |
-| Base       | 100                        |
+For an in-depth overview, explore the [extended validation section](/docs/payments/validation#extended-validation).
