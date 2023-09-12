@@ -184,7 +184,7 @@ For instance: `example.com`, `www.example.com`, `pay.example.com`.
 
 To pass a dynamic configuration to the button, such as for conveying dynamic prices or for initiating dynamic redirects after successful tips, you'll need to activate dynamic configurations for the specified integration.
 
-After activation, your dynamic configuration - supplied via an API endpoint from your system - must return a valid widget configuration. This configuration should, at a minimum, detail the accepted tips, including blockchains, tokens, amount, and receiver.
+After activation, your dynamic configuration - supplied via an API endpoint from your system - must return [a valid widget configuration](https://github.com/DePayFi/widgets#configuration). This configuration should, at a minimum, detail the accepted tips, including blockchains, tokens, amount, and receiver.
 
 ### Set endpoint
 
