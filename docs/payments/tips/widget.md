@@ -93,9 +93,9 @@ Self-host and controll the entire tip flow within your app.
 </div>
 
 <div className="pt-5 pb-1">
-  <DePayButton
-    label={'Click to test'}
-    widget={'Donation'}
+  <DePayWidgetTest
+    className="text-center"
+    label={'Click to test widget'}
     configuration={ {"title": "Tip", "accept":[{"blockchain":"ethereum","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"bsc","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"}]} }
   />
 </div>
@@ -106,374 +106,356 @@ Self-host and controll the entire tip flow within your app.
 
 You can install DePay Widgets via `yarn` or `npm` and build it as part of your application:
 
-```
+<Tabs>
+
+<TabItem value="yarn" label="Yarn" default>
+
+```bash
 yarn add @depay/widgets
 ```
 
-or if you use npm
+</TabItem>
 
-```
+<TabItem value="npm" label="NPM" default>
+
+```bash
 npm install @depay/widgets --save
 ```
+
+</TabItem>
+
+</Tabs>
+
+Make sure you install DePay widgets peer dependencies, too, in case your project does not have them installed yet:
+
+<Tabs>
+
+<TabItem value="yarn" label="Yarn" default>
+
+```bash
+yarn add ethers react react-dom
+```
+
+</TabItem>
+
+<TabItem value="npm" label="NPM" default>
+
+```bash
+npm install ethers react react-dom --save
+```
+
+</TabItem>
+
+</Tabs>
 
 ### CDN
 
 If you don't want to install the package or don't want to build DePay Widgets as part of your application, you can also load DePay Widgets via our CDN:
 
 ```html
-<script defer async src="https://integrate.depay.com/widgets/v10.js"></script>
+<script defer async src="https://integrate.depay.com/widgets/v12.js"></script>
 ```
 
-## Usage
+## Create an integration
 
-After installation, import `DePayWidgets` from `@depay/widgets` wherever you need it:
+Go to https://app.depay.com/dev/integrations and click "New Integration".
+
+Make sure you select the "**Tip Widget**" integration.
+
+Give your integration a name so that you can identify it later on.
+
+## Accepted tokens/blockchains
+
+Choose the tokens you wish to accept as tip methods. Ensure you provide a receiving wallet address for every selected token.
+
+## Place integration code
+
+Now you can place the integration code into your app and open the DePay Tip widget:
 
 ```javascript
-import DePayWidgets from '@depay/widgets';
-```
-
-## Configuration
-
-You need to pass a configuration object to `DePayWidgets.Donation` which needs to at least contain the `accept` field.
-
-```javascript
-DePayWidgets.Donation({
-
-  title: "Tip",
-
-  accept: [{
-    blockchain: 'ethereum',
-    token: '0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb',
-    receiver: '0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02'
-  }]
+DePayWidgets.Payment({
+  integration: 'YOUR-INTEGRATION-ID'
 });
 ```
 
-This declares to receive DEPAY tokens (`0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb`) as tip on `ethereum` to `0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02`.
+## Redirect after tip
 
-You can also accept multiple tokens on multiple blockchains:
+Enter the URL to which users should be redirected after a successful tip.
+
+If you need to configure dynamic redirects, continue reading how to setup [dynamic configurations](#dynamic-configuration).
+
+## Configure callbacks
+
+Set up an endpoint to be called upon each successful tip.
+
+The callbacks will execute a `POST` request to the specified URL.
+
+Ensure you provide an HTTPS URL.
+
+The callback's request body will be structured as follows:
+
+```json
+{
+  "blockchain": "polygon",
+  "transaction": "0x053279fcb2f52fd66a9367416910c0bf88ae848dca769231098c4d9e240fcf56",
+  "sender": "0x317D875cA3B9f8d14f960486C0d1D1913be74e90",
+  "receiver": "0x08B277154218CCF3380CAE48d630DA13462E3950",
+  "token": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+  "amount": "0.0985",
+  "payload": null,
+  "after_block": "46934392",
+  "commitment": "confirmed",
+  "confirmations": 1,
+  "created_at": "2023-08-30T11:37:30.157555Z",
+  "confirmed_at": "2023-08-30T11:37:35.492041Z"
+}
+```
+
+## Verify communication
+
+Copy the provided public key, store and use it in your application to verify all communications from DePay's APIs to your systems are authentic.
+
+DePay APIs include an `x-signature` header with all requests sent to your systems.
+
+Use that `x-signature` header together with the stored public key to verify the request is authentic.
+
+DePay employs RSA-PSS with a salt length of 64 and SHA256 to sign request bodies. The signature is then sent base64 safe URL-encoded via the `x-signature` header.
+
+<Tabs>
+
+<TabItem value="javascript" label="JavaScript" default>
+
+Use DePay's [verify-js-signature](https://github.com/DePayFi/js-verify-RSA-PSS-SHA256#functionoality) package for JavaScript & Node:
 
 ```javascript
-DePayWidgets.Donation({
+import { verify } from '@depay/js-verify-signature'
 
-  title: "Tip",
+let verified = await verify({
+  signature: req.headers['x-signature'],
+  data: req.body,
+  publicKey,
+});
 
-  accept: [
+if(!verified){ throw('Request was not authentic!') }
+```
+
+</TabItem>
+
+<TabItem value="ruby" label="Ruby" default>
+
+```ruby
+public_key = OpenSSL::PKey::RSA.new(STORED_PUBLIC_KEY)
+signature_decoded = Base64.urlsafe_decode64(request.headers["X-Signature"])
+data = request.raw_post
+
+verified = public_key.verify_pss(
+  "SHA256",
+  signature_decoded,
+  data,
+  salt_length: :auto,
+  mgf1_hash: "SHA256"
+)
+
+raise 'Request was not authentic' unless verified
+```
+
+</TabItem>
+
+<TabItem value="php" label="PHP" default>
+
+```php
+use phpseclib3\Crypt\RSA;
+use phpseclib3\Crypt\PublicKeyLoader;
+
+$signature = $request->get_header('x-signature');
+$signature = str_replace("_","/",  $signature);
+$signature = str_replace("-", "+",  $signature);
+$key = PublicKeyLoader::load($public_key)->withHash('sha256')->withPadding(RSA::SIGNATURE_PSS)->withMGFHash('sha256')->withSaltLength(64);
+
+if( !$key->verify($request->get_body(), base64_decode($signature)) ) {
+  throw new Exception("Request was not authentic");
+}
+```
+
+</TabItem>
+
+<TabItem value="other" label="Other" default>
+
+You can read up on how to verify RSA PSS signatures in other programming languages: [here](https://cloud.google.com/kms/docs/samples/kms-verify-asymmetric-signature-rsa).
+
+</TabItem>
+
+</Tabs>
+
+## Restrict domains
+
+Integrations permit usage and embedding exclusively on websites hosted on specified domains.
+
+If no domain is entered, domain restriction is entirely deactivated.
+
+Once you specify even a single domain, restriction enforcement is activated.
+
+It's essential to list each domain and subdomain you wish to support separately.
+
+For instance: `example.com`, `www.example.com`, `pay.example.com`.
+
+## Dynamic configuration
+
+To pass a dynamic configuration to the widget, such as for conveying dynamic prices or for initiating dynamic redirects after successful tips, you'll need to activate dynamic configurations for the specified integration.
+
+After activation, your dynamic configuration - supplied via an API endpoint from your system - must return a valid widget configuration. This configuration should, at a minimum, detail the accepted tips, including blockchains, tokens, amount, and receiver.
+
+### Set endpoint
+
+First, you must specify an HTTPS URL endpoint that the integration will call each time someone attempts to make a tip.
+
+:::caution
+
+Endpoints need to respond a dynamic configuration under **2 seconds** or requests will be dropped otherwise and the widget will not load.
+
+:::
+
+### Sign responses
+
+Similarly to how DePay APIs ensure the authenticity of requests to your systems by cryptographically signing request bodies with RSA-PSS, you'll need to employ the same method when implementing dynamic configurations.
+
+To begin signing your dynamic configuration responses, first generate a private key.
+
+Ensure you have [OpenSSL](https://www.openssl.org/) installed to generate private keys.
+
+#### Install OpenSSL
+
+<Tabs>
+
+<TabItem value="mac" label="macOS" default>
+
+Best to use [Homebrew](https://brew.sh/).
+
+```bash
+brew update
+brew install openssl
+```
+
+</TabItem>
+
+<TabItem value="windows" label="Windows" default>
+
+```bash
+
+```
+
+</TabItem>
+
+<TabItem value="debian" label="Debian/Ubuntu" default>
+
+```bash
+sudo apt update
+sudo apt install openssl
+```
+
+</TabItem>
+
+</Tabs>
+
+
+#### Generate private key
+
+```bash
+openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
+```
+
+:::danger
+
+Ensuring you adhere to the highest security standards when working with private keys. Never share or publicly disclose the private key.
+
+:::
+
+#### Generate public key
+
+```bash
+openssl rsa -pubout -in private_key.pem -out public_key.pem
+```
+
+#### Store public key
+
+Now take the content of the `public_key.pem` (not the private key!) and store it with your integration on https://app.depay.com.
+
+The public key format looks like:
+
+```
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4PlPK+oM4nQX5TcmnWAE
+UMtd5hL8irx1Fbmwtpg4P7aQA1Y7RJ7/JwEMKs4+kJcgSQqqBoil+YgP2WSGtDnp
+ar4jIFIPDWY+eWBe3kGqqse+OxyuVMG/k4iMyQG7wB/9l4gY2udi6qciBiSDlNpo
+cs7X+zPrnL1jaO9C85yaEBAe4qpRUXhyjZ32DfduDeCP7p2O+cNHXzNwppsWApnE
+L8LOX/UkSlSaduJL2pOEv3zcTupOo38fds7V3MmqaxJfMfH9mWMbvVPfEJ2eeEx6
+GKnXhyKyW3MH69iEFCrFgAEk/HKI2bAck4DOyh5wVD4bdks0a9cXRWHI747auCeZ
+sQIDAQAB
+-----END PUBLIC KEY-----
+```
+
+### Integrate responses
+
+After setting up an endpoint and registering a public key with the integration, you can begin tailoring your endpoint to return dynamic configurations.
+
+Incoming requests will have the following headers:
+
+```
+Accept: application/json,application/vnd.api+json
+Accept-Charset: utf-8
+Content-Type: application/json; charset=utf-8
+X-Signature: 0Lt-bOwigLB_tPzWev5Iwe1YeWFWQ1fTi31wolfisWXuSKfuj53MujGfxkDli_A3R4IgFpgfEF6KmU1tDqYn2bId2HiFG6MYf5v25bhLscJnwAlGyVYMVmnxYyuPYsHMTZvZx61LSxC52TavRw4LN5wq9ux4nw4B30rnqCAaYKAZcUgpKgUwsMRToY0D8AwwW2mkkFk5rJKdx0LAnhz0dpGx5b5lc1v7UbcdzvteU8PBzyXcT2hQ-lMo8dTcdFM6tr_xJRrlxEOzeAKB3b2EfOKS_H9AtzICXT-NGc-HvgWKI56NURAheJweKdAvV7AF5atWTjSLnTFAHFl4NkLFsg==
+```
+
+Ensure you verify the incoming `x-signature` header to confirm the request's authenticity. [How to verify communication](#verify-communication).
+
+### Basic response
+
+Responses need to be formatted in JSON.
+
+A basic response includes a fundamental widget configuration detailing the list of accepted tokens for the respective tip. In a basic setup, tips are denominated in tokens:
+
+```json
+{
+  "accept": [
     {
-      blockchain: 'ethereum',
-      token: '0xdac17f958d2ee523a2206206994597c13d831ec7',
-      receiver: '0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02'
-    },{
-      blockchain: 'bsc',
-      token: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      receiver: '0x552C2a5a774CcaEeC036d41c983808E3c76477e6'
+      "blockchain": "ethereum",
+      "token": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "receiver": "0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"
     }
   ]
-});
+}
 ```
 
-The [DePay App](https://app.depay.com) helps you to create a basic valid configuration: **[DePay App](https://app.depay.com)** > **Integrations** > **New Integration** > **Donation Widget**
+This configuration accepts USDT on the Ethereum blockchain sent to `0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02` as tip.
 
-### accept
+Consult the [widget documentation](https://github.com/DePayFi/widgets#configuration) for a deeper understanding of how widget configurations operate.
 
-The `accept` attribute describes what is accepted as a tip. It needs to be an array and needs to contain at least one entry.
+### Passthrough payload
 
-#### Required Attributes
-
-`blockchain` - The name of the blockchain (e.g. `ethereum`, `bsc`, `polygon` etc.)
-
-`token` - The address of the token you want to receive
-
-`receiver` - The address receiving the tip. Always double check that you've set the right address.
-
-#### amount
-
-When you want to control how the amount selection behaves, pass the `amount` configuration object,
-alongside values for `start`, `min` and `step`.
-
-`start`: The amount that is initially selected.
-
-`min`: The minimum amount selectable.
-
-`step`: The number by wich to increment/decremten changes to the amount.
+If your dynamic configuration depends on data initially provided to the widget (on the frontend) and this data needs to be relayed to your backend for determining the dynamic configuration, pass your payload to the widget during initialization:
 
 ```javascript
-{
-  amount: {
-    'start': 10,
-    'min': 1,
-    'step': 1
+DePayWidgets.Payment({
+  integration: 'YOUR-INTEGRATION-ID',
+  payload: {
+    user: '12345'
   }
-}
+})
 ```
 
-### connected
+By doing so, the payload will be included when calling your configured endpoint. The request body directed towards your configured endpoint will now encompass:
 
-A callback that will be executed once the user connects a wallet.
-
-This function will be called with the connected wallet address as the main argument:
-
-```javascript
-connected: (address)=> {
-  // do something with the address
-}
-```
-
-#### closed
-
-`closed`
-
-A function that will be called once the user closes the widget (no matter if before or after the tip).
-
-```javascript
-closed: ()=> {
-  // do something if user closed the widget
-}
-
-```
-
-### before
-
-`before`
-
-A function that will be called before the tip is handed over to the wallet.
-
-Allows you to stop the tip if this methods returns false.
-
-```javascript
-before: (tip)=> {
-  alert('Something went wrong')
-  return false // stop
-}
-```
-
-### sent
-
-`sent`
-
-A function that will be called once the tip has been sent to the network (but still needs to be mined/confirmed).
-
-The widget will call this function with a transaction as single argument (see: [depay-web3-wallets](https://github.com/depayfi/depay-web3-wallets#transaction) for more details about the structure)
-
-```javascript
-sent: (transaction)=> {
-  // called when tip transaction has been sent to the network
-}
-```
-
-### succeeded
-
-`succeeded`
-
-A function that will be called once the tip has succeeded on the network (checked client-side).
-
-The widget will call this function passing a transaction as single argument (see: [depay-web3-wallets](https://github.com/depayfi/depay-web3-wallets#transaction) for more details)
-
-```javascript
-succeeded: (transaction)=> {
-  // called when tip transaction has been confirmed once by the network
-}
-```
-
-### failed
-
-`failed`
-
-A function that will be called if the tip execution failed on the blockchain (after it has been sent/submitted).
-
-The widget will call this function passing a transaction as single argument (see: [depay-web3-wallets](https://github.com/depayfi/depay-web3-wallets#transaction) for more details)
-
-```javascript
-failed: (transaction)=> {
-  // called when tip transaction failed on the blockchain
-  // handled by the widget, no need to display anything
-}
-```
-
-### critical
-
-`critical`
-
-A function that will be called if the widget throws an critical internal error that it can't handle and display on it's own:
-
-```javascript
-critical: (error)=> {
-  // render and display the error with error.toString()
-}
-```
-
-### error
-
-`error`
-
-A function that will be called if the widget throws an non-critical internal error that it can and will handle and display on it's own:
-
-```javascript
-error: (error)=> {
-  // maybe do some internal tracking with error.toString()
-  // no need to display anything as widget takes care of displaying the error
-}
-```
-
-### currency
-
-Allows you to enforce displayed local currency (instead of automatically detecting it):
-
-```javascript
+```json
 {
-  currency: 'USD'
+  "user": "12345"
 }
 ```
 
-### whitelist
+## Finality
 
-Allows only the configured tokens to be eligible as means of tip (from the sender):
+DePay employs two distinct confirmation levels for payment validation based on the transaction value and the underlying blockchain's characteristics.
+Payments below USD $1,000 are designated as "confirmed" after a single block confirmation.
+In contrast, payments valued at USD $1,000 or above receive the "finalized" status, which necessitates varying block confirmations depending on the specific blockchain in use:
 
-```javacript
-whitelist: {
-  ethereum: [
-    '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // ETH
-    '0xdac17f958d2ee523a2206206994597c13d831ec7', // USDT
-    '0x6b175474e89094c44da98b954eedeac495271d0f'  // DAI
-  ],
-  bsc: [
-    '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // BNB
-    '0xe9e7cea3dedca5984780bafc599bd69add087d56', // BUSD
-    '0x55d398326f99059ff775485246999027b3197955'  // BSC-USD
-  ],
-  polygon: [
-    '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // MATIC
-    '0x2791bca1f2de4661ed88a30c99a7a9449aa84174', // USDC
-  ]
-}
-```
-
-### blacklist
-
-Allows to blacklist tokens so that they will not be suggested as means of tip (from the sender):
-
-```javacript
-blacklist: {
-  ethereum: [
-    '0x82dfDB2ec1aa6003Ed4aCBa663403D7c2127Ff67',  // akSwap
-    '0x1368452Bfb5Cd127971C8DE22C58fBE89D35A6BF',  // JNTR/e
-    '0xC12D1c73eE7DC3615BA4e37E4ABFdbDDFA38907E',  // KICK
-  ],
-  bsc: [
-    '0x119e2ad8f0c85c6f61afdf0df69693028cdc10be', // Zepe
-    '0xb0557906c617f0048a700758606f64b33d0c41a6', // Zepe
-    '0x5190b01965b6e3d786706fd4a999978626c19880', // TheEver
-    '0x68d1569d1a6968f194b4d93f8d0b416c123a599f', // AABek
-    '0xa2295477a3433f1d06ba349cde9f89a8b24e7f8d', // AAX
-    '0xbc6675de91e3da8eac51293ecb87c359019621cf', // AIR
-    '0x5558447b06867ffebd87dd63426d61c868c45904', // BNBW
-    '0x569b2cf0b745ef7fad04e8ae226251814b3395f9', // BSCTOKEN
-    '0x373233a38ae21cf0c4f9de11570e7d5aa6824a1e', // ALPACA
-    '0x7269163f2b060fb90101f58cf724737a2759f0bb', // PUPDOGE
-    '0xb16600c510b0f323dee2cb212924d90e58864421', // FLUX
-    '0x2df0b14ee90671021b016dab59f2300fb08681fa', // SAFEMOON.is
-    '0xd22202d23fe7de9e3dbe11a2a88f42f4cb9507cf', // MNEB
-    '0xfc646d0b564bf191b3d3adf2b620a792e485e6da', // PIZA
-    '0xa58950f05fea2277d2608748412bf9f802ea4901', // WSG
-    '0x12e34cdf6a031a10fe241864c32fb03a4fdad739' // FREE
-  ]
-}
-```
-
-### event
-
-If set to `ifSwapped`, emits an [event](https://github.com/depayfi/depay-evm-router#depayrouterv1paymentevent02) if payments are routed through [router smart contract](https://github.com/depayfi/depay-evm-router).
-Payments are routed through the DePayPaymentRouter if swapping tokens is required in order to perform the payment. If payments are not routed through the router, e.g. direct transfer, no event is emited if `event` is set to `ifSwapped`.
-
-```javascript
-{
-  event: 'ifSwapped'
-}
-```
-
-### container
-
-Allows you to pass a container element that is supposed to contain the widget:
-
-```javascript
-{
-  container: document.getElementById('my-container')
-}
-```
-
-Make sure to set the css value `position: relative;` for the container element. Otherwise it can not contain the widget.
-
-React example:
-
-```javascript
-let CustomComponentWithWidget = (props)=>{
-  let container = useRef()
-
-  useEffect(()=>{
-    if(container.current) {
-      DePayWidgets.Donation({ ...defaultArguments, document,
-        container: container.current
-      })
-    }
-  }, [container])
-
-  return(
-    <div ref={container} style={{ position: 'relative', border: '1px solid black', width: "600px", height: "600px" }}></div>
-  )
-}
-```
-
-### style
-
-Allows you to change the style of the widget.
-
-```javascript
-{
-  style: {
-    colors: {
-      primary: '#ffd265',
-      text: '#e1b64a',
-      buttonText: '#000000',
-      icons: '#ffd265'
-    },
-    fontFamily: '"Cardo", serif !important',
-    css: `
-      @import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap");
-
-      .ReactDialogBackground {
-        background: rgba(0,0,0,0.8);
-      }
-    `
-  }
-}
-```
-
-### fee
-
-You can configure a fee which will be applied to every tip with it's own dedicated fee receiver address.
-
-The fee will be taken from the target token and target amount (after swap, depending on your `accept` configuration).
-
-`amount`: Either percentage (e.g. `5%`, or absolute amount as BigNumber string ('100000000000000000') or pure number (2.5)
-
-`receiver`: The address that is supposed to receive the fee.
-
-```javascript
-{
-  fee: {
-    amount: '3%',
-    receiver: '0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02'
-  }
-}
-```
-
-## Unmount
-
-Allows you to unmount (the React safe way) the entire widget from the outside:
-
-```javascript
-let { unmount } = await DePayWidgets.Donation({})
-
-unmount()
-```
-
+For an in-depth overview, explore the [extended validation section](/docs/payments/validation#extended-validation).

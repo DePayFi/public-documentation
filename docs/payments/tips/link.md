@@ -11,6 +11,14 @@ Just create a link and start receiving tips.
 
 https://tip.depay.com/6KFBECVsokSt0UKOAug8CI
 
+### On Mobile
+
+![DePay Tip Link on Mobile](/img/examples/tip-link-mobile.png)
+
+### On Desktop
+
+![DePay Tip Link on Desktop](/img/examples/tip-link.png)
+
 ## Step by step
 
 ### Create new link
@@ -201,3 +209,11 @@ You add the following GET-parameter when sending users to the payment link:
 Users will be redirected after successful payment to the following URL:
 
 `https://example.com?user=123&step=confirmation`
+
+## Finality
+
+DePay employs two distinct confirmation levels for payment validation based on the transaction value and the underlying blockchain's characteristics.
+Payments below USD $1,000 are designated as "confirmed" after a single block confirmation.
+In contrast, payments valued at USD $1,000 or above receive the "finalized" status, which necessitates varying block confirmations depending on the specific blockchain in use:
+
+For an in-depth overview, explore the [extended validation section](/docs/payments/validation#extended-validation).

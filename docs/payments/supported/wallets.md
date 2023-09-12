@@ -25,6 +25,24 @@ DePay supports most crypto wallets.
 
 <div className="pb-1 pt-1">
   <div className="d-flex p-2 text-decoration-none">
+    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Binance.svg"/>
+    <div className="ps-3">
+      <div className="text-light"><strong>Binance Defi Wallet</strong></div>
+    </div>
+  </div>
+</div>
+
+<div className="pb-1 pt-1">
+  <div className="d-flex p-2 text-decoration-none">
+    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Uniswap.svg"/>
+    <div className="ps-3">
+      <div className="text-light"><strong>Uniswap Wallet</strong></div>
+    </div>
+  </div>
+</div>
+
+<div className="pb-1 pt-1">
+  <div className="d-flex p-2 text-decoration-none">
     <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Phantom.svg"/>
     <div className="ps-3">
       <div className="text-light"><strong>Phantom</strong></div>
@@ -99,7 +117,7 @@ DePay supports most crypto wallets.
   <div className="d-flex p-2 text-decoration-none">
     <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Ethereum.svg"/>
     <div className="ps-3">
-      <div className="text-light">100+ additional wallets via <strong>Ethereum Wallet Standard</strong></div>
+      <div className="text-light">100+ additional wallets via <strong>Ethereum Extension Standard</strong></div>
     </div>
   </div>
 </div>
@@ -108,7 +126,25 @@ DePay supports most crypto wallets.
   <div className="d-flex p-2 text-decoration-none">
     <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Solana.svg"/>
     <div className="ps-3">
-      <div className="text-light">20+ additional wallets via <strong>Solana Wallet Standard</strong></div>
+      <div className="text-light">10+ additional wallets via <strong>Solana Extension Standard</strong></div>
+    </div>
+  </div>
+</div>
+
+<div className="pb-1 pt-1">
+  <div className="d-flex p-2 text-decoration-none">
+    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Solana.svg"/>
+    <div className="ps-3">
+      <div className="text-light">10+ additional wallets via <strong>Solana Mobile Wallet Adapter</strong></div>
+    </div>
+  </div>
+</div>
+
+<div className="pb-1 pt-1">
+  <div className="d-flex p-2 text-decoration-none">
+    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/blockchains/Solana.svg"/>
+    <div className="ps-3">
+      <div className="text-light">2+ additional wallets via <strong>Solana Pay</strong></div>
     </div>
   </div>
 </div>
@@ -125,17 +161,17 @@ DePay supports most crypto wallets.
 
 You will find a [list of supported wallets](https://depay.com/wallets) on the DePay website.
 
-## Ethereum Wallet Standard
+## Ethereum Extension Standard
 
-DePay integrates the Ethereum Wallet Standard (`window.ethereum`).
+DePay integrates the Ethereum Extension Standard (`window.ethereum`).
 
 ## WalletConnect
 
 DePay integrates WalletConnect via DePay's own WalletConnect v1 bridge/relay and WalletConnect v2 cloud relayer.
 
-## Solana Wallet Standard
+## Solana Extension Standard
 
-DePay integrates the Solana Wallet Standard (`window.solana`).
+DePay integrates the Solana Extension Standard (`window.solana`).
 
 ## Solana Mobile Wallet Adapter
 

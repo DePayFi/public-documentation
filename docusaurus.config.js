@@ -6,7 +6,36 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/docs/payments/integrations',
+            to: '/docs/payments/integrate',
+          },
+          {
+            from: '/docs/payments/integrations/',
+            to: '/docs/payments/integrate/',
+          },
+          {
+            from: '/docs/payments/integrations/link',
+            to: '/docs/payments/integrate/link',
+          },
+          {
+            from: '/docs/payments/integrations/button',
+            to: '/docs/payments/integrate/button',
+          },
+          {
+            from: '/docs/payments/integrations/widget',
+            to: '/docs/payments/integrate/widget',
+          },
+        ],
+      },
+    ],
+  ],
 
   title: 'DePay Documentation',
   tagline: 'Learn how to integrate Web3 Payments by example.',
@@ -37,7 +66,7 @@ const config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
@@ -76,22 +105,23 @@ const config = {
           },
           {
             type: 'doc',
+            docId: 'wallets/index',
+            position: 'left',
+            label: 'Wallets',
+          },
+          {
+            type: 'doc',
             docId: 'apps/index',
             position: 'left',
             label: 'Apps',
           },
-          // {
-          //   type: 'doc',
-          //   docId: 'examples/index',
-          //   position: 'left',
-          //   label: 'Examples',
-          // },
         ],
       },
       footer: {}, // edit src/theme/Footer/index.js instead
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['ruby', 'php']
       },
       image: 'https://depay.com/docs/img/seo/documentation.jpg'
     }),

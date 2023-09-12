@@ -1,6 +1,6 @@
 ---
 sidebar_label: Plugins
-sidebar_position: 6
+sidebar_position: 8
 ---
 
 # Web3 Payment Plugins

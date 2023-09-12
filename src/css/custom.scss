@@ -245,6 +245,31 @@ main h2 {
   margin-bottom: 2.4rem !important;
 }
 
+.alert--note {
+  border-left: 5px solid rgb(212, 213, 216);
+  background-color: rgb(253, 253, 254);
+}
+
+.alert--success {
+  border-left: 5px solid rgb(0, 148, 0);
+  background-color: rgb(230, 246, 230);
+}
+
+.alert--info {
+  border-left: 5px solid rgb(76, 179, 212);
+  background-color: rgb(238, 249, 253);
+}
+
+.alert--warning {
+  border-left: 5px solid rgb(230, 167, 0);
+  background-color: rgb(255, 248, 230);
+}
+
+.alert--danger {
+  border-left: 5px solid rgb(225, 50, 56);
+  background-color: rgb(255, 235, 236);
+}
+
 @import './frontpage.scss';
 @import './dialog.scss';
 @import './examples.scss';
