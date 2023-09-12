@@ -1,13 +1,11 @@
 import Blockchains from '@depay/web3-blockchains'
 import BrowserOnly from '@docusaurus/BrowserOnly'
-import DePayWidgets from '@depay/widgets'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import MDXComponents from '@theme-original/MDXComponents'
 import React, { useState, useEffect } from 'react'
 import TabItem from '@theme/TabItem'
 import Tabs from '@theme/Tabs'
 import Token from '@depay/web3-tokens'
-import { decodePayment, PROTOCOL_ADDRESSES } from '@depay/verify-payment'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -67,22 +65,37 @@ function DePayButton(props){
   )
 }
 
+let DePayWidgets
+if (ExecutionEnvironment.canUseDOM) {
+  DePayWidgets = require('@depay/widgets').default;
+}
+
 function DePayWidgetTest(props){
   return(
-    <div className={props.className}>
-      <button
-        type='button'
-        className="btn btn-link fw-bold"
-        onClick={(event)=>{
-          event.preventDefault()
-          DePayWidgets.Payment(props.configuration)
-        }}
-      >{ props.label || "Click to test" }</button>
-    </div>
+    <BrowserOnly>
+      <div className={props.className}>
+        <button
+          type='button'
+          className="btn btn-link fw-bold"
+          onClick={(event)=>{
+            event.preventDefault()
+            DePayWidgets.Payment(props.configuration)
+          }}
+        >{ props.label || "Click to test" }</button>
+      </div>
+    </BrowserOnly>
   )
 }
 
+let decodePayment, PROTOCOL_ADDRESSES
+if (ExecutionEnvironment.canUseDOM) {
+  decodePayment = require('@depay/verify-payment').decodePayment;
+  PROTOCOL_ADDRESSES = require('@depay/verify-payment').PROTOCOL_ADDRESSES;
+}
+
 function PaymentDecoder() {
+
+  if (!ExecutionEnvironment.canUseDOM) { return null }
 
   const [ address, setAddress ] = useState('')
   const [ callData, setCallData ] = useState('')
