@@ -221,9 +221,7 @@ brew install openssl
 
 <TabItem value="windows" label="Windows" default>
 
-```bash
-
-```
+https://wiki.openssl.org/index.php/Binaries
 
 </TabItem>
 
