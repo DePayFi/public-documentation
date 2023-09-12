@@ -57,8 +57,8 @@ function DePayButton(props){
     <BrowserOnly>
       {() =>
         <DePayButtons.DePayButton
-          label={ props.label }
-          widget={ props.widget }
+          label={ props.label?.length ? props.label : 'Pay' }
+          widget={ props.widget?.length ? props.widget : 'Payment' }
           configuration={ props.configuration }
           css={ props.css }
         />

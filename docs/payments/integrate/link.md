@@ -12,7 +12,13 @@ Just create a link and send users to it.
 
 https://buy.depay.com/201JapngwCukZzlvdZgR1K
 
-![DePay Payment Link](/img/examples/payment-link.png)
+### On Mobile
+
+![DePay Payment Link on Mobile](/img/examples/payment-link-mobile.png)
+
+### On Desktop
+
+![DePay Payment Link on Desktop](/img/examples/payment-link.png)
 
 ## Step by step
 

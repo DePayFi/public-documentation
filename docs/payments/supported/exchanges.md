@@ -16,7 +16,7 @@ The following decentralized exchanges are currently supported by DePay.
       </div>
       <div className="ps-3">
         <div className="text-light"><strong>Uniswap v3</strong></div>
-        <div className="text-light">Ethereum, BSC, Polygon, Optimism, Arbitrum</div>
+        <div className="text-light">Ethereum, BSC, Polygon, Optimism, Arbitrum, Base</div>
       </div>
     </div>
   </div>

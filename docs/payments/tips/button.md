@@ -14,8 +14,8 @@ DePay's Web3 Tip Button allows you to directly accept Web3 Tips without any requ
 <div className="py-5">
   <DePayButton
     label={'Tip'}
-    widget={'Donation'}
-    configuration={ {"title": "Tip", "accept":[{"blockchain":"ethereum","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"bsc","token":"0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"}]} }
+    blockchains='["ethereum","bsc","polygon","solana","gnosis","fantom","avalanche","arbitrum","optimism","base"]'
+    configuration={ {"accept":[{"blockchain":"ethereum","token":"0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"bsc","token":"0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"polygon","token":"0x2791bca1f2de4661ed88a30c99a7a9449aa84174","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"solana","token":"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v","receiver":"B2mgZ4ddUcu7bimLThBahpizPysVJ7xTd2woScmWtPYr"},{"blockchain":"gnosis","token":"0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"fantom","token":"0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"avalanche","token":"0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"arbitrum","token":"0xaf88d065e77c8cC2239327C5EDb3A432268e5831","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"optimism","token":"0x94b008aA00579c1307B0EF2c499aD98a8ce58e58","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"},{"blockchain":"base","token":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913","receiver":"0x4e260bB2b25EC6F3A59B478fCDe5eD5B8D783B02"}]} }
   />
 </div>
 
@@ -24,6 +24,7 @@ DePay's Web3 Tip Button allows you to directly accept Web3 Tips without any requ
   class="DePayButton"
   label="Tip"
   integration="1f517a0d-5bf3-4095-a096-c6b11d8e4d91"
+  blockchains='["ethereum","bsc"]'
 ></div>
 <script src="https://integrate.depay.com/buttons/v12.js"></script>
 <noscript><a href="https://depay.com">Web3 Payments</a> are only supported with JavaScript enabled.</noscript>
@@ -51,6 +52,7 @@ Now you can place the integration code into your app and open the DePay Tip widg
   class="DePayButton"
   label="Tip"
   integration="1f517a0d-5bf3-4095-a096-c6b11d8e4d91"
+  blockchains='["ethereum","bsc"]'
 ></div>
 <script src="https://integrate.depay.com/buttons/v12.js"></script>
 <noscript><a href="https://depay.com">Web3 Payments</a> are only supported with JavaScript enabled.</noscript>
@@ -180,7 +182,7 @@ For instance: `example.com`, `www.example.com`, `pay.example.com`.
 
 ## Dynamic configuration
 
-To pass a dynamic configuration to the widget, such as for conveying dynamic prices or for initiating dynamic redirects after successful tips, you'll need to activate dynamic configurations for the specified integration.
+To pass a dynamic configuration to the button, such as for conveying dynamic prices or for initiating dynamic redirects after successful tips, you'll need to activate dynamic configurations for the specified integration.
 
 After activation, your dynamic configuration - supplied via an API endpoint from your system - must return a valid widget configuration. This configuration should, at a minimum, detail the accepted tips, including blockchains, tokens, amount, and receiver.
 
@@ -313,12 +315,14 @@ Consult the [widget documentation](https://github.com/DePayFi/widgets#configurat
 
 ### Passthrough payload
 
-If your dynamic configuration depends on data initially provided to the widget (on the frontend) and this data needs to be relayed to your backend for determining the dynamic configuration, pass your payload to the widget during initialization:
+If your dynamic configuration depends on data initially provided to the button (on the frontend) and this data needs to be relayed to your backend for determining the dynamic configuration, pass your payload to the button during initialization:
 
 ```javascript
 <div
   class="DePayButton"
+  label="Tip"
   integration="1f517a0d-5bf3-4095-a096-c6b11d8e4d91"
+  blockchains='["ethereum","bsc"]'
   payload='{"user": "123123123"}'
 ></div>
 ```

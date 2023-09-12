@@ -11,7 +11,13 @@ Just create a link and start receiving donations.
 
 https://donate.depay.com/1Ylujunhrm59HyLFuv7WwZ
 
-![DePay Payment Link](/img/examples/donation-link.png)
+### On Mobile
+
+![DePay Donation Link on Mobile](/img/examples/tip-link-mobile.png)
+
+### On Desktop
+
+![DePay Donation Link on Desktop](/img/examples/tip-link.png)
 
 ## Step by step
 

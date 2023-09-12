@@ -123,54 +123,58 @@ The following blockchains are currently supported by DePay.
 
 Payments on Solana typically take **1 second** in average to process and validate.
 
-DePay currently supports **60+ tokens** on Solana.
-
-A payment transaction on Solana costs users **below $0.001**.
+A payment transaction on Solana costs users **below $0.001** in average.
 
 ## Gnosis
 
-A payment transaction on Gnosis costs users **below $0.01**.
+Payments on Gnosis typically take **5 seconds** in average to process and validate.
+
+A payment transaction on Gnosis costs users **below $0.001** in average.
 
 ## Polygon
 
 Payments on Polygon typically take **5 seconds** in average to process and validate.
 
-DePay currently supports **380+ tokens** on Polygon.
-
-A payment transaction on Polygon costs users **below $0.01**.
+A payment transaction on Polygon costs users **below $0.01** in average.
 
 ## Fantom
 
-A payment transaction on Fantom costs users **below $0.05-$0.10**.
+Payments on Fantom typically take **40 seconds** in average to process and validate.
+
+A payment transaction on Fantom costs users **below $0.01-$0.08** in average.
 
 ## Avalanche
 
-A payment transaction on Fantom costs users **below $0.05-$0.20**.
+Payments on Arbitrum typically take **4 seconds** in average to process and validate.
+
+A payment transaction on Avalanche costs users **below $0.03-$0.20** in average.
 
 ## BNB Smart Chain
 
-Payments on BNB Smart Chain typically take **10 seconds** in average to process and validate.
+Payments on BNB Smart Chain typically take **5 seconds** in average to process and validate.
 
-DePay currently supports **4500+ tokens** on BNB Smart Chain.
-
-A payment transaction on BNB Smart Chain costs users between **$0.05-$0.50**.
+A payment transaction on BNB Smart Chain costs users between **$0.05-$0.50** in average.
 
 ## Arbitrum
 
-A payment transaction on Arbitrum costs users **below $0.30-$1.00**.
+Payments on Arbitrum typically take **1 second** in average to process and validate.
+
+A payment transaction on Arbitrum costs users **$0.30-$1.00** in average.
 
 ## Optimism
 
-A payment transaction on Optimism costs users **below $0.40-$1.00**.
+Payments on Optimism typically take **3 seconds** in average to process and validate.
+
+A payment transaction on Optimism costs users **$0.20-$1.00** in average.
 
 ## Base
 
-A payment transaction on Base costs users **below $0.40-$1.00**.
+Payments on Optimism typically take **40 seconds** in average to process and validate.
+
+A payment transaction on Base costs users **$0.20-$1.00** in average.
 
 ## Ethereum
 
 Payments on Ethereum typically take **18 seconds** in average to process and validate.
 
-DePay currently supports **3200+ tokens** on Ethereum.
-
-A payment transaction on Ethereum costs users between **$1-$50**.
+A payment transaction on Ethereum costs users between **$1-$50** in average.
