@@ -141,13 +141,13 @@ A payment transaction on Polygon costs users **below $0.01** in average.
 
 Payments on Fantom typically take **40 seconds** in average to process and validate.
 
-A payment transaction on Fantom costs users **below $0.01-$0.08** in average.
+A payment transaction on Fantom costs users **$0.01-$0.08** in average.
 
 ## Avalanche
 
 Payments on Arbitrum typically take **4 seconds** in average to process and validate.
 
-A payment transaction on Avalanche costs users **below $0.03-$0.20** in average.
+A payment transaction on Avalanche costs users **$0.03-$0.20** in average.
 
 ## BNB Smart Chain
 
