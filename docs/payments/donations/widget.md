@@ -305,6 +305,12 @@ To pass a dynamic configuration to the widget, such as for conveying dynamic pri
 
 After activation, your dynamic configuration - supplied via an API endpoint from your system - must return [a valid widget configuration](https://github.com/DePayFi/widgets#configuration). This configuration should, at a minimum, detail the accepted donations, including blockchains, tokens, amount, and receiver.
 
+:::caution
+
+Ensure you supply the widget configurations through your designated API endpoint. Do not pass the "accept" parameter directly to the widget during frontend initialization.
+
+:::
+
 ### Set endpoint
 
 First, you must specify an HTTPS URL endpoint that the integration will call each time someone attempts to make a donation.
