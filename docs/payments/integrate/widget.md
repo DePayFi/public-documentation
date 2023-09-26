@@ -446,6 +446,18 @@ When interacting with DePay, you always pass human readable amounts (not BigNumb
 
 Consult the [widget documentation](https://github.com/DePayFi/widgets#configuration) for a deeper understanding of how widget configurations operate.
 
+Make sure you sign the response body and submit the `X-Signature` header together with the response:
+
+```
+X-Signature: 0Lt-bOwigLB_tPzWev5Iwe1YeWFWQ1fTi31wolfisWXuSKfuj53MujGfxkDli_A3R4IgFpgfEF6KmU1tDqYn2bId2HiFG6MYf5v25bhLscJnwAlGyVYMVmnxYyuPYsHMTZvZx61LSxC52TavRw4LN5wq9ux4nw4B30rnqCAaYKAZcUgpKgUwsMRToY0D8AwwW2mkkFk5rJKdx0LAnhz0dpGx5b5lc1v7UbcdzvteU8PBzyXcT2hQ-lMo8dTcdFM6tr_xJRrlxEOzeAKB3b2EfOKS_H9AtzICXT-NGc-HvgWKI56NURAheJweKdAvV7AF5atWTjSLnTFAHFl4NkLFsg==
+```
+
+:::caution
+
+Ensure that you sign the response as string format.
+
+:::
+
 ### Currency denomination
 
 To denominate accepted payments in a currency, such as USD, EUR, etc., use the `amount` attribute. The integration will then calculate and apply the amounts for each specified accepted token.
