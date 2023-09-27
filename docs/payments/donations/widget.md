@@ -441,6 +441,8 @@ Consult the [widget documentation](https://github.com/DePayFi/widgets#configurat
 
 #### Sign your response
 
+For secure communication, DePay mandates the use of RSA-PSS to sign your response, specifying a salt length of 64 and utilizing the SHA256 hashing algorithm. Once signed, ensure that you encode the signature in a base64 URL-safe format and transmit it through the x-signature header.
+
 Make sure you sign the response body and submit the `X-Signature` header together with the response:
 
 ```
