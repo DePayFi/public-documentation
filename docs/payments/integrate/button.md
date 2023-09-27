@@ -369,7 +369,11 @@ const { Buffer } = require('buffer');
 const privateKeyString = process.env.MY_PRIVATE_KEY;
 const privateKey = crypto.createPrivateKey(privateKeyString);
 
-const dataToSign = JSON.stringify(req.body);
+const configuration = {
+  /// your dynamic configuration
+}
+
+const dataToSign = JSON.stringify(configuration);
 
 const signature = crypto.sign('sha256', Buffer.from(dataToSign), {
   key: privateKey,
@@ -383,6 +387,8 @@ const urlSafeBase64Signature = signature.toString('base64')
   .replace(/=+$/, '');
 
 res.setHeader('x-signature', urlSafeBase64Signature);
+
+return configuration;
 ```
 
 </TabItem>
