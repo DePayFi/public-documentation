@@ -449,7 +449,7 @@ X-Signature: 0Lt-bOwigLB_tPzWev5Iwe1YeWFWQ1fTi31wolfisWXuSKfuj53MujGfxkDli_A3R4I
 
 :::caution
 
-Ensure that you sign the response as string format.
+Ensure that you sign the response as string format and that the json tring does not contain any line-breaks (\n) or unessary whitespace.
 
 :::
 
@@ -483,7 +483,7 @@ const urlSafeBase64Signature = signature.toString('base64')
 
 res.setHeader('x-signature', urlSafeBase64Signature);
 
-return configuration;
+return JSON.stringify(configuration) // make sure to return JSON without line-breaks (\n) or unnessary whitespace
 ```
 
 </TabItem>
