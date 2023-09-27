@@ -323,7 +323,7 @@ Endpoints need to respond a dynamic configuration under **2 seconds** or request
 
 :::
 
-### Sign responses
+### Create private/public key
 
 Similarly to how DePay APIs ensure the authenticity of requests to your systems by cryptographically signing request bodies with RSA-PSS, you'll need to employ the same method when implementing dynamic configurations.
 
@@ -406,6 +406,8 @@ sQIDAQAB
 
 After setting up an endpoint and registering a public key with the integration, you can begin tailoring your endpoint to return dynamic configurations.
 
+#### Incoming requests
+
 Incoming requests will have the following headers:
 
 ```
@@ -417,7 +419,7 @@ X-Signature: 0Lt-bOwigLB_tPzWev5Iwe1YeWFWQ1fTi31wolfisWXuSKfuj53MujGfxkDli_A3R4I
 
 Ensure you verify the incoming `x-signature` header to confirm the request's authenticity. [How to verify communication](#verify-communication).
 
-### Basic response
+#### Basic response
 
 Responses need to be formatted in JSON.
 
@@ -446,6 +448,8 @@ When interacting with DePay, you always pass human readable amounts (not BigNumb
 
 Consult the [widget documentation](https://github.com/DePayFi/widgets#configuration) for a deeper understanding of how widget configurations operate.
 
+#### Sign your response
+
 Make sure you sign the response body and submit the `X-Signature` header together with the response:
 
 ```
@@ -457,6 +461,47 @@ X-Signature: 0Lt-bOwigLB_tPzWev5Iwe1YeWFWQ1fTi31wolfisWXuSKfuj53MujGfxkDli_A3R4I
 Ensure that you sign the response as string format.
 
 :::
+
+<Tabs>
+
+<TabItem value="node" label="Node" default>
+
+```js
+const crypto = require('crypto');
+const { Buffer } = require('buffer');
+
+const privateKeyString = process.env.MY_PRIVATE_KEY;
+const privateKey = crypto.createPrivateKey(privateKeyString);
+
+const dataToSign = JSON.stringify(req.body);
+
+const signature = crypto.sign('sha256', Buffer.from(dataToSign), {
+  key: privateKey,
+  padding: crypto.constants.RSA_PKCS1_PSS_PADDING,
+  saltLength: 64,
+});
+
+const urlSafeBase64Signature = signature.toString('base64')
+  .replace('+', '-')
+  .replace('/', '_')
+  .replace(/=+$/, '');
+
+res.setHeader('x-signature', urlSafeBase64Signature);
+```
+
+</TabItem>
+
+<TabItem value="ruby" label="Ruby / Rails" default>
+
+```ruby
+private_key = OpenSSL::PKey::RSA.new(ENV['MY_PRIVATE_KEY'])
+signature = private_key.sign_pss("SHA256", response.to_json, salt_length: 64, mgf1_hash: "SHA256")
+headers['x-signature'] = Base64.urlsafe_encode64(signature)
+```
+
+</TabItem>
+
+</Tabs>
 
 ### Currency denomination
 
