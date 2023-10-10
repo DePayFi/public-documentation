@@ -521,6 +521,18 @@ By doing so, the payload will be included when calling your configured endpoint.
 }
 ```
 
+### Dynamic user flow/redirect
+
+For scenarios necessitating the redirection of users to dynamic URLs — which can vary per payment event, such as directing users to diverse confirmation screens — utilize the `forward_to` parameter within your dynamic configuration response:
+
+```json
+{
+  
+  "forward_to": "https://example.com/depay/success/1212391238123"
+
+}
+```
+
 ## Finality
 
 DePay employs two distinct confirmation levels for payment validation based on the transaction value and the underlying blockchain's characteristics.
