@@ -86,6 +86,22 @@ Self-host and controll the entire payment flow within your app.
   />
 </div>
 
+## Integration examples
+
+Jump straight into example integrations for common frameworks and platforms:
+
+<Tabs>
+
+<TabItem value="Express" label="Express" default>
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/DePayFi/widgets-example-express-js">https://github.com/DePayFi/widgets-example-express-js</a>
+</TabItem>
+
+<TabItem value="Next.js" label="Next.js" default>
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/DePayFi/widgets-example-next-js">https://github.com/DePayFi/widgets-example-next-js</a>
+</TabItem>
+
+</Tabs>
+
 ## Installation
 
 ### Package
@@ -175,6 +191,8 @@ Choose the tokens you wish to accept as payment methods. Ensure you provide a re
 Now you can place the integration code into your app and open the DePay Payment widget:
 
 ```javascript
+import DePayWidgets from "@depay/widgets"
+
 DePayWidgets.Payment({
   integration: 'YOUR-INTEGRATION-ID'
 });
@@ -213,6 +231,22 @@ The callback's request body will be structured as follows:
 }
 ```
 
+:::caution
+
+Make sure you callback endpoint responds with 200, as otherwise the widget will not release the user.
+
+:::
+
+### Redirect user
+
+If you want to dynamically redirect users upon callback response, provide the location with `forward_to` as part of the callback response:
+
+```json
+{
+  "forward_to": "https://example.com/depay/success/1212391238123"
+}
+```
+
 ## Verify communication
 
 Copy the provided public key, store and use it in your application to verify all communications from DePay's APIs to your systems are authentic.
@@ -234,7 +268,7 @@ import { verify } from '@depay/js-verify-signature'
 
 let verified = await verify({
   signature: req.headers['x-signature'],
-  data: req.body,
+  data: JSON.stringify(req.body),
   publicKey,
 });
 
@@ -374,7 +408,7 @@ openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:204
 
 :::danger
 
-Ensuring you adhere to the highest security standards when working with private keys. Never share or publicly disclose the private key.
+Please ensure you adhere to the highest security standards when working with private keys. Never share or publicly disclose the private key.
 
 :::
 
@@ -458,7 +492,7 @@ X-Signature: 0Lt-bOwigLB_tPzWev5Iwe1YeWFWQ1fTi31wolfisWXuSKfuj53MujGfxkDli_A3R4I
 
 :::caution
 
-Ensure that you sign the response as string format and that the json tring does not contain any line-breaks (\n) or unessary whitespace.
+Ensure that you sign the response as string format and that the json string does not contain any line-breaks (\n) or unessary whitespace.
 
 :::
 
@@ -467,8 +501,8 @@ Ensure that you sign the response as string format and that the json tring does 
 <TabItem value="node" label="Node" default>
 
 ```js
-const crypto = require('crypto');
-const { Buffer } = require('buffer');
+const { Buffer } = require("node:buffer");
+import crypto from 'node:crypto';
 
 const privateKeyString = process.env.MY_PRIVATE_KEY;
 const privateKey = crypto.createPrivateKey(privateKeyString);

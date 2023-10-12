@@ -99,6 +99,18 @@ DePay offers a variety of integration methods. Explore each option and choose th
 
 [See all DePay integration options](/docs/payments/integrate/)
 
+## Jumpstart
+
+Explore detailed integration examples that demonstrate how to incorporate DePay into prevalent frameworks and platforms:
+
+- [Integrate Widgets in Express.js](https://github.com/DePayFi/widgets-example-express-js)
+
+- [Integrate Widgets in Next.js](https://github.com/DePayFi/widgets-example-next-js)
+
+- [Integrate Buttons in Express.js](https://github.com/DePayFi/buttons-example-express-js)
+
+- [Integrate Buttons in Next.js](https://github.com/DePayFi/buttons-example-next-js)
+
 ## Plugins
 
 DePay offers plugins for established platforms, allowing you to accept Web3 payments seamlessly without the need for intricate integration.
