@@ -126,6 +126,82 @@ Other codes but 200 or 202 will be considered a failed callback and will be retr
 
 Payment callbacks will retry failures with an exponential backoff using the formula (retry_count ** 4) + 15 + (rand(30) * (retry_count + 1)) (i.e. 15, 16, 31, 96, 271, ... seconds + a random amount of time).
 
+#### Verify communication
+
+On your link page on app.depay.com you will find a dedicated public key once you have activated "Send callback". Store and use it in your application to verify all communications from DePay's APIs to your systems are authentic.
+
+DePay APIs include an `x-signature` header with all requests sent to your systems.
+
+Use that `x-signature` header together with the stored public key to verify the request is authentic.
+
+DePay employs RSA-PSS with a salt length of 64 and SHA256 to sign request bodies. The signature is then sent base64 safe URL-encoded via the `x-signature` header.
+
+<Tabs>
+
+<TabItem value="javascript" label="JavaScript" default>
+
+Use DePay's [verify-js-signature](https://github.com/DePayFi/js-verify-RSA-PSS-SHA256#functionoality) package for JavaScript & Node:
+
+```javascript
+import { verify } from '@depay/js-verify-signature'
+
+let verified = await verify({
+  signature: req.headers['x-signature'],
+  data: JSON.stringify(req.body),
+  publicKey,
+});
+
+if(!verified){ throw('Request was not authentic!') }
+```
+
+</TabItem>
+
+<TabItem value="ruby" label="Ruby" default>
+
+```ruby
+public_key = OpenSSL::PKey::RSA.new(STORED_PUBLIC_KEY)
+signature_decoded = Base64.urlsafe_decode64(request.headers["X-Signature"])
+data = request.raw_post
+
+verified = public_key.verify_pss(
+  "SHA256",
+  signature_decoded,
+  data,
+  salt_length: :auto,
+  mgf1_hash: "SHA256"
+)
+
+raise 'Request was not authentic' unless verified
+```
+
+</TabItem>
+
+<TabItem value="php" label="PHP" default>
+
+```php
+use phpseclib3\Crypt\RSA;
+use phpseclib3\Crypt\PublicKeyLoader;
+
+$signature = $request->get_header('x-signature');
+$signature = str_replace("_","/",  $signature);
+$signature = str_replace("-", "+",  $signature);
+$key = PublicKeyLoader::load($public_key)->withHash('sha256')->withPadding(RSA::SIGNATURE_PSS)->withMGFHash('sha256')->withSaltLength(64);
+
+if( !$key->verify($request->get_body(), base64_decode($signature)) ) {
+  throw new Exception("Request was not authentic");
+}
+```
+
+</TabItem>
+
+<TabItem value="other" label="Other" default>
+
+You can read up on how to verify RSA PSS signatures in other programming languages: [here](https://cloud.google.com/kms/docs/samples/kms-verify-asymmetric-signature-rsa).
+
+</TabItem>
+
+</Tabs>
+
 ### Form Data
 
 Form data entered during the payment is transported via the `payload` attribute:
