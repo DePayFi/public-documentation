@@ -32,7 +32,7 @@ npm install @depay/verify-paymnet --save
 
 </Tabs>
 
-After installation you can decode payments by provided the transaction data:
+After installation you can decode payments by passing the transaction calldata:
 
 ```javascript
 import { decodePayment } from '@depay/verify-payment'
