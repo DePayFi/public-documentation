@@ -100,6 +100,7 @@ function PaymentDecoder() {
   if (!ExecutionEnvironment.canUseDOM) { return null }
 
   const [ address, setAddress ] = useState('')
+  const [ blockchain, setBlockchain ] = useState('ethereum')
   const [ callData, setCallData ] = useState('')
   const [ decodedPayment, setDecodedPayment ] = useState(null)
   const [ tokenSymbol, setTokenSymbol ] = useState()
@@ -111,7 +112,6 @@ function PaymentDecoder() {
     setTokenName()
     setReadableAmount()
     if(address && callData) {
-      const blockchain = Object.keys(PROTOCOL_ADDRESSES).find(key => PROTOCOL_ADDRESSES[key] === address && !key.match(/\d/));
       const _decodedPayment = decodePayment({ blockchain, address, transaction: callData });
       if(_decodedPayment) {
         setDecodedPayment({..._decodedPayment, blockchain })
@@ -143,6 +143,20 @@ function PaymentDecoder() {
 
   return(
     <div className="card p-4">
+      <div className="mb-3">
+        <label htmlFor="contractAddress" className="form-label">Blockchain</label>
+        <div>
+          <select value={ blockchain } onChange={(event)=>setBlockchain(event.target.value)}>
+            {
+              Blockchains.all.map((blockchain)=>{
+                return(
+                  <option key={blockchain.name} value={blockchain.name}>{ blockchain.label }</option>
+                )
+              })
+            }
+          </select>
+        </div>
+      </div>
       <div className="mb-3">
         <label htmlFor="contractAddress" className="form-label">Contract address</label>
         <input value={address} onChange={(event)=>setAddress(event.target.value)} type="email" className="form-control" id="contractAddress" aria-describedby="contractAddressHelp"/>
