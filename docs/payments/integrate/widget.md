@@ -305,8 +305,7 @@ from cryptography.hazmat.primitives.asymmetric import padding
 import base64
 
 # Load the public key
-with open('STORED_PUBLIC_KEY.pem', 'rb') as key_file:
-    public_key = serialization.load_pem_public_key(key_file.read())
+public_key = serialization.load_pem_public_key(PUBLIC_KEY.encode('utf-8'))
 
 # Decode the signature from the headers
 signature_decoded = base64.urlsafe_b64decode(request.headers["X-Signature"])
