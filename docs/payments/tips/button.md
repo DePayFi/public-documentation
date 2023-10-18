@@ -174,6 +174,39 @@ raise 'Request was not authentic' unless verified
 
 </TabItem>
 
+<TabItem value="python" label="Python" default>
+
+```python
+from cryptography.hazmat.primitives import hashes, serialization
+from cryptography.hazmat.primitives.asymmetric import padding
+import base64
+
+# Load the public key
+with open('STORED_PUBLIC_KEY.pem', 'rb') as key_file:
+    public_key = serialization.load_pem_public_key(key_file.read())
+
+# Decode the signature from the headers
+signature_decoded = base64.urlsafe_b64decode(request.headers["X-Signature"])
+
+# Get the raw post data
+data = request.data
+
+# Verify the signature
+try:
+    public_key.verify(
+        signature_decoded,
+        data,
+        padding.PSS(
+            mgf=padding.MGF1(hashes.SHA256()),
+            salt_length=padding.PSS.MAX_LENGTH
+        ),
+        hashes.SHA256()
+    )
+except InvalidSignature:
+    raise ValueError('Request was not authentic')
+```
+</TabItem>
+
 <TabItem value="php" label="PHP" default>
 
 ```php
@@ -408,7 +441,35 @@ private_key = OpenSSL::PKey::RSA.new(ENV['MY_PRIVATE_KEY'])
 signature = private_key.sign_pss("SHA256", response.to_json, salt_length: 64, mgf1_hash: "SHA256")
 headers['x-signature'] = Base64.urlsafe_encode64(signature)
 ```
+</TabItem>
 
+<TabItem value="python" label="Python" default>
+
+```python
+from cryptography.hazmat.primitives import hashes, serialization
+from cryptography.hazmat.primitives.asymmetric import padding
+import base64
+import json
+import os
+
+# Load the private key
+private_key_bytes = os.environ['MY_PRIVATE_KEY'].encode('utf-8')
+private_key = serialization.load_pem_private_key(private_key_bytes, password=None)
+
+# Sign the response data
+response_data = json.dumps(response).encode('utf-8')
+signature = private_key.sign(
+    response_data,
+    padding.PSS(
+        mgf=padding.MGF1(hashes.SHA256()),
+        salt_length=64
+    ),
+    hashes.SHA256()
+)
+
+# Set the signature in the headers
+headers['x-signature'] = base64.urlsafe_b64encode(signature).decode('utf-8')
+```
 </TabItem>
 
 </Tabs>
