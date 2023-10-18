@@ -143,9 +143,9 @@ If you want to dynamically redirect users upon callback response, provide the lo
 
 ## Verify communication
 
-Copy the provided public key, store and use it in your application to verify all communications from DePay's APIs to your systems are authentic.
+Copy the public key provided for your integration (on [app.depay.com](https://app.depay.com)), store and use it in your application to verify all communications from DePay's APIs to your systems are authentic.
 
-DePay APIs include an `x-signature` header with all requests sent to your systems.
+DePay's api calls include an `x-signature` header with all requests sent to your systems.
 
 Use that `x-signature` header together with the stored public key to verify the request is authentic.
 
