@@ -280,7 +280,7 @@ if(!verified){ throw('Request was not authentic!') }
 <TabItem value="ruby" label="Ruby" default>
 
 ```ruby
-public_key = OpenSSL::PKey::RSA.new(STORED_PUBLIC_KEY)
+public_key = OpenSSL::PKey::RSA.new(STORED_PUBLIC_KEY.gsub("\\n", "\n"))
 signature_decoded = Base64.urlsafe_decode64(request.headers["X-Signature"])
 data = request.raw_post
 
@@ -305,8 +305,7 @@ from cryptography.hazmat.primitives.asymmetric import padding
 import base64
 
 # Load the public key
-with open('STORED_PUBLIC_KEY.pem', 'rb') as key_file:
-    public_key = serialization.load_pem_public_key(key_file.read())
+public_key = serialization.load_pem_public_key(STORED_PUBLIC_KEY.replace("\\n", "\n").encode('utf-8'))
 
 # Decode the signature from the headers
 signature_decoded = base64.urlsafe_b64decode(request.headers["X-Signature"])
