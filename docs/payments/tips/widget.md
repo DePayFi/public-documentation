@@ -251,6 +251,37 @@ If you want to dynamically redirect users upon callback response, provide the lo
 }
 ```
 
+## Configure events
+
+If you want your systems to be informed about the different events occuring during the [payment flow](#payment-flow),
+configure an events endpoint url for your integration on https://app.depay.com.
+
+Once configured, event requests will execute a `POST` request to the specified URL.
+
+Ensure you provide an HTTPS URL.
+
+The event's request body will be structured as follows:
+
+```json
+{
+  "status": "attempt",
+  "blockchain": "polygon",
+  "transaction": "0x053279fcb2f52fd66a9367416910c0bf88ae848dca769231098c4d9e240fcf56",
+  "sender": "0x317D875cA3B9f8d14f960486C0d1D1913be74e90",
+  "receiver": "0x08B277154218CCF3380CAE48d630DA13462E3950",
+  "token": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+  "amount": "0.0985",
+  "payload": null,
+  "after_block": "46934392",
+  "commitment": "confirmed",
+  "confirmations": 1,
+  "created_at": "2023-08-30T11:37:30.157555Z",
+  "confirmed_at": "2023-08-30T11:37:35.492041Z"
+}
+```
+
+`status` can be one of `attempt`, `processing`, `failed` or `succeeded`.
+
 ## Verify communication
 
 Copy the public key provided for your integration (on [app.depay.com](https://app.depay.com)), store and use it in your application to verify all communications from DePay's APIs to your systems are authentic.

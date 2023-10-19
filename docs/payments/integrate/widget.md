@@ -243,6 +243,16 @@ Only successful payments are delivered to the configured callback.
 
 :::
 
+### Redirect user
+
+If you want to dynamically redirect users upon callback response, provide the location with `forward_to` as part of the callback response:
+
+```json
+{
+  "forward_to": "https://example.com/depay/success/1212391238123"
+}
+```
+
 ## Configure events
 
 If you want your systems to be informed about the different events occuring during the [payment flow](#payment-flow),
@@ -273,16 +283,6 @@ The event's request body will be structured as follows:
 ```
 
 `status` can be one of `attempt`, `processing`, `failed` or `succeeded`.
-
-### Redirect user
-
-If you want to dynamically redirect users upon callback response, provide the location with `forward_to` as part of the callback response:
-
-```json
-{
-  "forward_to": "https://example.com/depay/success/1212391238123"
-}
-```
 
 ## Verify communication
 
