@@ -233,9 +233,46 @@ The callback's request body will be structured as follows:
 
 :::caution
 
-Make sure you callback endpoint responds with 200, as otherwise the widget will not release the user.
+Make sure your callback endpoint responds with 200, as otherwise the widget will not release the user. See [payment flow](#payment-flow).
 
 :::
+
+:::info
+
+Only successful payments are delivered to the configured callback.
+
+:::
+
+## Configure events
+
+If you want your systems to be informed about the different events occuring during the [payment flow](#payment-flow),
+configure an events endpoint url for your integration on https://app.depay.com.
+
+Once configured, event requests will execute a `POST` request to the specified URL.
+
+Ensure you provide an HTTPS URL.
+
+The event's request body will be structured as follows:
+
+```json
+{
+  "status": "attempt",
+  "blockchain": "polygon",
+  "transaction": "0x053279fcb2f52fd66a9367416910c0bf88ae848dca769231098c4d9e240fcf56",
+  "sender": "0x317D875cA3B9f8d14f960486C0d1D1913be74e90",
+  "receiver": "0x08B277154218CCF3380CAE48d630DA13462E3950",
+  "token": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+  "amount": "0.0985",
+  "payload": null,
+  "after_block": "46934392",
+  "commitment": "confirmed",
+  "confirmations": 1,
+  "created_at": "2023-08-30T11:37:30.157555Z",
+  "confirmed_at": "2023-08-30T11:37:35.492041Z"
+}
+```
+
+`status` can be one of `attempt`, `processing`, `failed` or `succeeded`.
 
 ### Redirect user
 
@@ -687,3 +724,74 @@ Payments below USD $1,000 are designated as "confirmed" after a single block con
 In contrast, payments valued at USD $1,000 or above receive the "finalized" status, which necessitates varying block confirmations depending on the specific blockchain in use.
 
 For an in-depth overview, explore the [extended validation section](/docs/payments/validation#extended-validation).
+
+## Payment flow
+
+### Successful payment
+
+```mermaid
+sequenceDiagram
+  participant App as Your App
+  participant Widget
+  participant Wallet
+  participant Blockchain
+  participant DePay as DePay
+  App->>Widget: open widget
+  Widget->>DePay: request configuration
+  DePay-->>App: request dynamic configuration (optional)
+  App-->>DePay: respond dynamic configuration (optional)
+  DePay->>Widget: provide configuration
+  Widget->>Widget: show payment options
+  Widget->>Widget: user selects option
+  Widget->>Widget: user clicks "pay"
+  Widget->>DePay: store attempt
+  DePay-->>App: send "attempt" event (optional)
+  DePay->>Widget: confirm attempt
+  Widget->>Wallet: sign transaction
+  Wallet->>Blockchain: submit transaction
+  Wallet->>Widget: return transaction
+  Widget->>DePay: store transaction
+  DePay-->>App: send "processing" event (optional)
+  DePay->>Widget: confirm transaction
+  loop
+    Widget->>Blockchain: check status
+    Blockchain->>Widget: return status
+  end
+  loop
+    DePay->>Blockchain: validate payment
+    Blockchain->>DePay: return validation
+  end
+  Widget->>Blockchain: check status
+  Blockchain->>Widget: transaction succeeded
+  DePay->>Blockchain: validate payment
+  Blockchain->>DePay: payment succeeded
+  loop
+    DePay-->>App: sends callback (optional)
+    App-->>DePay: confirms callback receipt (optional)
+  end
+  DePay-->>App: send "succeeded" event (optional)
+  DePay->>Widget: release user
+  Widget->>App: release user
+```
+
+### Failed payment
+
+Only differs to a [successful payment](#successful-payment) in regards of the validation result and everything happening after.
+
+Ultimately instructing the user to retry the payment.
+
+```mermaid
+sequenceDiagram
+  participant App as Your App
+  participant Widget
+  participant Wallet
+  participant Blockchain
+  participant DePay as DePay
+  Widget->>Blockchain: check status
+  Blockchain->>Widget: transaction failed
+  DePay->>Blockchain: validate payment
+  Blockchain->>DePay: payment failed
+  DePay-->>App: send "failed" event (optional)
+  DePay->>Widget: release user
+  Widget->>Widget: ask user to retry payment
+```
