@@ -139,7 +139,7 @@ Only successful payments are delivered to the configured callback.
 
 :::info
 
-Callbacks requests will retry any uncessfull response (response code was not 200) with an exponential backoff using the formula (retry_count ** 4) + 15 + (rand(30) * (retry_count + 1)) (i.e. 15, 16, 31, 96, 271, ... seconds + a random amount of time). 
+Callback requests will retry any uncessfull response (response code was not 200) with an exponential backoff using the formula (retry_count ** 4) + 15 + (rand(30) * (retry_count + 1)) (i.e. 15, 16, 31, 96, 271, ... seconds + a random amount of time). 
 
 It will perform 25 retries over approx. 21 days.
 
