@@ -31,19 +31,11 @@ Explore DePay's Web3 APIs.
 
 ## Resources
 
-The resources accessible through DePay's APIs include:
+The following resources are available via DePay's APIs:
 
-### Links
-
-<div className="row pt-4">
-
-  <div className="col-12 col-md-6">
-    <a href="/docs/apis/links/payments" className="d-flex hover-card p-3 align-items-center">
-      <div className="ps-3 pt-1">
-        <div className="text-light"><strong>Payments</strong></div>
-        <div className="text-light">Payments received via Links</div>
-      </div>
-    </a>
-  </div>
-  
+<div><strong><a href="/docs/apis/links">Links</a></strong></div>
+<div className="ps-2">
+  <a className="pt-1 d-block" href="/docs/apis/links/payments">→ Payments</a>
 </div>
+
+

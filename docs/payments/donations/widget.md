@@ -300,7 +300,7 @@ It will perform 25 retries over approx. 21 days.
 
 ## Verify communication
 
-Copy the public key provided for your integration (on [app.depay.com](https://app.depay.com)), store and use it in your application to verify all communications from DePay's APIs to your systems are authentic.
+On your integration page on app.depay.com you will find a dedicated public key. Store and use it in your application to verify all communication from DePay's APIs to your systems is authentic.
 
 DePay's api calls include an `x-signature` header with all requests sent to your systems.
 
