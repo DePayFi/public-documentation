@@ -233,7 +233,7 @@ The callback's request body will be structured as follows:
 
 :::caution
 
-Make sure your callback endpoint responds with 200, as otherwise the widget will not release the user. See [payment flow](#payment-flow).
+Callbacks control the payment flow. Make sure your callback endpoint responds with 200, as otherwise the widget will not release the user. See [payment flow](#payment-flow).
 
 :::
 
