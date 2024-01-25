@@ -57,6 +57,24 @@ You can also list your WooCommerce items in a cryptocurrency token.
 
 Prices for conversion are obtained from integrated [decentralized exchanges](/docs/payments/supported/exchanges).
 
+### Connect DePay PRO
+
+The DePay WooCommerce plugin, by default, has a limited capacity for processing requests to facilitate payments.
+
+If you anticipate a significant volume of simultaneous customers completing checkouts in your WooCommerce store (10 or more at the same time), it is essential to connect your DePay account and ensure that DePay PRO is activated.
+
+#### Create a DePay account
+
+Initially, you must create a DePay account. Visit https://app.depay.com and follow the steps to set up your account.
+
+#### Upgrade your account to PRO
+
+Make sure your DePay account is upgraded to DePay PRO: https://app.depay.com/plan
+
+#### Connect your DePay PRO account
+
+
+
 ## FAQ
 
 ### Why are some tokens not supported for conversion?
@@ -78,4 +96,12 @@ Focus on selecting the tokens you want to receive and dont worry about the token
 The more tokens you select, the more calculations need to be peformed during checkout which can slow down the checkout experience.
 
 A configuration with an excessive number of tokens can result in timeouts, making it impossible to complete checkout using DePay.
+
+### Why do I see "To many requests! Please upgrade to DePay PRO."
+
+The DePay WooCommerce plugin, by default, has a limited capacity for processing requests to facilitate payments.
+
+For information on linking your DePay PRO account with your WooCommerce store to overcome technical limitations, please continue reading:
+[How to connect DePay PRO to your WooCommerce store](/docs/payments/plugins/woocommerce#connect-depay-pro).
+
 
