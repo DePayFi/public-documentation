@@ -7,7 +7,7 @@ sidebar_label: Tokens
 
 Learn which tokens are supported by DePay and what requirements custom tokens need to fulfill.
 
-# What tokens are supported?
+## What tokens are supported?
 
 DePay's permissionless, decentralized payment routing protocol technically supports all tokens fulfilling the requirements (see [requirements](#requirements)).
 
