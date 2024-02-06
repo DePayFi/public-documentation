@@ -11,7 +11,7 @@ In order to authenticate towards DePay's APIs you need an API key.
 In order to authenticate towards DePay's APIs, you need to pass your API Key via the `x-api-key header`:
 
 ```
-x-api-key: M5dZeHFfIp3J7h9H9fs4i4wmkUo1HjAF3EmMy32c
+x-api-key: Th1406MN7L796p9fM8lHTa79jrtNorXW2duHYZkY
 ```
 
 ## Test Key
@@ -20,7 +20,7 @@ For testing purposes, DePay provides a public API key which is not recommended f
 We also rotate the public api key on a recurring basis.
 
 ```
-M5dZeHFfIp3J7h9H9fs4i4wmkUo1HjAF3EmMy32c
+Th1406MN7L796p9fM8lHTa79jrtNorXW2duHYZkY
 ```
 
 ## Issue an API Key
