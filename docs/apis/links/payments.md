@@ -7,6 +7,12 @@ sidebar_label: Payments
 
 Accesses payments received with payment links via API
 
+:::info
+
+For efficient payment status synchronization, it's advised against using API endpoints for polling payment statuses. Instead, [implement callbacks](/docs/payments/integrate/link#callback-request) to ensure your system is seamlessly updated with payment transactions.
+
+:::
+
 ## GET
 
 ```

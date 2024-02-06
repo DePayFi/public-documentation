@@ -33,4 +33,4 @@ You will need to have an active DePay PRO subscription in order to issue and mai
 
 ## Limitations
 
-Every API Key is limited to max. 10 requests/second , 10 requests in parallel and 14'400 requests/day.
+Every API Key is limited to max. 10 requests/second (10 requests burst) and 14'400 requests/day.
