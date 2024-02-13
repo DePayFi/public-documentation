@@ -15,7 +15,7 @@ Accept any token with on-the-fly conversion.
 
 ## Example
 
-https://store.depay.com
+https://depay.com/shopify/demo
 
 ## Step-by-step
 
