@@ -268,6 +268,26 @@ Set the percentage of the applied discount and select the condition that needs t
 
 - Select **"Owns NFT"** as condition in order to apply the discount to customers owning the selected NFT.
 
+### Limits
+
+#### Start Date
+
+Enable the payment link to become active starting from a specified time. Transactions attempted before this designated start time will not be processed.
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/Ddo8TsYGRLI?si=HmRBuu9WcinKgdxS&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+#### End Date
+
+Set the payment link to expire at a specified time. Attempts to initiate payments after this deadline will be unsuccessful.
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/bE1e_Wis71M?si=0iKRaQqxsAHIUPYs&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+#### Quantity
+
+Restrict the payment link to a predefined quantity of items, ensuring that purchases cannot exceed this limit. The available quantity is dynamically displayed to all customers in real time, ensuring transparency and immediate updates on availability.
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/3IgKV4t3kpo?si=B5cmkYpf3U8olags&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ### Integrate
 
 Once you've provided all required information the app will generate a **Payment Link** that you can use.
