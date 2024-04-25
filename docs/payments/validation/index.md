@@ -30,7 +30,7 @@ Different blockchains have varying benchmarks for what constitutes a "finalized"
 |------------|--------|---------|
 | Ethereum   | 12     | 144s    |
 | BSC        | 15     | 45s     |
-| Polygon    | 256    | 512s    |
+| Polygon    | 50     | 100s    |
 | Solana     | 16     | 1s      |
 | Fantom     | 5      | 10s     |
 | Avalanche  | 2      | 2s      |
