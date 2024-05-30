@@ -71,12 +71,6 @@ Make sure to save everything so that the button gets published.
 
 Test it afterwards on the actual Wordpress page to make sure everything works as expected.
 
-### Link to the payment widget from within your text
-
-You can also link the Payment widget from any of your texts.
-
-No matter if that text is part of your layout, a post or a page, simply link the text to "#depay-payment-widget" and the DePay Payment widget will open once your users click on it.
-
 ### Receive payments
 
 Now you are receiving payments directly on your Wordpress page and those payments end up directly in your crypto wallet.

@@ -73,12 +73,6 @@ Make sure to save everything so that the button gets published.
 
 Test it afterwards on the actual Wordpress page to make sure everything works as expected.
 
-### Link to the donation widget from within your text
-
-You can also link the Donation widget from any of your texts.
-
-No matter if that text is part of your layout, a post or a page, simply link the text to "#depay-donation-widget" and the DePay Donation widget will open once your users click on it.
-
 ### Receive donations
 
 Now you are receiving donations directly on your Wordpress page and those donations end up directly in your crypto wallet.
