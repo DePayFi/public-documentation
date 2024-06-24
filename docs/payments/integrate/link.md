@@ -151,7 +151,7 @@ POST https://example.com/payments/depay/callback
 }
 ```
 
-Other codes but 200 or 202 will be considered a failed callback and will be retried up to 25 times over approx. 21 days.
+Other response codes but `200` will be considered a failed callback and will be retried up to 25 times over approx. 21 days.
 
 Payment callbacks will retry failures with an exponential backoff using the formula (retry_count ** 4) + 15 + (rand(30) * (retry_count + 1)) (i.e. 15, 16, 31, 96, 271, ... seconds + a random amount of time).
 
