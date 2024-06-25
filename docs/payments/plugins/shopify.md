@@ -68,3 +68,10 @@ Now within your approval e-mail you will find a "Start Now" link to activate DeP
 Follow the link and make sure you click "Activate DePay".
 
 Your customers can now select "DePay" as payment option during checkout.
+
+## Test Mode for Payments
+
+You can activate "Test Mode" for DePay's Shopify Payment Gateway to test how your customers pay for their orders, and to test how you and your staff process those orders.
+
+When test mode is enabled, no actual transactions are carried out. However, you can still test the wallet connection and explore the payment suggestion process.
+
