@@ -10,7 +10,7 @@ Just create a link and send users to it.
 
 ## Example
 
-https://buy.depay.com/201JapngwCukZzlvdZgR1K
+https://link.depay.com/201JapngwCukZzlvdZgR1K
 
 ### On Mobile
 
@@ -298,7 +298,7 @@ Send your users to the link in order to perform payments as configured.
 
 If you select to "Collect Data" during [link creation](#create-new-link) you can prefill all form fields with passing get parameters:
 
-https://buy.depay.com/201JapngwCukZzlvdZgR1K?name=Max%20Musterman&country=CH
+https://link.depay.com/201JapngwCukZzlvdZgR1K?name=Max%20Musterman&country=CH
 
 `name`: The full name of the payment sender.
 
@@ -315,13 +315,13 @@ You can append get parameters to the generated payment link in order to inject p
 This e.g. allows you to track individual users or sessions by id throughout the payment flow.
 
 ```
-https://tip.depay.com/6KFBECVsokSt0UKOAug8CI?payload[user_id]=1234567
+https://link.depay.com/6KFBECVsokSt0UKOAug8CI?payload[user_id]=1234567
 ```
 
 or multiple parameters
 
 ```
-https://tip.depay.com/6KFBECVsokSt0UKOAug8CI?payload[user_id]=1234567&payload[session_id]=89
+https://link.depay.com/6KFBECVsokSt0UKOAug8CI?payload[user_id]=1234567&payload[session_id]=89
 ```
 
 Those values will reappear in the [payment callback request](#callback-request) in the following way:
@@ -349,7 +349,7 @@ Redirect is `https://example.com?step=confirmation`
 
 You add the following GET-parameter when sending users to the payment link:
 
-`https://buy.depay.com/xxNdddVnbN02f0Enrav8?user=123`
+`https://link.depay.com/xxNdddVnbN02f0Enrav8?user=123`
 
 Users will be redirected after successful payment to the following URL:
 
