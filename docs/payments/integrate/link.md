@@ -304,8 +304,6 @@ https://buy.depay.com/201JapngwCukZzlvdZgR1K?name=Max%20Musterman&country=CH
 
 `email`: The email of the payment sender.
 
-`shipping_address`: The shipping address of the payment sender.
-
 `country`: The ISO 3166-1 alpha-2 country code of the payment sender.
 
 `quantity`: The preselected item quantity.
