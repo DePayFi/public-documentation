@@ -14,9 +14,13 @@ https://link.depay.com/201JapngwCukZzlvdZgR1K
 
 ### On Mobile
 
+DePay Payment Links on mobile are optimized for smaller screen sizes, ensuring a seamless user experience, and they conveniently integrate with mobile wallets, allowing customers to complete transactions with just a few taps.
+
 ![DePay Payment Link on Mobile](/img/examples/payment-link-mobile.png)
 
 ### On Desktop
+
+DePay Payment Links on desktop are designed to be visually stunning and highly intuitive, providing a straightforward payment process that boosts conversion rates. They seamlessly enable payments through crypto wallet browser extensions or by generating QR codes for easy handoff to other wallets and mobile devices.
 
 ![DePay Payment Link on Desktop](/img/examples/payment-link.png)
 
@@ -26,11 +30,17 @@ https://link.depay.com/201JapngwCukZzlvdZgR1K
 
 Go to the DePay App on https://app.depay.com and create a Payment Link via **Links** > **New Link** and select **Payment Link**.
 
-### Seller
+![Create new Payment Link](/img/examples/payment-links/create-new-payment-link.jpg)
 
-Enter a name for the seller in order to allow users to understand who they are paying.
+### Seller (Account)
 
-You can also upload an image to represent the seller visually.
+Your account name and logo will be displayed to customers as the visual identity of your brand.
+
+![Seller Account](/img/examples/payment-links/seller-account.jpg)
+
+To update your account name, brand color, or logo, navigate to **Account** > **Settings** > **Branding**.
+
+![Change branding](/img/examples/payment-links/change-branding.jpg)
 
 ### Product
 
@@ -38,13 +48,19 @@ Enter a name for the product in order to allow users to understand what they are
 
 You can also upload an image to represent the product visually.
 
+![Change branding](/img/examples/payment-links/product.jpg)
+
 ### Description
 
 Optionally, you can provide a description to clarify the specifics of the purchase.
 
-### Denomination
+![Description](/img/examples/payment-links/description.jpg)
+
+### Pricing
 
 You can denominate your product either in a fiat- or a crypto-currency.
+
+![Price in fiat currency](/img/examples/payment-links/price.jpg)
 
 #### Fiat Currency
 
@@ -70,19 +86,95 @@ Real-time conversion rates are calculated the moment a customer visits the link 
 > Once a customer visits the link to perform the payment that customer needs to pay you either **10 USDC** or **10 USDT**.
 > Conversions are also offered and calculated in real-time.
 
+![Amounts in crypto currencies](/img/examples/payment-links/crypto-currency-amounts.jpg)
+
+### Quantity
+
+You can enable customers to adjust the quantity, allowing them to purchase your product multiple times in a single transaction.
+
+![Adjust quantity](/img/examples/payment-links/adjust-quantity.jpg)
+
+Customers can then adjust the desired quantity themselves during checkout or payment.
+
+![Change quantity](/img/examples/payment-links/change-quantity.jpg)
+
+### VAT
+
+You can also enable the display of VAT on your payment links. You have the flexibility to configure the VAT rate yourself.
+
+:::info
+
+Make sure to set your account country in **Account** > **Settings** > **Billing** before activating the "Include VAT" option.
+
+:::
+
+![Enable VAT](/img/examples/payment-links/enable-vat.jpg)
+
+VAT will then be shown to customers located in the same country as the service provider.
+
+:::info
+
+Depending on your link configuration, the following factors will determine whether VAT is displayed:
+
+- If no address or country data collection is activated, the customer's location country, determined by IP, will be considered.
+
+- If shipping and billing data collection is activated, the customer's selected shipping address will be considered.
+
+- If billing data collection is activated, the customer's selected billing address will be considered.
+
+- If country data collection is activated, the customer's selected country will be considered.
+
+:::
+
+![Display VAT](/img/examples/payment-links/display-vat.jpg)
+
 ### Tokens
 
 Configure which tokens on which blockchains you want to receive as means of payment.
 
-Select as few tokens per blockchain as possible, but select at least 1 token per blockchain for every blockchain you want to support.
+:::caution
+
+We recommend to only configure 1 token per blockchain. Please ensure you select at least one token for each blockchain you intend to support for customers.
+
+:::
+
+:::info
+
+Configure only the tokens you wish to receive. With auto-conversion, your customers can seamlessly pay using thousands of different tokens, ensuring flexibility and convenience for every transaction.
+
+:::
+
+![Select tokens](/img/examples/payment-links/select-tokens.jpg)
 
 ### Receiver
 
-Enter the addresses that are supposed to receive the payments. One per token. You can use the same address for multiple tokens if that address supports receiving these tokens. Double-check the entered addresses, as an incorrect address can lead to a loss of payments.
+Enter the addresses that are supposed to receive the payments. One per token. You can use the same address for multiple tokens if that address supports receiving these tokens.
 
-### Branding/Colors
+:::caution
+
+Double-check the entered addresses, as an incorrect address can lead to a loss of payments.
+
+:::
+
+:::info
+
+You can also manage your wallets directly through your account settings (**Account** > **Settings** > **Wallets**), allowing you to select wallets easily without the need to paste addresses manually.
+
+:::
+
+![Payment receiver](/img/examples/payment-links/payment-receiver.jpg)
+
+### Branding & Colors
 
 You can select a primary color that will be used for the payment experience ensuring brand continuity throughout the payment experience.
+
+:::info
+
+Payment Links will automatically inherit the branding and color settings from your account, which you can configure in **Account** > **Settings** > **Branding**.
+
+:::
+
+![Branding colors](/img/examples/payment-links/branding-colors.jpg)
 
 ### Collect Data
 
@@ -90,16 +182,116 @@ Payment Links allow you to gather the following, additional information from you
 
 - Full Name
 - E-Mail
-- Shipping Address
-- Country
-- Quantity
+- Address
+  - Billing address only
+  - Shipping and billing address
+  - Country only
+- Custom Fields
+
+![Collect data](/img/examples/payment-links/collect-data.jpg)
+
+#### Payload
+
+Collected data entered during the payment is transported via the `payload` attribute of payments:
+
+```javascript
+{
+
+  "payload": {
+
+    "full_name": "Mister Smith",
+    "email": "test@example.com",
+    "shipping_address": "Mr. Peter\n738 S. Wentworth Street\nBronx, NY 10466\nUS",
+    "shipping_address_data": {
+      "full_name": "Mr. Peter",
+      "address_line_1": "738 S. Wentworth Street",
+      "postal_code": "NY 10466",
+      "city": "Bronx",
+      "state": "New York",
+      "country": "US"
+    },
+    "billing_address": "Mr. Peter\n738 S. Wentworth Street\nBronx, NY 10466\nUS",
+    "billing_address_data": {
+      "full_name": "Mr. Peter",
+      "address_line_1": "738 S. Wentworth Street",
+      "postal_code": "NY 10466",
+      "city": "Bronx",
+      "state": "New York",
+      "country": "US"
+    },
+    "quantity": 5,
+    "custom_values": [
+      { name: "Discord Name", value: "Ninja#123" },
+      { name: "Age", value: 18 }
+    ]
+
+  }
+}
+```
+
+#### Prefill Form Data
+
+If you select to "Collect Data" during [link creation](#create-new-link) you can prefill all form fields with passing get parameters:
+
+https://link.depay.com/201JapngwCukZzlvdZgR1K?name=Max%20Musterman&country=CH
+
+`name`: The full name of the payment sender.
+
+`email`: The email of the payment sender.
+
+`country`: The ISO 3166-1 alpha-2 country code of the payment sender.
+
+`quantity`: The preselected item quantity.
+
+#### Inject Payload Data
+
+You can append get parameters to the generated payment link in order to inject payload data which will become part of the [payment callback request](#callback-request).
+
+This e.g. allows you to track individual users or sessions by id throughout the payment flow.
+
+```
+https://link.depay.com/6KFBECVsokSt0UKOAug8CI?payload[user_id]=1234567
+```
+
+or multiple parameters
+
+```
+https://link.depay.com/6KFBECVsokSt0UKOAug8CI?payload[user_id]=1234567&payload[session_id]=89
+```
+
+Those values will reappear in the [payment callback request](#callback-request) in the following way:
+
+```javascript
+  {
+    "payload": {
+      "injected": {
+        "user_id": 1234567,
+        "session_id": 89
+      }
+    }
+  }
+```
+
+### Unlock Content
+
+You can store content that will only be displayed to customers after a successful payment, such as a link to additional pay-walled content.
+
+![Unlock content setup](/img/examples/payment-links/unlock-content-setup.jpg)
+
+Customers will be informed that content will be unlocked upon payment when they open the payment link.
+
+![Unlock content display before payment](/img/examples/payment-links/unlock-content-display-1.jpg)
+
+Once a customer completes a successful payment, the content or link will be displayed to them.
+
+![Unlock content display after payment](/img/examples/payment-links/unlock-content-display-2.jpg)
 
 ### User Flow
 
 Configure what is supposed to happen after a payment has been performed and validated succssfully:
 
-- Redirect users back to you
 - Show a payment confirmation without redirecting users back to you
+- Redirect users back to a website url you specify
 
 ### E-Mail Confirmations
 
@@ -108,7 +300,7 @@ You can configure Payment Links to automatically send payment confirmations per 
 - Send confirmation to your users
 - Send confirmation to yourself
 
-### Callback Request
+### Receive Callback Requests
 
 If your systems need to be informed about incoming payments (e.g. for automation) configure a callback request.
 
@@ -231,31 +423,6 @@ You can read up on how to verify RSA PSS signatures in other programming languag
 
 </Tabs>
 
-### Form Data
-
-Form data entered during the payment is transported via the `payload` attribute:
-
-```javascript
-{
-
-  "payload": {
-
-    "full_name": "Mister Smith",
-    "email": "test@example.com",
-    "shipping_address": "738 S. Wentworth Street, Bronx, NY 10466",
-    "billing_address": "738 S. Wentworth Street, Bronx, NY 10466",
-    "country": "US",
-    "quantity": 5,
-    "usd_value_received": 100.10,
-    "custom_values": [
-      { name: "Discord Name", value: "Ninja#123" },
-      { name: "Age", value: 18 }
-    ]
-
-  }
-}
-```
-
 ### Discounts
 
 You can add discounts to your payment link. 
@@ -293,49 +460,6 @@ Restrict the payment link to a predefined quantity of items, ensuring that purch
 Once you've provided all required information the app will generate a **Payment Link** that you can use.
 
 Send your users to the link in order to perform payments as configured.
-
-### Prefill Form Data
-
-If you select to "Collect Data" during [link creation](#create-new-link) you can prefill all form fields with passing get parameters:
-
-https://link.depay.com/201JapngwCukZzlvdZgR1K?name=Max%20Musterman&country=CH
-
-`name`: The full name of the payment sender.
-
-`email`: The email of the payment sender.
-
-`country`: The ISO 3166-1 alpha-2 country code of the payment sender.
-
-`quantity`: The preselected item quantity.
-
-### Inject Payload Data
-
-You can append get parameters to the generated payment link in order to inject payload data which will become part of the [payment callback request](#callback-request).
-
-This e.g. allows you to track individual users or sessions by id throughout the payment flow.
-
-```
-https://link.depay.com/6KFBECVsokSt0UKOAug8CI?payload[user_id]=1234567
-```
-
-or multiple parameters
-
-```
-https://link.depay.com/6KFBECVsokSt0UKOAug8CI?payload[user_id]=1234567&payload[session_id]=89
-```
-
-Those values will reappear in the [payment callback request](#callback-request) in the following way:
-
-```javascript
-  {
-    "payload": {
-      "injected": {
-        "user_id": 1234567,
-        "session_id": 89
-      }
-    }
-  }
-```
 
 ### Forward Parameters
 
