@@ -11,7 +11,7 @@ Get ready to reveive Web3 Payments with DePay.
 To receive payments on any blockchain, you must have a wallet compatible with that particular blockchain.
 
 DePay supports **all types of wallets**, whether it's a **"Hot Wallet"**, **"Cold Wallet"**, **ledger**, **custodial wallet**, centralized **exchange wallet**, or a **multisignature wallet**.
-As long as you control the address or are the ultimate beneficiary, DePay streamlines the payment reception process for that address.
+DePay streamlines the payment reception process directly to your wallet.
 
 ## Pick blockchains
 
