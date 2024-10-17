@@ -52,6 +52,15 @@ DePay supports most crypto wallets.
 
 <div className="pb-1 pt-1">
   <div className="d-flex p-2 text-decoration-none">
+    <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/WorldApp.svg"/>
+    <div className="ps-3">
+      <div className="text-light"><strong>World App</strong></div>
+    </div>
+  </div>
+</div>
+
+<div className="pb-1 pt-1">
+  <div className="d-flex p-2 text-decoration-none">
     <img style={{ width: '1rem', height: '1rem', position: 'relative', top: '0.2rem' }} src="/docs/img/wallets/Backpack.svg"/>
     <div className="ps-3">
       <div className="text-light"><strong>Backpack</strong></div>

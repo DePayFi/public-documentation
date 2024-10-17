@@ -22,6 +22,17 @@ The following blockchains are currently supported by DePay.
   <div className="col-12 col-md-6">
     <a href="#gnosis" className="d-flex hover-card p-3 align-items-center">
       <div className="text-center position-relative pe-2" style={{width: "2.3rem"}}>
+        <img style={{ width: '1.8rem', height: '1.8rem', position: 'relative', top: '0.1rem' }} src="/docs/img/blockchains/WorldChain.svg"/>
+      </div>
+      <div className="ps-3 pt-1">
+        <div className="text-light"><strong>World Chain</strong></div>
+      </div>
+    </a>
+  </div>
+
+  <div className="col-12 col-md-6">
+    <a href="#gnosis" className="d-flex hover-card p-3 align-items-center">
+      <div className="text-center position-relative pe-2" style={{width: "2.3rem"}}>
         <img style={{ width: '1.8rem', height: '1.8rem', position: 'relative', top: '0.1rem' }} src="/docs/img/blockchains/Gnosis.svg"/>
       </div>
       <div className="ps-3 pt-1">
@@ -125,6 +136,30 @@ Payments on Solana typically take **1 second** in average to process and validat
 
 A payment transaction on Solana costs users **below $0.001** in average.
 
+## World Chain
+
+Payments on World Chain typically take **3 seconds** in average to process and validate.
+
+A payment transaction on Gnosis costs users **below $0.001** in average.
+
+## Base
+
+Payments on Optimism typically take **3 seconds** in average to process and validate.
+
+A payment transaction on Base costs users **$0.01** in average.
+
+## Optimism
+
+Payments on Optimism typically take **3 seconds** in average to process and validate.
+
+A payment transaction on Optimism costs users **$0.001** in average.
+
+## Arbitrum
+
+Payments on Arbitrum typically take **1 second** in average to process and validate.
+
+A payment transaction on Arbitrum costs users below **$0.01** in average.
+
 ## Gnosis
 
 Payments on Gnosis typically take **5 seconds** in average to process and validate.
@@ -154,24 +189,6 @@ A payment transaction on Avalanche costs users **$0.03-$0.20** in average.
 Payments on BNB Smart Chain typically take **5 seconds** in average to process and validate.
 
 A payment transaction on BNB Smart Chain costs users between **$0.05-$0.50** in average.
-
-## Arbitrum
-
-Payments on Arbitrum typically take **1 second** in average to process and validate.
-
-A payment transaction on Arbitrum costs users **$0.30-$1.00** in average.
-
-## Optimism
-
-Payments on Optimism typically take **3 seconds** in average to process and validate.
-
-A payment transaction on Optimism costs users **$0.20-$1.00** in average.
-
-## Base
-
-Payments on Optimism typically take **40 seconds** in average to process and validate.
-
-A payment transaction on Base costs users **$0.20-$1.00** in average.
 
 ## Ethereum
 

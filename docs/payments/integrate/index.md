@@ -26,7 +26,7 @@ Explore the myriad of integration options available with DePay.
         <img src="/docs/img/payments/button.png" />
       </div>
       <div className="pt-4">
-        <div><a href="/docs/payments/integrate/link"><h5 className="pb-1 mb-0">Button</h5></a></div>
+        <div><a href="/docs/payments/integrate/button"><h5 className="pb-1 mb-0">Button</h5></a></div>
         <div className="pb-2"><small className="text-light">Embed simple HTML and enable one-click payments for your users.</small></div>
       </div>
     </a>
@@ -37,8 +37,20 @@ Explore the myriad of integration options available with DePay.
         <img src="/docs/img/payments/widget.png" />
       </div>
       <div className="pt-4">
-        <div><a href="/docs/payments/integrate/link"><h5 className="pb-1 mb-0">Widget</h5></a></div>
+        <div><a href="/docs/payments/integrate/widget"><h5 className="pb-1 mb-0">Widget</h5></a></div>
         <div className="pb-2"><small className="text-light">Embed payments and retain full control over the payment flow within your app.</small></div>
+      </div>
+    </a>
+  </div>
+
+  <div className="col-12 col-md-4 pe-4">
+    <a href="/docs/payments/integrate/mini-app-world-app" className="d-block hover-card p-3">
+      <div className="bg-contrast p-2 rounded-2">
+        <img src="/docs/img/payments/mini-app.png" />
+      </div>
+      <div className="pt-4">
+        <div><a href="/docs/payments/integrate/mini-app-world-app"><h5 className="pb-1 mb-0">Mini App (World App)</h5></a></div>
+        <div className="pb-2"><small className="text-light">Use DePay within in your Mini App (built on World App).</small></div>
       </div>
     </a>
   </div>
@@ -79,3 +91,13 @@ Payment widgets are self-hosted, run directly within your website/app and give y
 The [DePay App](https://app.depay.com) can help you to generate a valid "payment configuration" and helps you to track payments within your account automatically.
 
 [Start integrating the Payment Widget](/docs/payments/integrate/widget)
+
+### Mini App (Built on World App)
+
+Integrating DePay is simple.
+
+Add simple and seamless crypto payments to your Mini App (Built on World App).
+
+Get started with DePay and bring seamless crypto payments to your Mini App!
+
+[Start integrating DePay into your Mini App](/docs/payments/integrate/mini-app-world-app)
